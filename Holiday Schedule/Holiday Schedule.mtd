@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Altova Holiday Schedule" deploymentDescription_so="Add company holidays to your mobile device calendar" deploymentGlobalResourceConfig_so="Default">
+<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Company Holiday Schedule" deploymentDescription_so="Add company holidays to your mobile device calendar" deploymentGlobalResourceConfig_so="Default">
 	<DesignRoot id="6">
 		<style lightTheme="1"/>
 		<children>
