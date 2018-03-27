@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="55" versionServer="55" deploymentPath_so="/public/Company Sales Report" deploymentDescription_so="Sales Report app from the Creating Elegant User Interfaces Guide at Altova.com" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="1">
+		<style askCancelWorkflow="1" onSwitchToOtherSolution="cancel" serverAccess="always" timeoutClient="600" timeoutDataRetrieval="600" webOrientation="landscape" workflowIcon="SalesReport.png"/>
+		<children>
+			<DesignPage id="2" IsNeedsTableRestOfScreenHandling="1">
+				<style name="Sales Report" showTitleBar="0"/>
+				<children>
+					<DesignTable id="5491">
+						<style name="Main Header Table"/>
+						<children>
+							<DesignTableCol id="5682">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableCol id="5641"/>
+							<DesignTableCol id="5668">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableRow id="5494">
+								<children>
+									<DesignButton id="5670">
+										<style name="Regions / Products Button" text_x="if ($PERSISTENT/Root/user_settings/mainView =&apos;Products&apos; ) then &apos;&lt; Regions&apos; else &apos;&lt; Products&apos;" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle"/>
+										<controlActions id="5671">
+											<children>
+												<DesignActionGroupRef id="5956" groupRef="5932"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignLabel id="5642">
+										<style align="center" multiLine="1" name="Main Title Label" text_x="concat(
+if ($PERSISTENT/Root/user_settings/mainView =&apos;Products&apos; ) then &apos;Sales by Product&apos; else &apos;Sales by Region&apos;,
+if ($PERSISTENT/Root/user_settings/chartView =&apos;1&apos; ) then &apos; (Units)&apos; else &apos; ($)&apos;
+)" textSize_x="round( $PERSISTENT/Root/user_settings/textSize * 1.2 )" weight="1"/>
+									</DesignLabel>
+									<DesignButton id="5657">
+										<style name="Dollars / Units Button" text_x="if ($PERSISTENT/Root/user_settings/chartView =  &apos;1&apos; ) then &apos;   $    &gt;&apos; else &apos;  Units  &gt;&apos;" textSize_x="$PERSISTENT/Root/user_settings/textSize"/>
+										<controlActions id="5658">
+											<children>
+												<DesignActionGroupRef id="5957" groupRef="5921"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="5305">
+						<style name="Main View Filters"/>
+						<children>
+							<DesignTableCol id="5339">
+								<style colWidth="16%"/>
+							</DesignTableCol>
+							<DesignTableCol id="5958">
+								<style colWidth_x="if ( $PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos; ) then &apos;29%&apos; else &apos;1%&apos;"/>
+							</DesignTableCol>
+							<DesignTableCol id="5307">
+								<style colWidth_x="if ( $PERSISTENT/Root/user_settings/mainView = &apos;Products&apos; ) then &apos;29%&apos; else &apos;1%&apos;"/>
+							</DesignTableCol>
+							<DesignTableCol id="5308"/>
+							<DesignTableCol id="5309"/>
+							<DesignTableRow id="5310">
+								<children>
+									<DesignLabel id="5511">
+										<style align="center" name="Label1" text="Filter:" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle"/>
+									</DesignLabel>
+									<DesignCombo id="5960" pageXML="23" comboEntryVisValues="1">
+										<style align="center" marginBottom="5px" marginLeft="0px" name="Products ComboBox" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos;"/>
+										<controlActions id="5961">
+											<children>
+												<DesignActionCondition id="5962" condition="$PERSISTENT/Root/user_settings/Product = 10">
+													<children>
+														<DesignActionConditionTrue id="5963">
+															<children>
+																<DesignActionUpdateNode id="5964" updAt="$PERSISTENT/Root/user_settings/prod_all" resOf="10"/>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="5965">
+															<children>
+																<DesignActionUpdateNode id="5966" updAt="$PERSISTENT/Root/user_settings/prod_all" resOf="0"/>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+												<DesignActionGroupRef id="5967" groupRef="4064"/>
+											</children>
+										</controlActions>
+										<comboEntry desc="All Products" value="10"/>
+										<comboEntry desc="Sprockets" value="1"/>
+										<comboEntry desc="Widgets" value="2"/>
+										<comboEntry desc="Gadgets" value="3"/>
+										<comboEntry desc="Gizmos" value="4"/>
+										<comboEntry desc="Thingamajigs" value="5"/>
+									</DesignCombo>
+									<DesignCombo id="5319" pageXML="24" comboEntryVisValues="1">
+										<style align="center" marginBottom="5px" marginLeft="0px" name="Regions ComboBox" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Products&apos;"/>
+										<controlActions id="5320">
+											<children>
+												<DesignActionCondition id="5321" condition="$PERSISTENT/Root/user_settings/Region = 10">
+													<children>
+														<DesignActionConditionTrue id="5322">
+															<children>
+																<DesignActionUpdateNode id="5323" updAt="$PERSISTENT/Root/user_settings/reg_all" resOf="10"/>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="5324">
+															<children>
+																<DesignActionUpdateNode id="5325" updAt="$PERSISTENT/Root/user_settings/reg_all" resOf="0"/>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+												<DesignActionGroupRef id="5326" groupRef="4064"/>
+											</children>
+										</controlActions>
+										<comboEntry desc="All Regions" value="10"/>
+										<comboEntry desc="North" value="1"/>
+										<comboEntry desc="East" value="2"/>
+										<comboEntry desc="South" value="3"/>
+										<comboEntry desc="West" value="4"/>
+									</DesignCombo>
+									<DesignCombo id="5327" pageXML="3722" comboEntryVisValues="1">
+										<style align="center" marginBottom="5px" marginLeft="0px" name="ComboBox11" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle"/>
+										<controlActions id="5328">
+											<children>
+												<DesignActionCondition id="5968" condition="$PERSISTENT/Root/user_settings/Month &gt; month-from-date( current-date() ) and $PERSISTENT/Root/user_settings/Year = year-from-date( current-date() )">
+													<children>
+														<DesignActionConditionTrue id="5969">
+															<children>
+																<DesignActionUpdateNode id="5970" updAt="$PERSISTENT/Root/user_settings/Year" resOf="$PERSISTENT/Root/user_settings/Year - 1"/>
+															</children>
+														</DesignActionConditionTrue>
+													</children>
+												</DesignActionCondition>
+												<DesignActionGroupRef id="5329" groupRef="4064"/>
+											</children>
+										</controlActions>
+										<comboEntry desc="Jan" value="1"/>
+										<comboEntry desc="Feb" value="2"/>
+										<comboEntry desc="Mar" value="3"/>
+										<comboEntry desc="Apr" value="4"/>
+										<comboEntry desc="May" value="5"/>
+										<comboEntry desc="June" value="6"/>
+										<comboEntry desc="July" value="7"/>
+										<comboEntry desc="Aug" value="8"/>
+										<comboEntry desc="Sept" value="9"/>
+										<comboEntry desc="Oct" value="10"/>
+										<comboEntry desc="Nov" value="11"/>
+										<comboEntry desc="Dec" value="12"/>
+									</DesignCombo>
+									<DesignCombo id="5330" pageXML="25">
+										<style align="center" marginBottom="5px" marginLeft="0px" name="ComboBox12" textSize_x="$PERSISTENT/Root/user_settings/textSize" valign="middle"/>
+										<controlActions id="5331">
+											<children>
+												<DesignActionCondition id="5971" condition="$PERSISTENT/Root/user_settings/Month &gt; month-from-date( current-date() ) and $PERSISTENT/Root/user_settings/Year = year-from-date( current-date() )">
+													<children>
+														<DesignActionConditionTrue id="5972">
+															<children>
+																<DesignActionUpdateNode id="5973" updAt="$PERSISTENT/Root/user_settings/Month" resOf="month-from-date( current-date() )"/>
+															</children>
+														</DesignActionConditionTrue>
+													</children>
+												</DesignActionCondition>
+												<DesignActionGroupRef id="5974" groupRef="4064"/>
+											</children>
+										</controlActions>
+										<comboEntry desc="" value="2017"/>
+										<comboEntry desc="" value="2016"/>
+										<comboEntry desc="" value="2015"/>
+										<comboEntry desc="" value="2014"/>
+										<comboEntry desc="" value="2013"/>
+										<comboEntry desc="" value="2012"/>
+									</DesignCombo>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignChart id="4963" pageXML="5171" chartSettings="1947">
+						<style chartHeight_x="SetChartHeight()" chartWidth_x="if  ( $MT_Browser =  true() )
+then 800 
+else 
+$MT_CanvasX" createBeforeLoad="0" name="Sales by Region / Units Chart" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos; and
+$PERSISTENT/Root/user_settings/chartView = 1"/>
+					</DesignChart>
+					<DesignChart id="5549" pageXML="5557" chartSettings="5556">
+						<style chartHeight_x="SetChartHeight()" chartWidth_x="if  ( $MT_Browser =  true() )
+then 800 
+else 
+$MT_CanvasX" createBeforeLoad="0" name="Sales by Region/$ Chart" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos; and
+$PERSISTENT/Root/user_settings/chartView = 2"/>
+					</DesignChart>
+					<DesignTable id="4428">
+						<style addDelPossible="0" name="Region Sales / Units Table" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos; and $PERSISTENT/Root/user_settings/chartView = 1"/>
+						<children>
+							<DesignTableCol id="4429">
+								<style colWidth="8%"/>
+							</DesignTableCol>
+							<DesignTableCol id="4982">
+								<style colWidth="20%"/>
+							</DesignTableCol>
+							<DesignTableCol id="5109"/>
+							<DesignTableCol id="5153"/>
+							<DesignTableCol id="4430"/>
+							<DesignTableCol id="4431"/>
+							<DesignTableRow id="4435">
+								<children>
+									<DesignLabel id="4436">
+										<style align="center" marginTop="2px" name="Label22" text=" Day " textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="4971">
+										<style align="right" marginTop="2px" name="Label30" text="North" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5098">
+										<style align="right" marginTop="2px" multiLine="1" name="Label13" text="East" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5122">
+										<style align="right" marginTop="2px" name="Label31" text="South" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="4438">
+										<style align="right" marginTop="2px" name="Label29" text="West" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="4440">
+										<style align="right" marginTop="2px" multiLine="1" name="Label12" text_x="if ($MT_Landscape ) then &apos;Total Units&apos; else &apos;Total&apos;" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableScrollableArea id="4475">
+								<style maxTableY="RestScreenYAlways" scrollTableY="ScrollTableRows"/>
+								<children>
+									<DesignTableRowGroup id="4448" pageXML="5172">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="4449">
+												<children>
+													<DesignLabel id="5148" pageXML="5173">
+														<style align="right" format="#,###,##0" name="Label42" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5143">
+														<style align="right" format="#,###,##0" name="Label41" text_x="region[@name=1]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5104">
+														<style align="right" format="#,###,##0" name="Label37" text_x="region[@name=2]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5128">
+														<style align="right" format="#,###,##0" name="Label38" text_x="region[@name=3]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5133">
+														<style align="right" format="#,###,##0" name="Label39" text_x="region[@name=4]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5138">
+														<style align="right" format="#,###,##0" name="Label40" text_x="region[@name=1] +
+region[@name=2] +
+region[@name=3] +
+region[@name=4]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+							<DesignTableRow id="5757">
+								<children>
+									<DesignLabel id="5750">
+										<style align="left" marginTop="4px" name="Label26" text="Total" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5755">
+										<style align="right" format="#,##0" marginTop="2px" name="Label27" text_x="sum($salesquery/aggregatedsales/day/region[@name=1])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5764">
+										<style align="right" format="#,##0" marginTop="2px" name="Label28" text_x="sum($salesquery/aggregatedsales/day/region[@name=2])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5766">
+										<style align="right" format="#,##0" marginTop="2px" name="Label69" text_x="sum($salesquery/aggregatedsales/day/region[@name=3])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5768">
+										<style align="right" format="#,##0" marginTop="2px" name="Label70" text_x="sum($salesquery/aggregatedsales/day/region[@name=4])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5770">
+										<style align="right" format="#,##0" marginTop="2px" name="Label71" text_x="sum($salesquery/aggregatedsales/day/region)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="5562">
+						<style addDelPossible="0" name="Region Sales / $ Table" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Regions&apos; and $PERSISTENT/Root/user_settings/chartView = 2"/>
+						<children>
+							<DesignTableCol id="5563">
+								<style colWidth="8%"/>
+							</DesignTableCol>
+							<DesignTableCol id="5564">
+								<style colWidth="20%"/>
+							</DesignTableCol>
+							<DesignTableCol id="5565"/>
+							<DesignTableCol id="5566"/>
+							<DesignTableCol id="5567"/>
+							<DesignTableCol id="5568"/>
+							<DesignTableRow id="5569">
+								<children>
+									<DesignLabel id="5570">
+										<style align="center" marginTop="2px" name="Label25" text=" Day " textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5572">
+										<style align="right" marginTop="2px" name="Label60" text="North" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5574">
+										<style align="right" marginTop="2px" multiLine="1" name="Label18" text="East" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5576">
+										<style align="right" marginTop="2px" name="Label61" text="South" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5578">
+										<style align="right" marginTop="2px" name="Label62" text="West" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5580">
+										<style align="right" marginTop="2px" multiLine="1" name="Label19" text="Total" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableScrollableArea id="5582">
+								<style maxTableY="RestScreenYAlways" scrollTableY="ScrollTableRows"/>
+								<children>
+									<DesignTableRowGroup id="5583" pageXML="5558">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="5584">
+												<children>
+													<DesignLabel id="5585" pageXML="5559">
+														<style align="right" format="#,###,##0" name="Label63" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5587">
+														<style align="right" format="#,###,##0" name="Label64" text_x="region[@name=1]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5589">
+														<style align="right" format="#,###,##0" name="Label65" text_x="region[@name=2]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5591">
+														<style align="right" format="#,###,##0" name="Label66" text_x="region[@name=3]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5593">
+														<style align="right" format="#,###,##0" name="Label67" text_x="region[@name=4]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5595">
+														<style align="right" format="$#,###,##0" name="Label68" text_x="region[@name=1] +
+region[@name=2] +
+region[@name=3] +
+region[@name=4]" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+							<DesignTableRow id="5794">
+								<children>
+									<DesignLabel id="5882">
+										<style align="left" marginTop="4px" name="Label72" text="Total" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5792">
+										<style align="right" format="#,##0" marginTop="2px" name="Label73" text_x="sum($salesbyregion/aggregatedsales/day/region[@name=1])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5803">
+										<style align="right" format="#,##0" marginTop="2px" name="Label74" text_x="sum($salesbyregion/aggregatedsales/day/region[@name=2])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5805">
+										<style align="right" format="#,##0" marginTop="2px" name="Label75" text_x="sum($salesbyregion/aggregatedsales/day/region[@name=3])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5807">
+										<style align="right" format="#,##0" marginTop="2px" name="Label76" text_x="sum($salesbyregion/aggregatedsales/day/region[@name=4])" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5809">
+										<style align="right" format="$#,##0" marginTop="2px" name="Label77" text_x="sum($salesbyregion/aggregatedsales/day/region)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignChart id="5261" pageXML="5256" chartSettings="5266">
+						<style chartHeight_x="SetChartHeight()" chartWidth_x="if  ( $MT_Browser =  true() )
+then 800 
+else 
+$MT_CanvasX" createBeforeLoad="0" name="Sales by Product / Units Chart" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Products&apos; and
+$PERSISTENT/Root/user_settings/chartView = 1"/>
+					</DesignChart>
+					<DesignChart id="5401" pageXML="5256" chartSettings="5475">
+						<style chartHeight_x="SetChartHeight()" chartWidth_x="if  ( $MT_Browser =  true() )
+then 800 
+else 
+$MT_CanvasX" createBeforeLoad="0" name="Sales by Product/$ Chart" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Products&apos; and
+$PERSISTENT/Root/user_settings/chartView = 2"/>
+					</DesignChart>
+					<DesignTable id="5188">
+						<style addDelPossible="0" name="Product Sales Table" visible_x="$PERSISTENT/Root/user_settings/mainView = &apos;Products&apos;"/>
+						<children>
+							<DesignTableCol id="5189">
+								<style colWidth="8%"/>
+							</DesignTableCol>
+							<DesignTableCol id="5190"/>
+							<DesignTableCol id="5191"/>
+							<DesignTableCol id="5192"/>
+							<DesignTableCol id="5228"/>
+							<DesignTableCol id="5193"/>
+							<DesignTableCol id="5194"/>
+							<DesignTableRow id="5195">
+								<children>
+									<DesignLabel id="5196">
+										<style align="center" marginTop="2px" name="Label23" text=" Day " textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5198">
+										<style align="right" marginTop="2px" name="Label32" text="Sprocket" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5200">
+										<style align="right" marginTop="2px" multiLine="1" name="Label14" text="Widget" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5202">
+										<style align="right" marginTop="2px" name="Label33" text="Gadget" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5226">
+										<style align="right" marginTop="2px" name="Label35" text="Gizmo" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5204">
+										<style align="right" marginTop="2px" name="Label34" text_x="if ( $MT_Portrait ) then &apos;Thing&apos; else &apos;Thingamajig&apos;" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1" width="wrap_content"/>
+									</DesignLabel>
+									<DesignLabel id="5206">
+										<style align="right" marginTop="2px" multiLine="1" name="Label15" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 and $MT_Landscape ) then &apos;Total Units&apos;
+else if ($PERSISTENT/Root/user_settings/chartView = 1 and $MT_Portrait ) then &apos;Total&apos;
+else &apos;$ Total&apos;" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableScrollableArea id="5208">
+								<style maxTableY="RestScreenYAlways" scrollTableY="ScrollTableRows"/>
+								<children>
+									<DesignTableRowGroup id="5209" pageXML="5257">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="5210">
+												<children>
+													<DesignLabel id="5211" pageXML="5258">
+														<style align="right" format="#,###,##0" name="Label43" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5213">
+														<style align="right" format="#,###,##0" name="Label44" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then 
+prod[@name=1] else (
+prod[@name=1] * $productsDB/DB/RowSet/Row[1]/@price
+)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5215">
+														<style align="right" format="#,###,##0" name="Label45" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then 
+prod[@name=2] else (
+prod[@name=2] * $productsDB/DB/RowSet/Row[2]/@price
+)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5217">
+														<style align="right" format="#,###,##0" name="Label46" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then 
+prod[@name=3] else (
+prod[@name=3] * $productsDB/DB/RowSet/Row[3]/@price
+)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5272">
+														<style align="right" format="#,###,##0" name="Label49" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then 
+prod[@name=4] else (
+prod[@name=4] * $productsDB/DB/RowSet/Row[4]/@price
+)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5219">
+														<style align="right" format="#,###,##0" name="Label47" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then 
+prod[@name=5] else (
+prod[@name=5] * $productsDB/DB/RowSet/Row[5]/@price
+)" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+													<DesignLabel id="5221">
+														<style align="right" format="#,###,##0" name="Label48" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1) then
+(
+prod[@name=1] +
+prod[@name=2] +
+prod[@name=3] +
+prod[@name=4] +
+prod[@name=5]
+) else (
+( prod[@name=1]  * $productsDB/DB/RowSet/Row[1]/@price ) +
+( prod[@name=2]  * $productsDB/DB/RowSet/Row[2]/@price ) +
+( prod[@name=3]  * $productsDB/DB/RowSet/Row[3]/@price ) +
+( prod[@name=4]  * $productsDB/DB/RowSet/Row[4]/@price ) +
+( prod[@name=5]  * $productsDB/DB/RowSet/Row[5]/@price ) )" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+							<DesignTableRow id="5844">
+								<children>
+									<DesignLabel id="5884">
+										<style align="left" marginTop="4px" name="Label78" text="Total" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5823">
+										<style align="right" format="#,##0" marginTop="2px" name="Label79" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod[@name=1]) else
+sum($salesbyproduct/aggregatedsales/day/prod[@name=1])  * $productsDB/DB/RowSet/Row[1]/@price" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5830">
+										<style align="right" format="#,##0" marginTop="2px" name="Label80" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod[@name=2]) else
+sum($salesbyproduct/aggregatedsales/day/prod[@name=2])  * $productsDB/DB/RowSet/Row[2]/@price" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5833">
+										<style align="right" format="#,##0" marginTop="2px" name="Label83" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod[@name=3]) else
+sum($salesbyproduct/aggregatedsales/day/prod[@name=3])  * $productsDB/DB/RowSet/Row[3]/@price" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5836">
+										<style align="right" format="#,##0" marginTop="2px" name="Label84" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod[@name=4]) else
+sum($salesbyproduct/aggregatedsales/day/prod[@name=4])  * $productsDB/DB/RowSet/Row[4]/@price" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5839">
+										<style align="right" format="#,##0" marginTop="2px" name="Label85" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod[@name=5]) else
+sum($salesbyproduct/aggregatedsales/day/prod[@name=5])  * $productsDB/DB/RowSet/Row[5]/@price" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="5842">
+										<style align="right" format_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then &apos;#,###,##0&apos;
+else &apos;$#,###,##0&apos;" marginTop="2px" name="Label86" text_x="if ($PERSISTENT/Root/user_settings/chartView = 1 ) then
+sum($salesbyproduct/aggregatedsales/day/prod) else 
+(
+( sum( $salesbyproduct/aggregatedsales/day/prod[@name=1] )  * $productsDB/DB/RowSet/Row[1]/@price ) +
+( sum( $salesbyproduct/aggregatedsales/day/prod[@name=2] )  * $productsDB/DB/RowSet/Row[2]/@price ) +
+( sum( $salesbyproduct/aggregatedsales/day/prod[@name=3] ) * $productsDB/DB/RowSet/Row[3]/@price ) +
+( sum( $salesbyproduct/aggregatedsales/day/prod[@name=4] ) * $productsDB/DB/RowSet/Row[4]/@price ) +
+( sum( $salesbyproduct/aggregatedsales/day/prod[@name=5] ) * $productsDB/DB/RowSet/Row[5]/@price ) )" textSize_x="$PERSISTENT/Root/user_settings/textSize" underline="0" valign="bottom" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="4371">
+						<style name="User Prefs / Back button Table"/>
+						<children>
+							<DesignTableCol id="5950">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableCol id="5683"/>
+							<DesignTableCol id="4373">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableCol id="5701">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableRow id="4375">
+								<children>
+									<DesignButton id="5947">
+										<style align="left" name="Exit App Button" text=" &lt;      " textSize="medium" valign="middle" visible_x="( $MT_iOS ) or ( $MT_Windows = true() and $MT_WindowsPhone = false() )" weight="1"/>
+										<controlActions id="5951">
+											<children>
+												<DesignActionMessageBox id="5953" msgBoxKind="yesno" msgBoxMsg="&apos;Do you really want to exit this solution?&apos;">
+													<children>
+														<DesignActionMessageBoxButton id="5954">
+															<children>
+																<DesignActionWorkflowExecution id="5952" cancel="1"/>
+															</children>
+														</DesignActionMessageBoxButton>
+														<DesignActionMessageBoxButton id="5955"/>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="5684"/>
+									<DesignLabel id="5702">
+										<style align="center" marginBottom="4px" name="Decrease Text Size Label" text="   Abc-   " textSize="small" underline="0" valign="bottom" weight="1"/>
+										<controlActions id="5703">
+											<children>
+												<DesignActionUpdateNode id="5706" updAt="$PERSISTENT/Root/user_settings/textSize" resOf="if ( $PERSISTENT/Root/user_settings/textSize &gt; 11 ) then 
+$PERSISTENT/Root/user_settings/textSize - 2 else 10"/>
+												<DesignActionUpdateDisplay id="5707"/>
+											</children>
+										</controlActions>
+									</DesignLabel>
+									<DesignLabel id="5708">
+										<style align="center" marginBottom="4px" name="Increase Text Size Label" text="  Abc+  " textSize="medium" underline="0" valign="bottom" weight="1"/>
+										<controlActions id="5709">
+											<children>
+												<DesignActionUpdateNode id="5712" updAt="$PERSISTENT/Root/user_settings/textSize" resOf="if ( $PERSISTENT/Root/user_settings/textSize &lt; 48 ) then 
+$PERSISTENT/Root/user_settings/textSize+ 2 else 50"/>
+												<DesignActionUpdateDisplay id="5713"/>
+											</children>
+										</controlActions>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+				<onPageLoadActions id="131">
+					<children>
+						<DesignActionGroupRef id="5945" groupRef="5939"/>
+						<DesignActionGroupRef id="4307" groupRef="4064"/>
+					</children>
+				</onPageLoadActions>
+				<xmlRoots>
+					<PageXMLRootRef id="5154" refXMLRoot="5155"/>
+					<PageXMLRootRef id="5176" refXMLRoot="5178"/>
+					<PageXMLRootRef id="5168" refXMLRoot="5169"/>
+					<PageXMLRootRef id="5254" refXMLRoot="5255"/>
+					<PageXMLRootRef id="5545" refXMLRoot="5546"/>
+				</xmlRoots>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<ActionGroupRoot id="14">
+		<children>
+			<DesignActionGroup id="5939" name="Initialize Settings">
+				<children>
+					<DesignActionUpdateNode id="5946" updAt="$PERSISTENT/Root/user_settings/Month" resOf="month-from-date( current-date() )"/>
+					<DesignActionUpdateNode id="5941" updAt="$PERSISTENT/Root/user_settings/Year" resOf="year-from-date( current-date() )"/>
+					<DesignActionUpdateNode id="5944" actionEnabled="0" updAt="$PERSISTENT/Root/user_settings/chartView" resOf="1"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="4064" name="Reload database and charts">
+				<children>
+					<DesignActionReloadData id="5685" reloadRef="5178"/>
+					<DesignActionReloadData id="5170" reloadRef="5169"/>
+					<DesignActionReloadData id="5686" reloadRef="5546"/>
+					<DesignActionReloadData id="5687" reloadRef="5255"/>
+					<DesignActionReloadData id="4061" reloadRef="4963"/>
+					<DesignActionReloadData id="5271" reloadRef="5261"/>
+					<DesignActionReloadData id="5476" reloadRef="5401"/>
+					<DesignActionReloadData id="5621" reloadRef="5549"/>
+					<DesignActionUpdateDisplay id="5688"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="5932" name="Toggle mainView">
+				<children>
+					<DesignActionCondition id="5933" condition="$PERSISTENT/Root/user_settings/mainView = &apos;Products&apos;">
+						<children>
+							<DesignActionConditionTrue id="5934">
+								<children>
+									<DesignActionUpdateNode id="5928" updAt="$PERSISTENT/Root/user_settings/mainView" resOf="&apos;Regions&apos;"/>
+								</children>
+							</DesignActionConditionTrue>
+							<DesignActionConditionFalse id="5935">
+								<children>
+									<DesignActionUpdateNode id="5929" updAt="$PERSISTENT/Root/user_settings/mainView" resOf="&apos;Products&apos;"/>
+								</children>
+							</DesignActionConditionFalse>
+						</children>
+					</DesignActionCondition>
+					<DesignActionGroupRef id="5936" groupRef="4064"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="5921" name="Toggle chartView">
+				<children>
+					<DesignActionCondition id="5922" condition="$PERSISTENT/Root/user_settings/chartView = 1">
+						<children>
+							<DesignActionConditionTrue id="5923">
+								<children>
+									<DesignActionUpdateNode id="5924" updAt="$PERSISTENT/Root/user_settings/chartView" resOf="2"/>
+								</children>
+							</DesignActionConditionTrue>
+							<DesignActionConditionFalse id="5925">
+								<children>
+									<DesignActionUpdateNode id="5926" updAt="$PERSISTENT/Root/user_settings/chartView" resOf="1"/>
+								</children>
+							</DesignActionConditionFalse>
+						</children>
+					</DesignActionCondition>
+					<DesignActionGroupRef id="5927" groupRef="4064"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="5719" name="Change display sound effect">
+				<children>
+					<DesignActionAudio id="5714" actionEnabled="0" channel="1" endPosition="1">
+						<FileSettings id="5715" url="http://altova.com/images/whoosh.mp3" fileOnClient="1" createDirs="0"/>
+						<FileSettingsCache id="5716" url="whoosh_snd.mp3" fileOnClient="1"/>
+						<SoundBank id="5717" fileOnClient="1"/>
+						<SoundBankCache id="5718" fileOnClient="1"/>
+					</DesignActionAudio>
+				</children>
+			</DesignActionGroup>
+		</children>
+	</ActionGroupRoot>
+	<XPathFunctionsRoot id="361">
+		<children>
+			<DesignXPathFunction id="4312" xpath="declare function GetMonth($a) as xs:string
+{
+	switch ( $a )
+	case &apos;1&apos; return &apos;January&apos;
+	case &apos;2&apos; return &apos;February&apos;
+	case &apos;3&apos; return &apos;March&apos;
+	case &apos;4&apos; return &apos;April&apos;
+	case &apos;5&apos; return &apos;May&apos;
+	case &apos;6&apos; return &apos;June&apos;
+	case &apos;7&apos; return &apos;July&apos;
+	case &apos;8&apos; return &apos;August&apos;
+	case &apos;9&apos; return &apos;September&apos;
+	case &apos;10&apos; return &apos;October&apos;
+	case &apos;11&apos; return &apos;November&apos;
+	case &apos;12&apos; return &apos;December&apos;
+		
+	default return &apos;Unknown&apos;
+}"/>
+			<DesignXPathFunction id="4368" xpath="declare function SetChartHeight()
+{
+if ($MT_Browser )
+then 240 
+else 
+if ($MT_Windows )
+then 300 
+else 
+if ( $MT_DeviceWidth &gt; 0  and $MT_Portrait ) then   $MT_DeviceHeight idiv 3.5
+else
+ if ( $MT_DeviceWidth &gt; 0  and $MT_Landscape ) then   $MT_DeviceWidth idiv 4
+else 400
+}"/>
+		</children>
+	</XPathFunctionsRoot>
+	<PageXMLNamespaceRoot id="28">
+		<children>
+			<PageXMLNamespace id="29" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="30" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="31" name="Root">
+				<children>
+					<PageXMLElement id="22" name="user_settings">
+						<children>
+							<PageXMLElement id="23" name="Product" mustExist="1" default="10"/>
+							<PageXMLElement id="24" name="Region" mustExist="1" default="10"/>
+							<PageXMLElement id="25" name="Year" mustExist="1" default="2017"/>
+							<PageXMLElement id="3722" name="Month" mustExist="1" default="1"/>
+							<PageXMLElement id="2788" name="textSize" mustExist="1" default="16"/>
+							<PageXMLElement id="5346" name="mainView" mustExist="1" default="Products"/>
+							<PageXMLElement id="4507" name="chartView" mustExist="1" default="1"/>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLPersistentRoot>
+	<PageXMLRoots id="114">
+		<children>
+			<PageXMLRootXML id="5155" name="companysales" readOnlyXML="1" keepDataOn="server" hasUrl="1">
+				<children>
+					<PageXMLElement id="5156" name="companysales" from="xml">
+						<children>
+							<PageXMLElement id="5157" name="month" from="xml">
+								<children>
+									<PageXMLAttribute id="5158" name="number" from="xml"/>
+									<PageXMLElement id="5159" name="day" from="xml">
+										<children>
+											<PageXMLAttribute id="5160" name="num" from="xml"/>
+											<PageXMLElement id="5161" name="prod" from="xml">
+												<children>
+													<PageXMLAttribute id="5162" name="name" from="xml"/>
+													<PageXMLElement id="5163" name="region" from="xml">
+														<children>
+															<PageXMLAttribute id="5164" name="name" from="xml"/>
+														</children>
+													</PageXMLElement>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<DefaultFile so="1" id="5165" url="companyOrders.xml" deployable_so="5167"/>
+			</PageXMLRootXML>
+			<PageXMLRootXQueryTree id="5169" name="salesquery" readOnlyXML="1" xpath="&lt;aggregatedsales&gt;
+{
+	(: iterate over all days in the selected month :)
+	for $day in $companysales/companysales/month[@number=$PERSISTENT/Root/user_settings/Month]/day
+	(: select either one product based on the selector, or all products if the selector is set to 10 :)
+	let $prod := if ( $PERSISTENT/Root/user_settings/Product = 10 ) then $day/prod else $day/prod[@name=$PERSISTENT/Root/user_settings/Product]
+	return &lt;day num=&quot;{$day/@num}&quot;&gt;
+	{
+		(: iterate over all the regions based on the first product - remember, we could have multiple products due to &quot;all&quot; selector value :)
+		for $region in $prod[1]/region
+		where build-date( $PERSISTENT/Root/user_settings/Year, $PERSISTENT/Root/user_settings/Month, $day/@num ) &lt;= current-date-no-TZ()
+		return &lt;region name=&quot;{$region/@name}&quot;&gt;
+		{
+			(: aggregate the sales data for the respective region from all the seleted products :)
+			sum( $prod/region[@name=$region/@name] )
+		}
+		&lt;/region&gt;
+	}
+	&lt;/day&gt;
+}
+&lt;/aggregatedsales&gt;" needsClient="0">
+				<children>
+					<PageXMLElement id="5171" name="aggregatedsales">
+						<children>
+							<PageXMLElement id="5172" name="day">
+								<children>
+									<PageXMLAttribute id="5173" name="num"/>
+									<PageXMLElement id="5174" name="region">
+										<children>
+											<PageXMLAttribute id="5175" name="name"/>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLRootXQueryTree>
+			<PageXMLRootDB id="5178" name="productsDB">
+				<children>
+					<PageXMLElement id="5179" name="DB" from="db">
+						<children>
+							<PageXMLElement id="5180" name="RowSet" from="db">
+								<children>
+									<PageXMLElement id="5181" name="Row" from="db">
+										<children>
+											<PageXMLAttribute id="5182" name="id" from="db" primaryKey="1" autoIncrement="1" readOnly="1"/>
+											<PageXMLAttribute id="5183" name="prodName" from="db"/>
+											<PageXMLAttribute id="5184" name="price" from="db"/>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<dbSelection so="1" id="5186" dbSource_so="5895">
+					<dbSelectionDescription>
+						<statements>
+							<statement name="current_prices" statementUI="SELECT &quot;id&quot;,
+       &quot;prodName&quot;,
+       &quot;price&quot;
+FROM   &quot;main&quot;.&quot;products&quot;;" table="products">
+								<colDescriptions>
+									<col name="id" PK="1" fixed="1" autoIncrement="1" dataType="mt_bigint"/>
+									<col name="prodName" dataType="mt_string" length="80"/>
+									<col name="price" dataType="mt_double"/>
+								</colDescriptions>
+							</statement>
+						</statements>
+					</dbSelectionDescription>
+				</dbSelection>
+			</PageXMLRootDB>
+			<PageXMLRootXQueryTree id="5255" name="salesbyproduct" readOnlyXML="1" xpath="&lt;aggregatedsales&gt;
+{
+	(: iterate over all days in the selected month :)
+	for $day in $companysales/companysales/month[@number=$PERSISTENT/Root/user_settings/Month]/day
+	return &lt;day num=&quot;{$day/@num}&quot;&gt;
+	{
+		(: iterate over all the products :)
+		for $prod in $day/prod
+		where build-date( $PERSISTENT/Root/user_settings/Year, $PERSISTENT/Root/user_settings/Month, $day/@num ) &lt;= current-date-no-TZ()
+		return &lt;prod name=&quot;{$prod/@name}&quot;&gt;
+		{
+			(: aggregate the sales data for the respective product from all the seleted regions :)
+			(: select either one region based on the selector, or sum over all regions if the selector is set to 10 :)
+			sum ( if ( $PERSISTENT/Root/user_settings/Region = 10 ) then $prod/region else $prod/region[@name=$PERSISTENT/Root/user_settings/Region] )
+		}
+		&lt;/prod&gt;
+	}
+	&lt;/day&gt;
+}
+&lt;/aggregatedsales&gt;" needsClient="0">
+				<children>
+					<PageXMLElement id="5256" name="aggregatedsales">
+						<children>
+							<PageXMLElement id="5257" name="day">
+								<children>
+									<PageXMLAttribute id="5258" name="num"/>
+									<PageXMLElement id="5267" name="prod">
+										<children>
+											<PageXMLAttribute id="5268" name="name"/>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLRootXQueryTree>
+			<PageXMLRootXQueryTree id="5546" name="salesbyregion" readOnlyXML="1" xpath="&lt;aggregatedsales&gt;
+{
+	(: iterate over all days in the selected month :)
+	for $day in $companysales/companysales/month[@number=$PERSISTENT/Root/user_settings/Month]/day
+	(: select either one product based on the selector, or all products if the selector is set to 10 :)
+	let $prod := if ( $PERSISTENT/Root/user_settings/Product = 10 ) then $day/prod else $day/prod[@name=$PERSISTENT/Root/user_settings/Product]
+	return &lt;day num=&quot;{$day/@num}&quot;&gt;
+	{
+		(: iterate over all the regions based on the first product - remember, we could have multiple products due to &quot;all&quot; selector value :)
+		for $region in $prod[1]/region
+		where build-date( $PERSISTENT/Root/user_settings/Year, $PERSISTENT/Root/user_settings/Month, $day/@num ) &lt;= current-date-no-TZ()
+		return &lt;region name=&quot;{$region/@name}&quot;&gt;
+		{
+			(: aggregate the sales data for the respective region from all the seleted products :)
+			( sum ( $prod[1]/region[@name=$region/@name]  * $productsDB/DB/RowSet/Row[1]/@price )  +
+			  sum( $prod[2]/region[@name=$region/@name]  * $productsDB/DB/RowSet/Row[2]/@price )   +
+			  sum( $prod[3]/region[@name=$region/@name]  * $productsDB/DB/RowSet/Row[3]/@price )   +
+			  sum( $prod[4]/region[@name=$region/@name]  * $productsDB/DB/RowSet/Row[4]/@price )   +
+			  sum( $prod[5]/region[@name=$region/@name]  * $productsDB/DB/RowSet/Row[5]/@price )  
+     )
+		}
+		&lt;/region&gt;
+	}
+	&lt;/day&gt;
+}
+&lt;/aggregatedsales&gt;" needsClient="0">
+				<children>
+					<PageXMLElement id="5557" name="aggregatedsales">
+						<children>
+							<PageXMLElement id="5558" name="day">
+								<children>
+									<PageXMLAttribute id="5559" name="num"/>
+									<PageXMLElement id="5560" name="region">
+										<children>
+											<PageXMLAttribute id="5561" name="name"/>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLRootXQueryTree>
+		</children>
+	</PageXMLRoots>
+	<WorkflowRoot id="17">
+		<children>
+			<WorkflowPageRef id="18" page="2"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="32">
+		<children>
+			<GlobalVariable id="33" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="34" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="35" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="36" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="37" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="38" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="39" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="40" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="41" sysVar="MT_DPIX"/>
+			<GlobalVariable id="42" sysVar="MT_DPIY"/>
+			<GlobalVariable id="43" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="44" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="45" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="46" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="47" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="48" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="49" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="50" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="51" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="52" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="53" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="54" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="55" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="56" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="57" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="58" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="59" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="60" sysVar="MT_ControlName"/>
+			<GlobalVariable id="61" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="62" sysVar="MT_PageName"/>
+			<GlobalVariable id="63" sysVar="MT_UserName"/>
+			<GlobalVariable id="64" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="65" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="66" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="67" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="68" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="69" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="70" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="71" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="72" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="73" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="1961" name="SmallScreen" xpath="$MT_DeviceWidth &gt; 600" description_so="Device is too small for table" idxIcon_so="13"/>
+			<GlobalVariable id="1962" name="BigScreen" xpath="$MT_DeviceWidth &lt;= 600" idxIcon_so="16"/>
+			<GlobalVariable id="178" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="270" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="271" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="272" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="313" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="314" sysVar="MT_NFCAvailable"/>
+		</children>
+	</GlobalVariables>
+	<ChartSettingsRoot id="74">
+		<children>
+			<ChartSettings id="1947">
+				<chartData so="1" map-data-categories="1">
+					<layer>
+						<dataseries-xny-rows for-each="day" x-value="@num" auto-x-value="0">
+							<col y-value="region[@name=1]" y-name="&quot;North&quot;"/>
+							<col y-value="region[@name=2]" y-name="&quot;East&quot;"/>
+							<col y-value="region[@name=3]" y-name="&quot;South&quot;"/>
+							<col y-value="region[@name=4]" y-name="&quot;West (Units) &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="StackedBarChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9">
+								<TitleFont Size="4.5%"/>
+								<LegendFont Size="4.%"/>
+								<AxisLabelFont Size="4.%"/>
+							</General>
+							<Bar ShowShadow="0"/>
+							<XY>
+								<XAxis>
+									<ValueFont Size="4.%"/>
+								</XAxis>
+								<YAxis UseAutoTick="0" ManualTickInterval="25.">
+									<ValueFont Size="4.%"/>
+								</YAxis>
+							</XY>
+						</chartsettings>
+						<chartsettings-xpath>
+							<main-properties>
+								<main-property location="ChartSettings/General/@BKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/@PlotBorderColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/@PlotBKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/TitleFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/LegendFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/AxisLabelFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@OutlineColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisGridColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRange" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRangeIncludesZero" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeFrom" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeTill" xpath="max($salesquery/aggregatedsales/day/region) * 3.5"/>
+								<main-property location="ChartSettings/XY/YAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@AxisGridColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@UseAutoTick" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@ManualTickInterval" xpath="if ( ( max($salesquery/aggregatedsales/day/region) * 3.5 ) &lt; 501 ) then 50 
+else 200"/>
+								<main-property location="ChartSettings/XY/YAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+							</main-properties>
+						</chartsettings-xpath>
+					</layer>
+					<layer>
+						<dataseries-xny-rows>
+							<col y-value="mtd_costPerActv" y-name="&quot;$ per Activation (right)  &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="LineChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9"/>
+							<Line DrawFilledConnectionShapes="0"/>
+							<XY>
+								<YAxis AxisPosition="RightOrTop"/>
+							</XY>
+						</chartsettings>
+					</layer>
+				</chartData>
+			</ChartSettings>
+			<ChartSettings id="5266">
+				<chartData so="1" map-data-categories="1">
+					<layer>
+						<dataseries-xny-rows for-each="day" x-value="@num" auto-x-value="0">
+							<col y-value="prod[@name=1]" y-name="&quot;Sprockets&quot;"/>
+							<col y-value="prod[@name=2]" y-name="&quot;Widgets&quot;"/>
+							<col y-value="prod[@name=3]" y-name="&quot;Gadgets&quot;"/>
+							<col y-value="prod[@name=4]" y-name="&quot;Gizmos&quot;"/>
+							<col y-value="prod[@name=5]" y-name="&quot;Thingamajigs (Units) &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="StackedBarChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9">
+								<TitleFont Size="4.5%"/>
+								<LegendFont Size="4.%"/>
+								<AxisLabelFont Size="4.%"/>
+							</General>
+							<Bar ShowShadow="0"/>
+							<Colors Style="User" Colors="#237518" Colors1="#52aca0" Colors2="#ffd700" Colors3="#8971d8" Colors4="#b71b68" Colors5="#4410a3" Colors6="#878369" Colors7="#a25d2d" Colors8="#0028ff" Colors9="#bfbfbf" Colors10="#d3c15d" Colors11="#04b508" Colors12="#0879b5" Colors13="#dc7708" Colors14="#dc143c"/>
+							<XY>
+								<XAxis>
+									<ValueFont Size="4.%"/>
+								</XAxis>
+								<YAxis UseAutoTick="0" ManualTickInterval="25.">
+									<ValueFont Size="4.%"/>
+								</YAxis>
+							</XY>
+						</chartsettings>
+						<chartsettings-xpath>
+							<main-properties>
+								<main-property location="ChartSettings/General/@BKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/@PlotBorderColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/@PlotBKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/TitleFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/LegendFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/AxisLabelFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@ShadowColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@OutlineColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisGridColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRange" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeFrom" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeTill" xpath="avg( $salesbyproduct/aggregatedsales/day/prod )  * 6.5"/>
+								<main-property location="ChartSettings/XY/YAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@UseAutoTick" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@ManualTickInterval" xpath="if ( ( avg( $salesbyproduct/aggregatedsales/day/prod ) * 5.25 ) &lt; 501 ) then 50
+else 200"/>
+								<main-property location="ChartSettings/XY/YAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+							</main-properties>
+						</chartsettings-xpath>
+					</layer>
+					<layer>
+						<dataseries-xny-rows>
+							<col y-value="mtd_costPerActv" y-name="&quot;$ per Activation (right)  &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="LineChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9"/>
+							<Line DrawFilledConnectionShapes="0"/>
+							<XY>
+								<YAxis AxisPosition="RightOrTop"/>
+							</XY>
+						</chartsettings>
+					</layer>
+				</chartData>
+			</ChartSettings>
+			<ChartSettings id="5475">
+				<chartData so="1" map-data-categories="1">
+					<layer>
+						<dataseries-xny-rows for-each="day" x-value="@num" auto-x-value="0">
+							<col y-value="prod[@name=1] * $productsDB/DB/RowSet/Row[1]/@price" y-name="&quot;Sprockets&quot;"/>
+							<col y-value="prod[@name=2] * $productsDB/DB/RowSet/Row[2]/@price" y-name="&quot;Widgets&quot;"/>
+							<col y-value="prod[@name=3] * $productsDB/DB/RowSet/Row[3]/@price" y-name="&quot;Gadgets&quot;"/>
+							<col y-value="prod[@name=4] * $productsDB/DB/RowSet/Row[4]/@price" y-name="&quot;Gizmos&quot;"/>
+							<col y-value="prod[@name=5] * $productsDB/DB/RowSet/Row[5]/@price" y-name="&quot;Thingamajigs ($) &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="StackedBarChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9">
+								<TitleFont Size="4.5%"/>
+								<LegendFont Size="4.%"/>
+								<AxisLabelFont Size="4.%"/>
+							</General>
+							<Bar ShowShadow="0"/>
+							<Colors Style="User" Colors="#237518" Colors1="#52aca0" Colors2="#ffd700" Colors3="#8971d8" Colors4="#b71b68" Colors5="#4410a3" Colors6="#878369" Colors7="#a25d2d" Colors8="#0028ff" Colors9="#bfbfbf" Colors10="#d3c15d" Colors11="#04b508" Colors12="#0879b5" Colors13="#dc7708" Colors14="#dc143c"/>
+							<XY>
+								<XAxis>
+									<ValueFont Size="4.%"/>
+								</XAxis>
+								<YAxis UseAutoTick="0" ManualTickInterval="25.">
+									<ValueFont Size="4.%"/>
+								</YAxis>
+							</XY>
+						</chartsettings>
+						<chartsettings-xpath>
+							<main-properties>
+								<main-property location="ChartSettings/General/@BKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/@PlotBorderColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/@PlotBKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/TitleFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/LegendFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/AxisLabelFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@ShadowColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@OutlineColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisGridColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRange" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRangeIncludesZero" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeFrom" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeTill" xpath="avg( $salesbyproduct/aggregatedsales/day/prod ) * 4800"/>
+								<main-property location="ChartSettings/XY/YAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@UseAutoTick" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@ManualTickInterval" xpath="if ( $PERSISTENT/Root/user_settings/Region &lt; 10 ) then 10000 
+else 
+200000"/>
+								<main-property location="ChartSettings/XY/YAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+							</main-properties>
+						</chartsettings-xpath>
+					</layer>
+					<layer>
+						<dataseries-xny-rows>
+							<col y-value="mtd_costPerActv" y-name="&quot;$ per Activation (right)  &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="LineChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9"/>
+							<Line DrawFilledConnectionShapes="0"/>
+							<XY>
+								<YAxis AxisPosition="RightOrTop"/>
+							</XY>
+						</chartsettings>
+					</layer>
+				</chartData>
+			</ChartSettings>
+			<ChartSettings id="5556">
+				<chartData so="1" map-data-categories="1">
+					<layer>
+						<dataseries-xny-rows for-each="day" x-value="@num" auto-x-value="0">
+							<col y-value="region[@name=1]" y-name="&quot;North&quot;"/>
+							<col y-value="region[@name=2]" y-name="&quot;East&quot;"/>
+							<col y-value="region[@name=3]" y-name="&quot;South&quot;"/>
+							<col y-value="region[@name=4]" y-name="&quot;West ($) &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="StackedBarChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9">
+								<TitleFont Size="4.5%"/>
+								<LegendFont Size="4.%"/>
+								<AxisLabelFont Size="4.%"/>
+							</General>
+							<Bar ShowShadow="0"/>
+							<XY>
+								<XAxis>
+									<ValueFont Size="4.%"/>
+								</XAxis>
+								<YAxis UseAutoTick="0" ManualTickInterval="25.">
+									<ValueFont Size="4.%"/>
+								</YAxis>
+							</XY>
+						</chartsettings>
+						<chartsettings-xpath>
+							<main-properties>
+								<main-property location="ChartSettings/General/@BKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/@PlotBorderColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/@PlotBKColor" xpath="if ($MT_iOS ) then $MT_EditFieldBackgroundColor else
+$MT_PageBackgroundColor"/>
+								<main-property location="ChartSettings/General/TitleFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/LegendFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/General/AxisLabelFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@ShadowColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/Bar/@OutlineColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/@AxisGridColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/XAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRange" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@AutoRangeIncludesZero" xpath="&apos;1&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeFrom" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@RangeTill" xpath="max( $salesbyregion/aggregatedsales/day/region ) * 4"/>
+								<main-property location="ChartSettings/XY/YAxis/@AxisColor" xpath="$MT_LabelTextColor"/>
+								<main-property location="ChartSettings/XY/YAxis/@UseAutoTick" xpath="&apos;0&apos;"/>
+								<main-property location="ChartSettings/XY/YAxis/@ManualTickInterval" xpath="if ( ( max($salesbyregion/aggregatedsales/day/region) * 4 ) &lt; 50000 ) then 10000 else
+if ( ( max($salesbyregion/aggregatedsales/day/region) * 4 ) &lt; 800000 ) then 20000 else
+if ( ( max($salesbyregion/aggregatedsales/day/region) * 4 ) &lt; 1000000 ) then 200000
+else 250000"/>
+								<main-property location="ChartSettings/XY/YAxis/ValueFont/@Color" xpath="$MT_LabelTextColor"/>
+							</main-properties>
+						</chartsettings-xpath>
+					</layer>
+					<layer>
+						<dataseries-xny-rows>
+							<col y-value="mtd_costPerActv" y-name="&quot;$ per Activation (right)  &quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="LineChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9"/>
+							<Line DrawFilledConnectionShapes="0"/>
+							<XY>
+								<YAxis AxisPosition="RightOrTop"/>
+							</XY>
+						</chartsettings>
+					</layer>
+				</chartData>
+			</ChartSettings>
+		</children>
+	</ChartSettingsRoot>
+	<DeployableFiles so="1" id="115">
+		<children>
+			<DeployableFile id="5167" deploy="1"/>
+		</children>
+	</DeployableFiles>
+	<DBSourcesRoot so="1" id="113">
+		<children>
+			<DBSource id="5895">
+				<dbDesignerInfo name="companySales"/>
+				<dbContextInfo catalog="main" connection="C:\MTworking\SampleData\CompanySalesDB\companySales.sqlite" contextType="sqlite" databaseMajorVersion="3" vendor="sqlite"/>
+			</DBSource>
+		</children>
+	</DBSourcesRoot>
+	<CustomerAppSettings so="1" id="16"/>
+</MobileTogetherDesign>
