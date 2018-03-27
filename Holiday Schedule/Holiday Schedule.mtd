@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Altova Holiday Schedule" deploymentDescription_so="Add company holidays to your mobile device calendar" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="6">
+		<style lightTheme="1"/>
+		<children>
+			<DesignPage id="7">
+				<style name="Holiday Schedule" showTitleBar="0"/>
+				<children>
+					<DesignTable id="362">
+						<style name="Table3"/>
+						<children>
+							<DesignTableCol id="363">
+								<style colWidth="10%"/>
+							</DesignTableCol>
+							<DesignTableCol id="364"/>
+							<DesignTableCol id="365">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableRow id="366">
+								<children>
+									<DesignButton id="385">
+										<style align="center" marginBottom="3px" name="Button1" text="&lt;" textSize="large" weight="1"/>
+										<controlActions id="386">
+											<children>
+												<DesignActionMessageBox id="381" msgBoxKind="okcancel" msgBoxMsg="&apos;Do you really want to close this app?&apos;">
+													<children>
+														<DesignActionMessageBoxButton id="382">
+															<children>
+																<DesignActionWorkflowExecution id="383" cancel="1"/>
+															</children>
+														</DesignActionMessageBoxButton>
+														<DesignActionMessageBoxButton id="384"/>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignLabel id="1">
+										<style align="center" marginBottom="3px" multiLine="1" name="Label1" text="Company Holiday Schedule" textSize="large" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="370">
+										<style align="center" marginBottom="3px" name="Label3" text=" "/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="227">
+						<style addDelPossible="0" name="Table4"/>
+						<children>
+							<DesignTableCol id="343">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableCol id="228">
+								<style colWidth="25%"/>
+							</DesignTableCol>
+							<DesignTableCol id="229"/>
+							<DesignTableCol id="230">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableRow id="233">
+								<children>
+									<DesignCheckBox id="341" pageXML="350" checkedValues="1" uncheckedValue="0">
+										<style cbRight="0" name="Check Box2"/>
+										<controlActions id="344">
+											<children>
+												<DesignActionLoop id="342" varName="i" forEach="1 to count ($Events/events/holiday)">
+													<children>
+														<DesignActionUpdateNode id="345" updAt="$Events/events/holiday[$i]/selected" resOf="$WorkingXML/root/selectAll"/>
+													</children>
+												</DesignActionLoop>
+											</children>
+										</controlActions>
+									</DesignCheckBox>
+									<DesignLabel id="234">
+										<style name="Label10" text="Date" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="236">
+										<style name="Label11" text="Holiday" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="238">
+										<style align="center" name="Label12" text="Location" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="11">
+						<style addDelPossible="0" name="Table1"/>
+						<children>
+							<DesignTableCol id="346">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableCol id="12">
+								<style colWidth="25%"/>
+							</DesignTableCol>
+							<DesignTableCol id="13"/>
+							<DesignTableCol id="14">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableScrollableArea id="178">
+								<style maxTableY="50%"/>
+								<children>
+									<DesignTableRowGroup id="32" pageXML="170">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="33">
+												<children>
+													<DesignCheckBox id="338" pageXML="174" checkedValues="1" uncheckedValue="0">
+														<style name="Check Box1"/>
+													</DesignCheckBox>
+													<DesignLabel id="34" pageXML="172">
+														<style name="Label6" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;"/>
+													</DesignLabel>
+													<DesignLabel id="38" pageXML="171">
+														<style multiLine="1" name="Label7" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" underline="0"/>
+														<controlActions id="29">
+															<children>
+																<DesignActionCondition id="391" condition="./selected = 1">
+																	<children>
+																		<DesignActionConditionTrue id="392">
+																			<children>
+																				<DesignActionUpdateNode id="389" updAt="./selected" resOf="0"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																		<DesignActionConditionFalse id="393">
+																			<children>
+																				<DesignActionUpdateNode id="390" updAt="./selected" resOf="1"/>
+																			</children>
+																		</DesignActionConditionFalse>
+																	</children>
+																</DesignActionCondition>
+															</children>
+														</controlActions>
+													</DesignLabel>
+													<DesignLabel id="42" pageXML="173">
+														<style align="center" name="Label8" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignLabel id="188">
+						<style align="center" marginBottom="3px" marginTop="7px" name="Label9" text="Update Calendar with:" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" weight="1"/>
+					</DesignLabel>
+					<DesignTable id="192">
+						<style backgroundColor_x="if ( $MT_iOS ) then $MT_PageBackgroundColor else ( )" name="Table2"/>
+						<children>
+							<DesignTableCol id="374"/>
+							<DesignTableCol id="193"/>
+							<DesignTableCol id="194"/>
+							<DesignTableRow id="196">
+								<children>
+									<DesignButton id="353">
+										<style align="center" marginLeft="4px" marginRight="4px" multiLine="1" name="Update Selected Events" text="Selected Holidays" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" valign="middle" weight="1"/>
+										<controlActions id="354">
+											<children>
+												<DesignActionLoop id="357" varName="i" forEach="1 to count ( $Events/events/holiday )">
+													<children>
+														<DesignActionCondition id="358" condition="$Events/events/holiday[$i]/selected = 1">
+															<children>
+																<DesignActionConditionTrue id="359">
+																	<children>
+																		<DesignActionCalendar id="360" operation="writeEvent" writeTitle="$Events/events/holiday[$i]/name" writeBegin="StringToStart( $Events/events/holiday[$i]/observed )" writeEnd="StringToEnd( $Events/events/holiday[$i]/observed )" writeAllDay="1" writeDescription="&apos;Business holiday&apos;" writeLocation="if ( $Events/events/holiday[$i]/location = &apos;Both&apos; ) 
+then
+&apos;All company offices closed&apos;
+else
+concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company offices closed&apos;)"/>
+																	</children>
+																</DesignActionConditionTrue>
+															</children>
+														</DesignActionCondition>
+													</children>
+												</DesignActionLoop>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="179">
+										<style align="center" marginLeft="4px" marginRight="4px" multiLine="1" name="Update US Events" text="US Holidays" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" valign="middle" weight="1"/>
+										<controlActions id="197">
+											<children>
+												<DesignActionMessageBox id="314" msgBoxKind="okcancel" msgBoxTitle="&apos;Are you sure?&apos;" msgBoxMsg="&apos;You will need to confirm each holiday in your Calendar app!&apos;">
+													<children>
+														<DesignActionMessageBoxButton id="315">
+															<children>
+																<DesignActionLoop id="310" varName="i" forEach="1 to count ( $Events/events/holiday )">
+																	<children>
+																		<DesignActionCondition id="311" condition="( $Events/events/holiday[$i]/location = &apos;US&apos; or $Events/events/holiday[$i]/location = &apos;Both&apos; )">
+																			<children>
+																				<DesignActionConditionTrue id="312">
+																					<children>
+																						<DesignActionCalendar id="313" operation="writeEvent" writeTitle="$Events/events/holiday[$i]/name" writeBegin="StringToStart( $Events/events/holiday[$i]/observed )" writeEnd="StringToEnd( $Events/events/holiday[$i]/observed )" writeAllDay="1" writeDescription="&apos;Business holiday&apos;" writeLocation="if ( $Events/events/holiday[$i]/location = &apos;Both&apos; ) then
+&apos;All company offices&apos;
+ else
+ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company offices&apos;)"/>
+																					</children>
+																				</DesignActionConditionTrue>
+																			</children>
+																		</DesignActionCondition>
+																	</children>
+																</DesignActionLoop>
+															</children>
+														</DesignActionMessageBoxButton>
+														<DesignActionMessageBoxButton id="316"/>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="183">
+										<style align="center" marginLeft="4px" marginRight="4px" multiLine="1" name="Update EU Events" text="EU Holidays" textSize_x="if ( $MT_Landscape = true() ) then
+&apos;medium&apos; else &apos;small&apos;" valign="middle" weight="1"/>
+										<controlActions id="184">
+											<children>
+												<DesignActionMessageBox id="331" msgBoxKind="okcancel" msgBoxTitle="&apos;Are you sure?&apos;" msgBoxMsg="&apos;You will need to confirm each holiday in your Calendar app.&apos;">
+													<children>
+														<DesignActionMessageBoxButton id="332">
+															<children>
+																<DesignActionLoop id="333" varName="i" forEach="1 to count ( $Events/events/holiday )">
+																	<children>
+																		<DesignActionCondition id="334" condition="( $Events/events/holiday[$i]/location = &apos;EU&apos; or $Events/events/holiday[$i]/location = &apos;Both&apos; )">
+																			<children>
+																				<DesignActionConditionTrue id="335">
+																					<children>
+																						<DesignActionCalendar id="336" operation="writeEvent" writeTitle="$Events/events/holiday[$i]/name" writeBegin="StringToStart( $Events/events/holiday[$i]/observed )" writeEnd="StringToEnd( $Events/events/holiday[$i]/observed )" writeAllDay="1" writeDescription="&apos;Business holiday&apos;" writeLocation="if ( $Events/events/holiday[$i]/location = &apos;Both&apos; ) then
+&apos;All company offices&apos;
+ else
+ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company offices&apos;)"/>
+																					</children>
+																				</DesignActionConditionTrue>
+																			</children>
+																		</DesignActionCondition>
+																	</children>
+																</DesignActionLoop>
+															</children>
+														</DesignActionMessageBoxButton>
+														<DesignActionMessageBoxButton id="337"/>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+				<xmlRoots>
+					<PageXMLRootRef id="347" refXMLRoot="348"/>
+					<PageXMLRootRef id="167" refXMLRoot="168"/>
+				</xmlRoots>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<XPathFunctionsRoot id="94">
+		<children>
+			<DesignXPathFunction id="292" xpath="declare function StringToStart($a as xs:string)
+{
+	parse-date( $a,  &quot;[M]-[D]-[Y]&quot; )
+}"/>
+			<DesignXPathFunction id="293" xpath="declare function StringToEnd($a)
+{
+	add-days-to-date( parse-date( $a , &quot;[M]-[D]-[Y]&quot; ),  1 )
+	
+}"/>
+		</children>
+	</XPathFunctionsRoot>
+	<PageXMLNamespaceRoot id="111">
+		<children>
+			<PageXMLNamespace id="112" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="113" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="114" name="Root"/>
+		</children>
+	</PageXMLPersistentRoot>
+	<PageXMLRootCalendar id="251" name="MT_CALENDAR" readOnlyXML="1">
+		<children>
+			<PageXMLElement id="252" name="Root">
+				<children>
+					<PageXMLElement id="253" name="Calendar">
+						<children>
+							<PageXMLAttribute id="254" name="Id"/>
+							<PageXMLAttribute id="255" name="Name"/>
+							<PageXMLAttribute id="256" name="AccountName"/>
+							<PageXMLAttribute id="257" name="OwnerName"/>
+							<PageXMLAttribute id="258" name="AllowedAttendeeTypes"/>
+							<PageXMLAttribute id="259" name="Color"/>
+							<PageXMLAttribute id="260" name="Location"/>
+							<PageXMLAttribute id="261" name="Timezone"/>
+							<PageXMLAttribute id="262" name="isPrimary"/>
+							<PageXMLAttribute id="263" name="isVisible"/>
+							<PageXMLAttribute id="264" name="SyncEvents"/>
+						</children>
+					</PageXMLElement>
+					<PageXMLElement id="265" name="Event">
+						<children>
+							<PageXMLAttribute id="266" name="Id"/>
+							<PageXMLAttribute id="267" name="EventId"/>
+							<PageXMLAttribute id="268" name="CalendarId"/>
+							<PageXMLAttribute id="269" name="Title"/>
+							<PageXMLAttribute id="270" name="Location"/>
+							<PageXMLAttribute id="271" name="Start"/>
+							<PageXMLAttribute id="272" name="End"/>
+							<PageXMLAttribute id="273" name="AllDay"/>
+							<PageXMLAttribute id="274" name="Availability"/>
+							<PageXMLAttribute id="275" name="Duration"/>
+							<PageXMLAttribute id="276" name="RecurringDate"/>
+							<PageXMLAttribute id="277" name="RecurringRule"/>
+							<PageXMLAttribute id="278" name="Description"/>
+							<PageXMLAttribute id="279" name="hasAlarm"/>
+							<PageXMLElement id="280" name="Recurring">
+								<children>
+									<PageXMLAttribute id="281" name="Begin"/>
+									<PageXMLAttribute id="282" name="End"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="283" name="Attendee">
+								<children>
+									<PageXMLAttribute id="284" name="Name"/>
+									<PageXMLAttribute id="285" name="Email"/>
+									<PageXMLAttribute id="286" name="Relationship"/>
+									<PageXMLAttribute id="287" name="Type"/>
+									<PageXMLAttribute id="288" name="Status"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="289" name="Reminder">
+								<children>
+									<PageXMLAttribute id="290" name="Minutes"/>
+									<PageXMLAttribute id="291" name="Method"/>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLRootCalendar>
+	<PageXMLRoots id="102">
+		<children>
+			<PageXMLRootXML id="168" name="Events" loadBeforePageOpen="always" hasUrl="1">
+				<children>
+					<PageXMLElement id="169" name="events" from="xml">
+						<children>
+							<PageXMLElement id="170" name="holiday" from="xml">
+								<children>
+									<PageXMLElement id="171" name="name" from="xml"/>
+									<PageXMLElement id="172" name="observed" from="xml"/>
+									<PageXMLElement id="173" name="location" from="xml"/>
+									<PageXMLElement id="174" name="selected" from="xml"/>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<DefaultFile so="1" id="175" url="holidays.xml" deployable_so="177"/>
+			</PageXMLRootXML>
+			<PageXMLRootXML id="348" name="WorkingXML">
+				<children>
+					<PageXMLElement id="349" name="root">
+						<children>
+							<PageXMLElement id="350" name="selectAll" mustExist="1" default="0"/>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLRootXML>
+		</children>
+	</PageXMLRoots>
+	<WorkflowRoot id="99">
+		<children>
+			<WorkflowPageRef id="100" page="7"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="115">
+		<children>
+			<GlobalVariable id="116" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="117" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="118" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="119" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="120" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="121" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="122" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="123" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="124" sysVar="MT_DPIX"/>
+			<GlobalVariable id="125" sysVar="MT_DPIY"/>
+			<GlobalVariable id="126" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="127" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="128" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="129" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="130" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="131" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="132" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="133" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="134" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="135" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="136" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="137" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="138" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="139" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="140" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="141" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="142" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="143" sysVar="MT_ControlName"/>
+			<GlobalVariable id="144" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="145" sysVar="MT_PageName"/>
+			<GlobalVariable id="146" sysVar="MT_UserName"/>
+			<GlobalVariable id="147" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="148" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="149" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="150" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="151" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="152" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="153" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="154" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="155" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="156" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="157" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="158" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="159" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="160" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="161" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="162" sysVar="MT_NFCAvailable"/>
+			<GlobalVariable id="163" sysVar="MT_IsEmbedded"/>
+		</children>
+	</GlobalVariables>
+	<DeployableFiles so="1" id="165">
+		<children>
+			<DeployableFile id="177" deploy="1"/>
+		</children>
+	</DeployableFiles>
+	<CustomerAppSettings so="1" id="98"/>
+</MobileTogetherDesign>
