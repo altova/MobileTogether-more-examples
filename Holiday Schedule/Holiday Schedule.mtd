@@ -3,7 +3,7 @@
 	<DesignRoot id="6">
 		<style lightTheme="1"/>
 		<children>
-			<DesignPage id="7">
+			<DesignPage id="7" IsNeedsTableRestOfScreenHandling="1">
 				<style name="Holiday Schedule" showTitleBar="0"/>
 				<children>
 					<DesignTable id="362">
@@ -102,7 +102,7 @@
 								<style colWidth="15%"/>
 							</DesignTableCol>
 							<DesignTableScrollableArea id="178">
-								<style maxTableY="50%"/>
+								<style maxTableY="RestScreenYAlways"/>
 								<children>
 									<DesignTableRowGroup id="32" pageXML="170">
 										<style addDelPossible="0"/>
