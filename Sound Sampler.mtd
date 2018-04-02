@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Sound Sampler" deploymentDescription_so="App to demonstrate each built-in sound effect" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="1">
+		<children>
+			<DesignPage id="2">
+				<style autoAddSubmitButton="0" name="Sound Sampler" pageTitle="Sound Sampler" showTitleBar="1"/>
+				<children>
+					<DesignTable id="922">
+						<style name="Table3"/>
+						<children>
+							<DesignTableCol id="923"/>
+							<DesignTableRow id="924">
+								<children>
+									<DesignLabel id="925">
+										<style align="center" multiLine="1" name="Label1" text="MobileTogether built-in sound effects developers can appy within apps."/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="126">
+						<style name="Table1" visible_x="$PERSISTENT/Root/userSound = &apos;true&apos;"/>
+						<children>
+							<DesignTableCol id="127"/>
+							<DesignTableCol id="128"/>
+							<DesignTableRow id="385">
+								<children>
+									<DesignButton id="384">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button2" text="ClickOffOn"/>
+										<controlActions id="386">
+											<children>
+												<DesignActionAudio id="389" isPredefinedSound="1">
+													<FileSettings id="390" fileOnClient="1"/>
+													<FileSettingsCache id="391" fileOnClient="1"/>
+													<SoundBank id="392" fileOnClient="1"/>
+													<SoundBankCache id="393" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="395">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button3" text="ClickOnOff"/>
+										<controlActions id="408">
+											<children>
+												<DesignActionAudio id="411" isPredefinedSound="1" sound="ClickOnOff">
+													<FileSettings id="412" fileOnClient="1"/>
+													<FileSettingsCache id="413" fileOnClient="1"/>
+													<SoundBank id="414" fileOnClient="1"/>
+													<SoundBankCache id="415" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="481">
+								<children>
+									<DesignButton id="462">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button4" text="Ding"/>
+										<controlActions id="463">
+											<children>
+												<DesignActionAudio id="466" isPredefinedSound="1" sound="Ding">
+													<FileSettings id="467" fileOnClient="1"/>
+													<FileSettingsCache id="468" fileOnClient="1"/>
+													<SoundBank id="469" fileOnClient="1"/>
+													<SoundBankCache id="470" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="472">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button5" text="DingDong"/>
+										<controlActions id="473">
+											<children>
+												<DesignActionAudio id="476" isPredefinedSound="1" sound="DingDong">
+													<FileSettings id="477" fileOnClient="1"/>
+													<FileSettingsCache id="478" fileOnClient="1"/>
+													<SoundBank id="479" fileOnClient="1"/>
+													<SoundBankCache id="480" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="520">
+								<children>
+									<DesignButton id="483">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button6" text="ErrorDeepBuzz"/>
+										<controlActions id="484">
+											<children>
+												<DesignActionAudio id="487" isPredefinedSound="1" sound="ErrorDeepBuzz">
+													<FileSettings id="488" fileOnClient="1"/>
+													<FileSettingsCache id="489" fileOnClient="1"/>
+													<SoundBank id="490" fileOnClient="1"/>
+													<SoundBankCache id="491" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="493">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button7" text="ErrorWhoops"/>
+										<controlActions id="494">
+											<children>
+												<DesignActionAudio id="497" isPredefinedSound="1" sound="ErrorWhoops">
+													<FileSettings id="498" fileOnClient="1"/>
+													<FileSettingsCache id="499" fileOnClient="1"/>
+													<SoundBank id="500" fileOnClient="1"/>
+													<SoundBankCache id="501" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="191">
+								<children>
+									<DesignButton id="502">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button8" text="GoodBye"/>
+										<controlActions id="503">
+											<children>
+												<DesignActionAudio id="506" isPredefinedSound="1" sound="Goodbye">
+													<FileSettings id="507" fileOnClient="1"/>
+													<FileSettingsCache id="508" fileOnClient="1"/>
+													<SoundBank id="509" fileOnClient="1"/>
+													<SoundBankCache id="510" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="511">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button9" text="KeyClickTick"/>
+										<controlActions id="512">
+											<children>
+												<DesignActionAudio id="515" isPredefinedSound="1" sound="KeyClickTick">
+													<FileSettings id="516" fileOnClient="1"/>
+													<FileSettingsCache id="517" fileOnClient="1"/>
+													<SoundBank id="518" fileOnClient="1"/>
+													<SoundBankCache id="519" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="192">
+								<children>
+									<DesignButton id="521">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button10" text="KeyClickTock"/>
+										<controlActions id="522">
+											<children>
+												<DesignActionAudio id="525" isPredefinedSound="1" sound="KeyClickTock">
+													<FileSettings id="526" fileOnClient="1"/>
+													<FileSettingsCache id="527" fileOnClient="1"/>
+													<SoundBank id="528" fileOnClient="1"/>
+													<SoundBankCache id="529" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="530">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button11" text="MessageBounce"/>
+										<controlActions id="531">
+											<children>
+												<DesignActionAudio id="534" isPredefinedSound="1" sound="MessageBounce">
+													<FileSettings id="535" fileOnClient="1"/>
+													<FileSettingsCache id="536" fileOnClient="1"/>
+													<SoundBank id="537" fileOnClient="1"/>
+													<SoundBankCache id="538" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="193">
+								<children>
+									<DesignButton id="539">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button12" text="MsgXylophone"/>
+										<controlActions id="540">
+											<children>
+												<DesignActionAudio id="543" isPredefinedSound="1" sound="MessageXylophone">
+													<FileSettings id="544" fileOnClient="1"/>
+													<FileSettingsCache id="545" fileOnClient="1"/>
+													<SoundBank id="546" fileOnClient="1"/>
+													<SoundBankCache id="547" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="548">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button13" text="WhooshDeep"/>
+										<controlActions id="549">
+											<children>
+												<DesignActionAudio id="552" isPredefinedSound="1" sound="WhooshDeep">
+													<FileSettings id="553" fileOnClient="1"/>
+													<FileSettingsCache id="554" fileOnClient="1"/>
+													<SoundBank id="555" fileOnClient="1"/>
+													<SoundBankCache id="556" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="194">
+								<children>
+									<DesignButton id="557">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button14" text="WhooshExhale"/>
+										<controlActions id="558">
+											<children>
+												<DesignActionAudio id="561" isPredefinedSound="1" sound="WhooshExhale">
+													<FileSettings id="562" fileOnClient="1"/>
+													<FileSettingsCache id="563" fileOnClient="1"/>
+													<SoundBank id="564" fileOnClient="1"/>
+													<SoundBankCache id="565" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="566">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button15" text="WhooshLong"/>
+										<controlActions id="567">
+											<children>
+												<DesignActionAudio id="570" isPredefinedSound="1" sound="WhooshLong">
+													<FileSettings id="571" fileOnClient="1"/>
+													<FileSettingsCache id="572" fileOnClient="1"/>
+													<SoundBank id="573" fileOnClient="1"/>
+													<SoundBankCache id="574" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="195">
+								<children>
+									<DesignButton id="575">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button16" text="WhooshQuick"/>
+										<controlActions id="576">
+											<children>
+												<DesignActionAudio id="579" isPredefinedSound="1" sound="WhooshQuick">
+													<FileSettings id="580" fileOnClient="1"/>
+													<FileSettingsCache id="581" fileOnClient="1"/>
+													<SoundBank id="582" fileOnClient="1"/>
+													<SoundBankCache id="583" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="584">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button17" text="WhooshQuicker"/>
+										<controlActions id="585">
+											<children>
+												<DesignActionAudio id="588" isPredefinedSound="1" sound="WhooshQuicker">
+													<FileSettings id="589" fileOnClient="1"/>
+													<FileSettingsCache id="590" fileOnClient="1"/>
+													<SoundBank id="591" fileOnClient="1"/>
+													<SoundBankCache id="592" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+						<appliedVar ref="72"/>
+					</DesignTable>
+					<DesignTable id="614">
+						<style name="Table2" visible_x="$PERSISTENT/Root/userSound = &apos;true&apos;"/>
+						<children>
+							<DesignTableCol id="615"/>
+							<DesignTableCol id="616"/>
+							<DesignTableCol id="896"/>
+							<DesignTableRow id="617">
+								<children>
+									<DesignButton id="618">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button18" text="ClickOffOn"/>
+										<controlActions id="619">
+											<children>
+												<DesignActionAudio id="622" isPredefinedSound="1">
+													<FileSettings id="623" fileOnClient="1"/>
+													<FileSettingsCache id="624" fileOnClient="1"/>
+													<SoundBank id="625" fileOnClient="1"/>
+													<SoundBankCache id="626" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="627">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button19" text="ClickOnOff"/>
+										<controlActions id="628">
+											<children>
+												<DesignActionAudio id="631" isPredefinedSound="1" sound="ClickOnOff">
+													<FileSettings id="632" fileOnClient="1"/>
+													<FileSettingsCache id="633" fileOnClient="1"/>
+													<SoundBank id="634" fileOnClient="1"/>
+													<SoundBankCache id="635" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="769">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button20" text="Ding"/>
+										<controlActions id="770">
+											<children>
+												<DesignActionAudio id="773" isPredefinedSound="1" sound="Ding">
+													<FileSettings id="774" fileOnClient="1"/>
+													<FileSettingsCache id="775" fileOnClient="1"/>
+													<SoundBank id="776" fileOnClient="1"/>
+													<SoundBankCache id="777" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="636">
+								<children>
+									<DesignButton id="778">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button21" text="DingDong"/>
+										<controlActions id="779">
+											<children>
+												<DesignActionAudio id="782" isPredefinedSound="1" sound="DingDong">
+													<FileSettings id="783" fileOnClient="1"/>
+													<FileSettingsCache id="784" fileOnClient="1"/>
+													<SoundBank id="785" fileOnClient="1"/>
+													<SoundBankCache id="786" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="787">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button22" text="ErrorDeepBuzz"/>
+										<controlActions id="788">
+											<children>
+												<DesignActionAudio id="791" isPredefinedSound="1" sound="ErrorDeepBuzz">
+													<FileSettings id="792" fileOnClient="1"/>
+													<FileSettingsCache id="793" fileOnClient="1"/>
+													<SoundBank id="794" fileOnClient="1"/>
+													<SoundBankCache id="795" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="796">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button23" text="ErrorWhoops"/>
+										<controlActions id="797">
+											<children>
+												<DesignActionAudio id="800" isPredefinedSound="1" sound="ErrorWhoops">
+													<FileSettings id="801" fileOnClient="1"/>
+													<FileSettingsCache id="802" fileOnClient="1"/>
+													<SoundBank id="803" fileOnClient="1"/>
+													<SoundBankCache id="804" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="655">
+								<children>
+									<DesignButton id="805">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button24" text="GoodBye"/>
+										<controlActions id="806">
+											<children>
+												<DesignActionAudio id="809" isPredefinedSound="1" sound="Goodbye">
+													<FileSettings id="810" fileOnClient="1"/>
+													<FileSettingsCache id="811" fileOnClient="1"/>
+													<SoundBank id="812" fileOnClient="1"/>
+													<SoundBankCache id="813" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="814">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button25" text="KeyClickTick"/>
+										<controlActions id="815">
+											<children>
+												<DesignActionAudio id="818" isPredefinedSound="1" sound="KeyClickTick">
+													<FileSettings id="819" fileOnClient="1"/>
+													<FileSettingsCache id="820" fileOnClient="1"/>
+													<SoundBank id="821" fileOnClient="1"/>
+													<SoundBankCache id="822" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="823">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button26" text="KeyClickTock"/>
+										<controlActions id="824">
+											<children>
+												<DesignActionAudio id="827" isPredefinedSound="1" sound="KeyClickTock">
+													<FileSettings id="828" fileOnClient="1"/>
+													<FileSettingsCache id="829" fileOnClient="1"/>
+													<SoundBank id="830" fileOnClient="1"/>
+													<SoundBankCache id="831" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="674">
+								<children>
+									<DesignButton id="832">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button27" text="MessageBounce"/>
+										<controlActions id="833">
+											<children>
+												<DesignActionAudio id="836" isPredefinedSound="1" sound="MessageBounce">
+													<FileSettings id="837" fileOnClient="1"/>
+													<FileSettingsCache id="838" fileOnClient="1"/>
+													<SoundBank id="839" fileOnClient="1"/>
+													<SoundBankCache id="840" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="841">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button28" text="MsgXylophone"/>
+										<controlActions id="842">
+											<children>
+												<DesignActionAudio id="845" isPredefinedSound="1" sound="MessageXylophone">
+													<FileSettings id="846" fileOnClient="1"/>
+													<FileSettingsCache id="847" fileOnClient="1"/>
+													<SoundBank id="848" fileOnClient="1"/>
+													<SoundBankCache id="849" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="850">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button29" text="WhooshDeep"/>
+										<controlActions id="851">
+											<children>
+												<DesignActionAudio id="854" isPredefinedSound="1" sound="WhooshDeep">
+													<FileSettings id="855" fileOnClient="1"/>
+													<FileSettingsCache id="856" fileOnClient="1"/>
+													<SoundBank id="857" fileOnClient="1"/>
+													<SoundBankCache id="858" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="693">
+								<children>
+									<DesignButton id="859">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button30" text="WhooshExhale"/>
+										<controlActions id="860">
+											<children>
+												<DesignActionAudio id="863" isPredefinedSound="1" sound="WhooshExhale">
+													<FileSettings id="864" fileOnClient="1"/>
+													<FileSettingsCache id="865" fileOnClient="1"/>
+													<SoundBank id="866" fileOnClient="1"/>
+													<SoundBankCache id="867" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="868">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button31" text="WhooshLong"/>
+										<controlActions id="869">
+											<children>
+												<DesignActionAudio id="872" isPredefinedSound="1" sound="WhooshLong">
+													<FileSettings id="873" fileOnClient="1"/>
+													<FileSettingsCache id="874" fileOnClient="1"/>
+													<SoundBank id="875" fileOnClient="1"/>
+													<SoundBankCache id="876" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="877">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button32" text="WhooshQuick"/>
+										<controlActions id="878">
+											<children>
+												<DesignActionAudio id="881" isPredefinedSound="1" sound="WhooshQuick">
+													<FileSettings id="882" fileOnClient="1"/>
+													<FileSettingsCache id="883" fileOnClient="1"/>
+													<SoundBank id="884" fileOnClient="1"/>
+													<SoundBankCache id="885" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="712">
+								<children>
+									<DesignTableCellEmpty id="935"/>
+									<DesignButton id="926">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else ( )" margin="8px" name="Button33" text="WhooshQuicker"/>
+										<controlActions id="927">
+											<children>
+												<DesignActionAudio id="930" isPredefinedSound="1" sound="WhooshQuicker">
+													<FileSettings id="931" fileOnClient="1"/>
+													<FileSettingsCache id="932" fileOnClient="1"/>
+													<SoundBank id="933" fileOnClient="1"/>
+													<SoundBankCache id="934" fileOnClient="1"/>
+												</DesignActionAudio>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="898"/>
+								</children>
+							</DesignTableRow>
+						</children>
+						<appliedVar ref="71"/>
+					</DesignTable>
+					<DesignTable id="899">
+						<style name="Table5"/>
+						<children>
+							<DesignTableCol id="900">
+								<style colWidth="60%"/>
+							</DesignTableCol>
+							<DesignTableCol id="901"/>
+							<DesignTableRow id="902">
+								<children>
+									<DesignLabel id="903">
+										<style align="center" name="Label2" text="Enable Sound:"/>
+									</DesignLabel>
+									<DesignSwitch id="905" pageXML="137">
+										<style name="Switch1" toggleOffText="No" toggleOnText="Yes"/>
+										<controlActions id="906">
+											<children>
+												<DesignActionCondition id="909" actionEnabled="0" condition="$PERSISTENT/Root/userSound = &apos;true&apos;">
+													<children>
+														<DesignActionConditionTrue id="910">
+															<children>
+																<DesignActionAudio id="911" isPredefinedSound="1" sound="ClickOnOff">
+																	<FileSettings id="912" fileOnClient="1"/>
+																	<FileSettingsCache id="913" fileOnClient="1"/>
+																	<SoundBank id="914" fileOnClient="1"/>
+																	<SoundBankCache id="915" fileOnClient="1"/>
+																</DesignActionAudio>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="916">
+															<children>
+																<DesignActionAudio id="917" isPredefinedSound="1">
+																	<FileSettings id="918" fileOnClient="1"/>
+																	<FileSettingsCache id="919" fileOnClient="1"/>
+																	<SoundBank id="920" fileOnClient="1"/>
+																	<SoundBankCache id="921" fileOnClient="1"/>
+																</DesignActionAudio>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+											</children>
+										</controlActions>
+									</DesignSwitch>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<PageXMLNamespaceRoot id="56">
+		<children>
+			<PageXMLNamespace id="57" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="58" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="59" name="Root">
+				<children>
+					<PageXMLElement id="137" name="userSound" mustExist="1" default="false"/>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLPersistentRoot>
+	<WorkflowRoot id="52">
+		<children>
+			<WorkflowPageRef id="53" page="2"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="60">
+		<children>
+			<GlobalVariable id="61" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="62" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="63" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="64" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="65" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="66" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="67" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="68" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="69" sysVar="MT_DPIX"/>
+			<GlobalVariable id="70" sysVar="MT_DPIY"/>
+			<GlobalVariable id="71" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="72" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="73" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="74" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="75" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="76" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="77" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="78" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="79" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="80" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="81" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="82" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="83" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="84" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="85" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="86" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="87" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="88" sysVar="MT_ControlName"/>
+			<GlobalVariable id="89" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="90" sysVar="MT_PageName"/>
+			<GlobalVariable id="91" sysVar="MT_UserName"/>
+			<GlobalVariable id="92" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="93" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="94" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="95" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="96" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="97" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="98" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="99" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="100" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="101" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="102" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="103" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="104" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="105" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="106" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="107" sysVar="MT_NFCAvailable"/>
+			<GlobalVariable id="108" sysVar="MT_IsEmbedded"/>
+		</children>
+	</GlobalVariables>
+	<CustomerAppSettings so="1" id="51"/>
+</MobileTogetherDesign>

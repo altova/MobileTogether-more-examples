@@ -36,7 +36,7 @@
 										</controlActions>
 									</DesignButton>
 									<DesignLabel id="1">
-										<style align="center" marginBottom="3px" multiLine="1" name="Label1" text="Company Holiday Schedule" textSize="large" weight="1"/>
+										<style align="center" marginBottom="3px" multiLine="1" name="Header Label" text="Company Holiday Schedule" textSize="large" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="370">
 										<style align="center" marginBottom="3px" name="Label3" text=" "/>
@@ -87,6 +87,9 @@
 								</children>
 							</DesignTableRow>
 						</children>
+						<appliedVar ref="116"/>
+						<appliedVar ref="117"/>
+						<appliedVar ref="121"/>
 					</DesignTable>
 					<DesignTable id="11">
 						<style addDelPossible="0" name="Table1"/>
@@ -149,10 +152,16 @@
 								</children>
 							</DesignTableScrollableArea>
 						</children>
+						<appliedVar ref="116"/>
+						<appliedVar ref="117"/>
+						<appliedVar ref="121"/>
 					</DesignTable>
 					<DesignLabel id="188">
 						<style align="center" marginBottom="3px" marginTop="7px" name="Label9" text="Update Calendar with:" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" weight="1"/>
+						<appliedVar ref="116"/>
+						<appliedVar ref="117"/>
+						<appliedVar ref="121"/>
 					</DesignLabel>
 					<DesignTable id="192">
 						<style backgroundColor_x="if ( $MT_iOS ) then $MT_PageBackgroundColor else ( )" name="Table2"/>
@@ -256,7 +265,97 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 								</children>
 							</DesignTableRow>
 						</children>
+						<appliedVar ref="116"/>
+						<appliedVar ref="117"/>
+						<appliedVar ref="121"/>
 					</DesignTable>
+					<DesignTable id="394">
+						<style addDelPossible="0" name="Table5"/>
+						<children>
+							<DesignTableCol id="396">
+								<style colWidth="25%"/>
+							</DesignTableCol>
+							<DesignTableCol id="397"/>
+							<DesignTableCol id="398">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableRow id="399">
+								<children>
+									<DesignLabel id="404">
+										<style name="Label13" text="Date" textSize="medium" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="406">
+										<style name="Label14" text="Holiday" textSize="medium" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="408">
+										<style align="center" name="Label15" text="Location" textSize="medium" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+						<appliedVar ref="118"/>
+						<appliedVar ref="120"/>
+					</DesignTable>
+					<DesignTable id="410">
+						<style addDelPossible="0" name="Table6"/>
+						<children>
+							<DesignTableCol id="412">
+								<style colWidth="25%"/>
+							</DesignTableCol>
+							<DesignTableCol id="413"/>
+							<DesignTableCol id="414">
+								<style colWidth="15%"/>
+							</DesignTableCol>
+							<DesignTableScrollableArea id="415">
+								<style maxTableY="RestScreenYAlways"/>
+								<children>
+									<DesignTableRowGroup id="416" pageXML="170">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="417">
+												<children>
+													<DesignLabel id="420" pageXML="172">
+														<style name="Label16" textSize="medium"/>
+													</DesignLabel>
+													<DesignLabel id="422" pageXML="171">
+														<style multiLine="1" name="Label17" textSize="medium" underline="0"/>
+														<controlActions id="423">
+															<children>
+																<DesignActionCondition id="426" condition="./selected = 1">
+																	<children>
+																		<DesignActionConditionTrue id="427">
+																			<children>
+																				<DesignActionUpdateNode id="428" updAt="./selected" resOf="0"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																		<DesignActionConditionFalse id="429">
+																			<children>
+																				<DesignActionUpdateNode id="430" updAt="./selected" resOf="1"/>
+																			</children>
+																		</DesignActionConditionFalse>
+																	</children>
+																</DesignActionCondition>
+															</children>
+														</controlActions>
+													</DesignLabel>
+													<DesignLabel id="431" pageXML="173">
+														<style align="center" name="Label18" textSize="medium"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+						<appliedVar ref="118"/>
+						<appliedVar ref="120"/>
+					</DesignTable>
+					<DesignLabel id="434">
+						<style marginBottom="6px" marginLeft="15px" marginRight="15px" marginTop="6px" multiLine="1" name="Platform function label" text="Run this app on your mobile phone to access additional functionality: Add holidays to your mobile calendar."/>
+						<appliedVar ref="118"/>
+						<appliedVar ref="120"/>
+					</DesignLabel>
 				</children>
 				<xmlRoots>
 					<PageXMLRootRef id="347" refXMLRoot="348"/>
