@@ -19,7 +19,7 @@
 							<DesignTableRow id="366">
 								<children>
 									<DesignButton id="385">
-										<style align="center" marginBottom="3px" name="Button1" text="&lt;" textSize="large" weight="1"/>
+										<style align="center" marginBottom="3px" name="Back Button" text="&lt;" textSize="large" weight="1"/>
 										<controlActions id="386">
 											<children>
 												<DesignActionMessageBox id="381" msgBoxKind="okcancel" msgBoxMsg="&apos;Do you really want to close this app?&apos;">
@@ -61,7 +61,7 @@
 							<DesignTableRow id="233">
 								<children>
 									<DesignCheckBox id="341" pageXML="350" checkedValues="1" uncheckedValue="0">
-										<style cbRight="0" name="Check Box2"/>
+										<style cbRight="0" name="Header Check Box "/>
 										<controlActions id="344">
 											<children>
 												<DesignActionLoop id="342" varName="i" forEach="1 to count ($Events/events/holiday)">
@@ -73,15 +73,15 @@
 										</controlActions>
 									</DesignCheckBox>
 									<DesignLabel id="234">
-										<style name="Label10" text="Date" textSize_x="if ( $MT_Landscape = true() ) then
+										<style name="Header Date Label" text="Date" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="236">
-										<style name="Label11" text="Holiday" textSize_x="if ( $MT_Landscape = true() ) then
+										<style name="Header Holiday Label" text="Holiday" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="238">
-										<style align="center" name="Label12" text="Location" textSize_x="if ( $MT_Landscape = true() ) then
+										<style align="center" name="Header location label" text="Location" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" weight="1"/>
 									</DesignLabel>
 								</children>
@@ -113,14 +113,14 @@
 											<DesignTableRow id="33">
 												<children>
 													<DesignCheckBox id="338" pageXML="174" checkedValues="1" uncheckedValue="0">
-														<style name="Check Box1"/>
+														<style name="Table Check Box"/>
 													</DesignCheckBox>
 													<DesignLabel id="34" pageXML="172">
-														<style name="Label6" textSize_x="if ( $MT_Landscape = true() ) then
+														<style name="Table Date Label" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;"/>
 													</DesignLabel>
 													<DesignLabel id="38" pageXML="171">
-														<style multiLine="1" name="Label7" textSize_x="if ( $MT_Landscape = true() ) then
+														<style multiLine="1" name="Table Name Label" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" underline="0"/>
 														<controlActions id="29">
 															<children>
@@ -142,7 +142,7 @@
 														</controlActions>
 													</DesignLabel>
 													<DesignLabel id="42" pageXML="173">
-														<style align="center" name="Label8" textSize_x="if ( $MT_Landscape = true() ) then
+														<style align="center" name="Table location Label" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;"/>
 													</DesignLabel>
 												</children>
@@ -157,7 +157,7 @@
 						<appliedVar ref="121"/>
 					</DesignTable>
 					<DesignLabel id="188">
-						<style align="center" marginBottom="3px" marginTop="7px" name="Label9" text="Update Calendar with:" textSize_x="if ( $MT_Landscape = true() ) then
+						<style align="center" marginBottom="3px" marginTop="7px" name="Message Label" text="Update Calendar with:" textSize_x="if ( $MT_Landscape = true() ) then
 &apos;medium&apos; else &apos;small&apos;" weight="1"/>
 						<appliedVar ref="116"/>
 						<appliedVar ref="117"/>
@@ -282,13 +282,13 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 							<DesignTableRow id="399">
 								<children>
 									<DesignLabel id="404">
-										<style name="Label13" text="Date" textSize="medium" weight="1"/>
+										<style name="Alt Date Header Label" text="Date" textSize="medium" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="406">
-										<style name="Label14" text="Holiday" textSize="medium" weight="1"/>
+										<style name="Alt Name Header Label" text="Holiday" textSize="medium" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="408">
-										<style align="center" name="Label15" text="Location" textSize="medium" weight="1"/>
+										<style align="center" name="Alt Location Header Label" text="Location" textSize="medium" weight="1"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
@@ -315,31 +315,13 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 											<DesignTableRow id="417">
 												<children>
 													<DesignLabel id="420" pageXML="172">
-														<style name="Label16" textSize="medium"/>
+														<style name="Alt Date Label" textSize="medium"/>
 													</DesignLabel>
 													<DesignLabel id="422" pageXML="171">
-														<style multiLine="1" name="Label17" textSize="medium" underline="0"/>
-														<controlActions id="423">
-															<children>
-																<DesignActionCondition id="426" condition="./selected = 1">
-																	<children>
-																		<DesignActionConditionTrue id="427">
-																			<children>
-																				<DesignActionUpdateNode id="428" updAt="./selected" resOf="0"/>
-																			</children>
-																		</DesignActionConditionTrue>
-																		<DesignActionConditionFalse id="429">
-																			<children>
-																				<DesignActionUpdateNode id="430" updAt="./selected" resOf="1"/>
-																			</children>
-																		</DesignActionConditionFalse>
-																	</children>
-																</DesignActionCondition>
-															</children>
-														</controlActions>
+														<style multiLine="1" name="Alt Name Label" textSize="medium" underline="0"/>
 													</DesignLabel>
 													<DesignLabel id="431" pageXML="173">
-														<style align="center" name="Label18" textSize="medium"/>
+														<style align="center" name="Alt Location Label" textSize="medium"/>
 													</DesignLabel>
 												</children>
 											</DesignTableRow>
@@ -361,6 +343,59 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 					<PageXMLRootRef id="347" refXMLRoot="348"/>
 					<PageXMLRootRef id="167" refXMLRoot="168"/>
 				</xmlRoots>
+			</DesignPage>
+			<DesignPage id="36332" IsNeedsTableRestOfScreenHandling="1">
+				<style name="Intro"/>
+				<children>
+					<DesignLabel id="36321">
+						<style align="center" name="Header Label1" text="Holiday Schedule" textSize="large" weight="1"/>
+					</DesignLabel>
+					<DesignTable id="36362">
+						<style addDelPossible="0" margin="6px" name="Table2"/>
+						<children>
+							<DesignTableCol id="36363"/>
+							<DesignTableScrollableArea id="36368">
+								<style maxTableY="RestScreenYMax"/>
+								<children>
+									<DesignTableRow id="36364">
+										<children>
+											<DesignTable id="36357">
+												<style addDelPossible="0" name="Table3"/>
+												<children>
+													<DesignTableCol id="36358"/>
+													<DesignTableRow id="36359">
+														<children>
+															<DesignLabel id="36360">
+																<style margin="6px" multiLine="1" name="Body text label" text_x="&quot;This app demonstrates MobileTogether integration with built-in Calendar apps for mobile devices. Programmers or web developers can build highly sophisticated apps to read and write calendar events for all platforms. For instance, a mobile scheduling app for a large, distributed user base can help everyone easily sync their calendars.
+
+The app displays a list of all US and EU holidays in a scrollable table in the center of the screen. Users can update their calendars with individually selected holidays or with entire groups. The check box control in the table header at the top left lets the user select or deselect all with a single click.
+
+The list of holidays is stored in an external file for easy update from year to year.
+
+This app was created as an example for the Altova blog.&quot;"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+												</children>
+											</DesignTable>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignCheckBox id="36366" pageXML="36349">
+						<style cbRight="0" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
+					</DesignCheckBox>
+					<DesignButton id="36327">
+						<style align="center" name="Launch Button" text="Next Page"/>
+						<controlActions id="36328">
+							<children>
+								<DesignActionGotoPage id="36331" showLoadToppageMsg="0" processRef="100"/>
+							</children>
+						</controlActions>
+					</DesignButton>
+				</children>
 			</DesignPage>
 		</children>
 	</DesignRoot>
@@ -384,7 +419,11 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 	</PageXMLNamespaceRoot>
 	<PageXMLPersistentRoot id="113" name="PERSISTENT">
 		<children>
-			<PageXMLElement id="114" name="Root"/>
+			<PageXMLElement id="114" name="Root">
+				<children>
+					<PageXMLElement id="36349" name="skipIntro" mustExist="1" default="false"/>
+				</children>
+			</PageXMLElement>
 		</children>
 	</PageXMLPersistentRoot>
 	<PageXMLRootCalendar id="251" name="MT_CALENDAR" readOnlyXML="1">
@@ -481,6 +520,7 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 	</PageXMLRoots>
 	<WorkflowRoot id="99">
 		<children>
+			<WorkflowPageRef id="36348" page="36332"/>
 			<WorkflowPageRef id="100" page="7"/>
 		</children>
 	</WorkflowRoot>
