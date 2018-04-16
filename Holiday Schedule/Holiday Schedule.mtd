@@ -366,13 +366,28 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 													<DesignTableRow id="36359">
 														<children>
 															<DesignLabel id="36360">
-																<style margin="6px" multiLine="1" name="Body text label" text_x="&quot;This app demonstrates MobileTogether integration with built-in Calendar apps for mobile devices. Programmers or web developers can build highly sophisticated apps to read and write calendar events for all platforms. For instance, a mobile scheduling app for a large, distributed user base can help everyone easily sync their calendars.
-
-The app displays a list of all US and EU holidays in a scrollable table in the center of the screen. Users can update their calendars with individually selected holidays or with entire groups. The check box control in the table header at the top left lets the user select or deselect all with a single click.
-
-The list of holidays is stored in an external file for easy update from year to year.
-
-This app was created as an example for the Altova blog.&quot;"/>
+																<style margin="6px" multiLine="1" name="Body text label1" text="This app demonstrates MobileTogether integration with built-in Calendar apps for mobile devices. Programmers or web developers can build highly sophisticated apps to read and write calendar events for all platforms. For instance, a mobile scheduling app for a large, distributed user base can help everyone easily sync their calendars."/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="36378">
+														<children>
+															<DesignLabel id="36372">
+																<style margin="6px" multiLine="1" name="Body text label2" text="The app displays a list of all US and EU holidays in a scrollable table in the center of the screen. Users can update their calendars with individually selected holidays or with entire groups. The check box control in the table header at the top left lets the user select or deselect all with a single click."/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="36381">
+														<children>
+															<DesignLabel id="36374">
+																<style margin="6px" multiLine="1" name="Body text label3" text="The list of holidays is stored in an external file for easy update from year to year."/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="36384">
+														<children>
+															<DesignLabel id="36376">
+																<style margin="6px" multiLine="1" name="Body text label4" text="This app was created as an example for the Altova blog."/>
 															</DesignLabel>
 														</children>
 													</DesignTableRow>
