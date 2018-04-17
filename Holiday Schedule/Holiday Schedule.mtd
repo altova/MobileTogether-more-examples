@@ -187,6 +187,7 @@ then
 &apos;All company offices closed&apos;
 else
 concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company offices closed&apos;)"/>
+																		<DesignActionUpdateNode id="36387" updAt="$Events/events/holiday[$i]/selected" resOf="&apos;false&apos;"/>
 																	</children>
 																</DesignActionConditionTrue>
 															</children>
@@ -420,9 +421,9 @@ concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company of
 {
 	parse-date( $a,  &quot;[M]-[D]-[Y]&quot; )
 }"/>
-			<DesignXPathFunction id="293" xpath="declare function StringToEnd($a)
+			<DesignXPathFunction id="293" xpath="declare function StringToEnd($a as xs:string)
 {
-	add-days-to-date( parse-date( $a , &quot;[M]-[D]-[Y]&quot; ),  1 )
+	 parse-dateTime( concat($a, &quot; 23:59:59&quot; ) , &quot;[M]-[D]-[Y] [H]:[m]:[s] &quot; )
 	
 }"/>
 		</children>
