@@ -187,11 +187,15 @@ then
 &apos;All company offices closed&apos;
 else
 concat (&apos;All &apos;, $Events/events/holiday[$i]/location, &apos; company offices closed&apos;)"/>
-																		<DesignActionUpdateNode id="36387" updAt="$Events/events/holiday[$i]/selected" resOf="&apos;false&apos;"/>
 																	</children>
 																</DesignActionConditionTrue>
 															</children>
 														</DesignActionCondition>
+													</children>
+												</DesignActionLoop>
+												<DesignActionLoop id="36388" varName="i" forEach="1 to count ( $Events/events/holiday )">
+													<children>
+														<DesignActionUpdateNode id="36393" updAt="$Events/events/holiday[$i]/selected" resOf="&apos;false&apos;"/>
 													</children>
 												</DesignActionLoop>
 											</children>
