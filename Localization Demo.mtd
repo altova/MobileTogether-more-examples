@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Localization Demo" deploymentDescription_so="Updated Text To Speech app for blog post on Localization" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="6" isNeedsTextToSpeech="1">
+		<children>
+			<DesignPage id="7">
+				<style name="Localization Demo" pageTitle="Localization Demo"/>
+				<children>
+					<DesignTable id="291">
+						<style name="Table2"/>
+						<children>
+							<DesignTableCol id="292"/>
+							<DesignTableCol id="293"/>
+							<DesignTableCol id="294"/>
+							<DesignTableRow id="295">
+								<children>
+									<DesignButton id="296">
+										<style align="center" backgroundColor_x="if ( $MT_iOS ) then $MT_EditFieldBackgroundColor else $MT_ButtonBackgroundColor" margin="5px" name="Button1" text="Speak" weight="1"/>
+										<localization so="1">
+											<children>
+												<LocLangData lang="fr">
+													<style text="Parler"/>
+												</LocLangData>
+												<LocLangData lang="es">
+													<style text="Hablar"/>
+												</LocLangData>
+												<LocLangData lang="de">
+													<style text="Sprechen"/>
+												</LocLangData>
+												<LocLangData lang="en-US">
+													<style text="Speak"/>
+												</LocLangData>
+												<LocLangData lang="it">
+													<style text="Parlare"/>
+												</LocLangData>
+											</children>
+										</localization>
+										<controlActions id="297">
+											<children>
+												<DesignActionHideKeyboard id="300"/>
+												<DesignActionCondition id="301" condition="$PERSISTENT/Root/workingText = &apos;&apos;">
+													<children>
+														<DesignActionConditionTrue id="302">
+															<children>
+																<DesignActionTextToSpeech id="303" speechText="$PERSISTENT/Root/defaultMsg" speechLang="$PERSISTENT/Root/userLanguage"/>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="304">
+															<children>
+																<DesignActionTextToSpeech id="305" speechText="$PERSISTENT/Root/workingText" speechLang="$PERSISTENT/Root/userLanguage"/>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="306">
+										<style align="center" backgroundColor_x="if ( $MT_iOS ) then $MT_EditFieldBackgroundColor else $MT_ButtonBackgroundColor" margin="5px" name="Button2" text="Silence" weight="1"/>
+										<localization so="1">
+											<children>
+												<LocLangData lang="es">
+													<style text="Silencio"/>
+												</LocLangData>
+												<LocLangData lang="fr">
+													<style text="Silence"/>
+												</LocLangData>
+												<LocLangData lang="de">
+													<style text="Schweigen"/>
+												</LocLangData>
+												<LocLangData lang="en-US">
+													<style text="Silence"/>
+												</LocLangData>
+												<LocLangData lang="it">
+													<style text="Silenzio"/>
+												</LocLangData>
+											</children>
+										</localization>
+										<controlActions id="307">
+											<children>
+												<DesignActionTextToSpeech id="310" op="Stop"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="311">
+										<style align="center" backgroundColor_x="if ( $MT_iOS ) then $MT_EditFieldBackgroundColor else $MT_ButtonBackgroundColor" margin="5px" name="Button3" text="Exit" weight="1"/>
+										<localization so="1">
+											<children>
+												<LocLangData lang="es">
+													<style text="Salido"/>
+												</LocLangData>
+												<LocLangData lang="fr">
+													<style text="Sortie"/>
+												</LocLangData>
+												<LocLangData lang="de">
+													<style text="Ausgang"/>
+												</LocLangData>
+												<LocLangData lang="en-US">
+													<style text="Exit"/>
+												</LocLangData>
+												<LocLangData lang="it">
+													<style text="Uscita"/>
+												</LocLangData>
+											</children>
+										</localization>
+										<controlActions id="312">
+											<children>
+												<DesignActionGroupRef id="315" groupRef="252"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignLabel id="213">
+						<style align="center" margin="20px" name="Label1" text="Enter Text:" weight="1"/>
+						<localization so="1">
+							<children>
+								<LocLangData lang="es">
+									<style text="Ingrese texto:"/>
+								</LocLangData>
+								<LocLangData lang="fr">
+									<style text="Entrez du texte:"/>
+								</LocLangData>
+								<LocLangData lang="de">
+									<style text="Text eingeben:"/>
+								</LocLangData>
+								<LocLangData lang="en-US">
+									<style text="Enter Text:"/>
+								</LocLangData>
+								<LocLangData lang="it">
+									<style text="Inserire il testo"/>
+								</LocLangData>
+							</children>
+						</localization>
+					</DesignLabel>
+					<DesignEditField id="207" pageXML="225">
+						<style keyboard="Text" marginBottom="10px" marginLeft="20px" marginRight="20px" multiLine="1" name="Edit Field1"/>
+					</DesignEditField>
+					<DesignButton id="318">
+						<style align="center" backgroundColor_x="if ( $MT_iOS ) then $MT_EditFieldBackgroundColor else $MT_ButtonBackgroundColor" margin="5px" name="Button4" text="Scroll to top" visible_x="string-length($PERSISTENT/Root/workingText) &gt; 100" weight="1"/>
+						<localization so="1">
+							<children>
+								<LocLangData lang="es">
+									<style text="Vuelve al comienzo"/>
+								</LocLangData>
+								<LocLangData lang="fr">
+									<style text="Parcourez le sommet"/>
+								</LocLangData>
+								<LocLangData lang="de">
+									<style text="Scrolle nach oben"/>
+								</LocLangData>
+								<LocLangData lang="en-US">
+									<style text="Scroll to top"/>
+								</LocLangData>
+								<LocLangData lang="it">
+									<style text="Scorri verso l&apos;alto"/>
+								</LocLangData>
+							</children>
+						</localization>
+						<controlActions id="319">
+							<children>
+								<DesignActionScrollTo id="323" scrolltoTarget="top" subject="page"/>
+							</children>
+						</controlActions>
+					</DesignButton>
+					<DesignTable id="330">
+						<style name="Table1"/>
+						<children>
+							<DesignTableCol id="331">
+								<style colWidth="40%"/>
+							</DesignTableCol>
+							<DesignTableCol id="332"/>
+							<DesignTableRow id="333">
+								<children>
+									<DesignLabel id="334">
+										<style align="center" multiLine="1" name="Label2" text="Set language:" weight="1"/>
+										<localization so="1">
+											<children>
+												<LocLangData lang="en-US">
+													<style text="Set language:"/>
+												</LocLangData>
+												<LocLangData lang="de">
+													<style text="Sprache einstellen:"/>
+												</LocLangData>
+												<LocLangData lang="es">
+													<style text="Elegir lenguaje:"/>
+												</LocLangData>
+												<LocLangData lang="fr">
+													<style text="Définir la langue:"/>
+												</LocLangData>
+												<LocLangData lang="it">
+													<style text="Imposta la lingua:"/>
+												</LocLangData>
+											</children>
+										</localization>
+									</DesignLabel>
+									<DesignCombo id="329" pageXML="359" comboEntryVisValues="1">
+										<style align="center" multiLine="1" name="Combo Box1"/>
+										<localization so="1">
+											<children>
+												<LocLangData lang="en-US">
+													<comboEntry desc="Default" loc="Default"/>
+													<comboEntry desc="English" loc="English"/>
+													<comboEntry desc="German" loc="German"/>
+													<comboEntry desc="French" loc="French"/>
+													<comboEntry desc="Spanish" loc="Spanish"/>
+												</LocLangData>
+												<LocLangData lang="de">
+													<comboEntry desc="Default" loc="Standard"/>
+													<comboEntry desc="English" loc="Englisch"/>
+													<comboEntry desc="German" loc="Deutsche"/>
+													<comboEntry desc="French" loc="Französisch"/>
+													<comboEntry desc="Spanish" loc="Spanisch"/>
+													<comboEntry desc="Italian" loc="Italienisch"/>
+												</LocLangData>
+												<LocLangData lang="fr">
+													<comboEntry desc="Default" loc="Défaut"/>
+													<comboEntry desc="English" loc="Inglés"/>
+													<comboEntry desc="German" loc="Allemand"/>
+													<comboEntry desc="French" loc="Français"/>
+													<comboEntry desc="Spanish" loc="Espanol"/>
+													<comboEntry desc="Italian" loc="Italien"/>
+												</LocLangData>
+												<LocLangData lang="es">
+													<comboEntry desc="Default" loc="Defecto"/>
+													<comboEntry desc="English" loc="Anglais"/>
+													<comboEntry desc="German" loc="Alemán"/>
+													<comboEntry desc="French" loc="Francés"/>
+													<comboEntry desc="Spanish" loc="Español"/>
+													<comboEntry desc="Italian" loc="Italiano"/>
+												</LocLangData>
+												<LocLangData lang="it">
+													<comboEntry desc="Default" loc="Predefinito"/>
+													<comboEntry desc="English" loc="Inglese"/>
+													<comboEntry desc="German" loc="Tedesco"/>
+													<comboEntry desc="French" loc="Francese"/>
+													<comboEntry desc="Spanish" loc="Spagnolo"/>
+													<comboEntry desc="Italian" loc="Italiano"/>
+												</LocLangData>
+											</children>
+										</localization>
+										<controlActions id="338">
+											<children>
+												<DesignActionTextToSpeech id="374" speechText="$PERSISTENT/Root/restartMsg" speechLang="$PERSISTENT/Root/userLanguage"/>
+												<DesignActionMessageBox id="340" msgBoxKind="okcancel" msgBoxTitle="mt-load-string( &apos;msg_header_1&apos;)" msgBoxMsg="$PERSISTENT/Root/restartMsg">
+													<children>
+														<DesignActionMessageBoxButton id="341">
+															<children>
+																<DesignActionUpdateNode id="358" updAt="$PERSISTENT/Root/userLanguage" resOf="$PERSISTENT/Root/userChoice"/>
+																<DesignActionSetLanguage id="350" language="$PERSISTENT/Root/userLanguage"/>
+															</children>
+														</DesignActionMessageBoxButton>
+														<DesignActionMessageBoxButton id="342">
+															<children>
+																<DesignActionUpdateNode id="363" updAt="$PERSISTENT/Root/userChoice" resOf="$PERSISTENT/Root/userLanguage"/>
+															</children>
+														</DesignActionMessageBoxButton>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+										<comboEntry desc="Default" value=""/>
+										<comboEntry desc="English" value="en-US"/>
+										<comboEntry desc="German" value="de"/>
+										<comboEntry desc="French" value="fr"/>
+										<comboEntry desc="Spanish" value="es"/>
+										<comboEntry desc="Italian" value="it"/>
+									</DesignCombo>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+				<localization so="1">
+					<children>
+						<LocLangData lang="en-US">
+							<style pageTitle="Localization Demo"/>
+						</LocLangData>
+						<LocLangData lang="de">
+							<style pageTitle="Lokalisierung Demo"/>
+						</LocLangData>
+						<LocLangData lang="it">
+							<style pageTitle="Demo di localizzazione"/>
+						</LocLangData>
+						<LocLangData lang="es">
+							<style pageTitle="Demostración de localización"/>
+						</LocLangData>
+						<LocLangData lang="fr">
+							<style pageTitle="Démonstration de localisation"/>
+						</LocLangData>
+					</children>
+				</localization>
+				<onPageLoadActions id="14">
+					<children>
+						<DesignActionUpdateNode id="383" updAt="$PERSISTENT/Root/userLanguage" resOf="$PERSISTENT/Root/userChoice"/>
+						<DesignActionGroupRef id="258" groupRef="253"/>
+						<DesignActionUpdateDisplay id="352"/>
+						<DesignActionHideKeyboard id="241"/>
+					</children>
+				</onPageLoadActions>
+				<onBackButtonActions id="17">
+					<children>
+						<DesignActionGroupRef id="251" groupRef="252"/>
+					</children>
+				</onBackButtonActions>
+			</DesignPage>
+			<DesignPage id="36387" IsNeedsTableRestOfScreenHandling="1">
+				<style name="Intro"/>
+				<children>
+					<DesignLabel id="36369">
+						<style align="center" name="Header Label1" text="Localization Demo" textSize="large" weight="1"/>
+						<localization so="1">
+							<children>
+								<LocLangData lang="es">
+									<style text="Demostración de localización"/>
+								</LocLangData>
+								<LocLangData lang="fr">
+									<style text="Démonstration de localisation"/>
+								</LocLangData>
+								<LocLangData lang="it">
+									<style text="Demo di localizzazione"/>
+								</LocLangData>
+								<LocLangData lang="de">
+									<style text="Lokalisierung Demo"/>
+								</LocLangData>
+								<LocLangData lang="en-US">
+									<style text="Localization Demo"/>
+								</LocLangData>
+							</children>
+						</localization>
+					</DesignLabel>
+					<DesignTable id="36371">
+						<style addDelPossible="0" margin="6px" name="Table2"/>
+						<children>
+							<DesignTableCol id="36372"/>
+							<DesignTableScrollableArea id="36373">
+								<style maxTableY="RestScreenYMax"/>
+								<children>
+									<DesignTableRow id="36374">
+										<children>
+											<DesignTable id="36375">
+												<style addDelPossible="0" name="Table3"/>
+												<children>
+													<DesignTableCol id="36376"/>
+													<DesignTableRow id="36377">
+														<children>
+															<DesignLabel id="36378">
+																<style margin="6px" multiLine="1" name="Body text label" text="MobileTogether includes support to seamlessly localize mobile apps in multiple languages. This empowers developers to build one version of a mobile app that works across many languages as well as across multiple platforms.
+
+Developers can include translations in a single MobileTogether app design for all text phrases required, and when any end-user runs the app, whether on an Android phone, an iPhone, Windows desktop, or any other supported platform, the language for the app is selected to match the language for the device operating system.
+
+With multi-language localization, even text-to-speech functionality is localized to the user’s native language.
+
+Check the Project / Localization menu option and the Online Help in MobileTogether Designer to see how it is done.
+
+This app was created as an example for the Altova blog."/>
+																<localization so="1">
+																	<children>
+																		<LocLangData lang="en-US">
+																			<style text="MobileTogether includes support to seamlessly localize mobile apps in multiple languages. This empowers developers to build one version of a mobile app that works across many languages as well as across multiple platforms.
+
+Developers can include translations in a single MobileTogether app design for all text phrases required, and when any end-user runs the app, whether on an Android phone, an iPhone, Windows desktop, or any other supported platform, the language for the app is selected to match the language for the device operating system.
+
+With multi-language localization, even text-to-speech functionality is localized to the user’s native language.
+
+Check the Project / Localization menu option and the Online Help in MobileTogether Designer to see how it&amp;apos;s done.
+
+This app was created as an example for the Altova blog."/>
+																		</LocLangData>
+																		<LocLangData lang="de">
+																			<style text="MobileTogether bietet Unterstützung für die nahtlose Lokalisierung von mobilen Apps in mehreren Sprachen. Dies ermöglicht Entwicklern, eine Version einer mobilen App zu erstellen, die sowohl in mehreren Sprachen als auch auf mehreren Plattformen funktioniert.
+
+Entwickler können Übersetzungen in ein einziges MobileTogether-App-Design für alle erforderlichen Textphrasen aufnehmen. Wenn ein Endbenutzer die App ausführt, ist die Sprache der App, ob auf einem Android-Telefon, einem iPhone, Windows-Desktop oder einer anderen unterstützten Plattform ausgewählt, um der Sprache für das Betriebssystem des Geräts zu entsprechen.
+
+Bei der mehrsprachigen Lokalisierung wird sogar die Text-zu-Sprache-Funktionalität in der Muttersprache des Benutzers lokalisiert.
+
+Überprüfen Sie die Menüoption Projekt / Lokalisierung und die Online-Hilfe in MobileTogether Designer, um zu sehen, wie es gemacht wurde.
+
+Diese App wurde als Beispiel für den Altova-Blog erstellt."/>
+																		</LocLangData>
+																		<LocLangData lang="fr">
+																			<style text="MobileTogether inclut le support pour localiser en toute transparence les applications mobiles dans plusieurs langues. Cela permet aux développeurs de créer une version d&apos;application mobile qui fonctionne dans de nombreuses langues et sur plusieurs plates-formes.
+
+Les développeurs peuvent inclure des traductions dans une conception d&apos;application MobileTogether unique pour toutes les phrases de texte requises et lorsqu&apos;un utilisateur final exécute l&apos;application, que ce soit sur un téléphone Android, un iPhone, un bureau Windows ou toute autre plate-forme prise en charge. sélectionné pour correspondre à la langue du système d&apos;exploitation de l&apos;appareil.
+
+Avec la localisation multilingue, même la fonctionnalité de synthèse vocale est localisée dans la langue maternelle de l&apos;utilisateur.
+
+Cochez l&apos;option de menu Projet / Localisation et l&apos;aide en ligne dans MobileTogether Designer pour voir comment cela a été fait.
+
+Cette application a été créée comme un exemple pour le blog Altova."/>
+																		</LocLangData>
+																		<LocLangData lang="es">
+																			<style text="MobileTogether incluye soporte para localizar sin problemas aplicaciones móviles en varios idiomas. Esto permite a los desarrolladores crear una versión de una aplicación móvil que funcione en varios idiomas y en múltiples plataformas.
+
+Los desarrolladores pueden incluir traducciones en un solo diseño de aplicación MobileTogether para todas las frases de texto requeridas, y cuando cualquier usuario final ejecuta la aplicación, ya sea en un teléfono Android, un iPhone, escritorio de Windows o cualquier otra plataforma compatible, el idioma de la aplicación es seleccionado para que coincida con el idioma del sistema operativo del dispositivo.
+
+Con la localización en varios idiomas, incluso la funcionalidad de texto a voz se localiza en el idioma nativo del usuario.
+
+Compruebe la opción de menú Proyecto / Localización y la Ayuda en línea en MobileTogether Designer para ver cómo se hace.
+
+Esta aplicación fue creada como un ejemplo para el blog de Altova."/>
+																		</LocLangData>
+																		<LocLangData lang="it">
+																			<style text="MobileTogether include il supporto per localizzare senza problemi le app mobili in più lingue. Ciò consente agli sviluppatori di creare una versione di un&apos;app mobile che funziona su più lingue e su più piattaforme.
+
+Gli sviluppatori possono includere le traduzioni in un unico progetto di app MobileTogether per tutte le frasi di testo richieste e quando un utente finale esegue l&apos;app, su un telefono Android, un iPhone, un desktop Windows o qualsiasi altra piattaforma supportata, la lingua dell&apos;app è selezionato per abbinare la lingua per il sistema operativo del dispositivo.
+
+Con la localizzazione multilingue, anche la funzionalità text-to-speech è localizzata nella lingua nativa dell&apos;utente.
+
+Controlla l&apos;opzione del menu Progetto / Localizzazione e la Guida in linea di MobileTogether Designer per vedere come è andata a finire.
+
+Questa app è stata creata come esempio per il blog di Altova."/>
+																		</LocLangData>
+																	</children>
+																</localization>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+												</children>
+											</DesignTable>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignCheckBox id="36380" pageXML="384">
+						<style cbRight="0" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
+						<localization so="1">
+							<children>
+								<LocLangData lang="en-US">
+									<style text="Skip this intro in the future"/>
+								</LocLangData>
+								<LocLangData lang="de">
+									<style text="Überspringe dieses Intro in Zukunft"/>
+								</LocLangData>
+								<LocLangData lang="es">
+									<style text="Omita esta introducción en el futuro"/>
+								</LocLangData>
+								<LocLangData lang="fr">
+									<style text="Passer cette intro dans le futur"/>
+								</LocLangData>
+								<LocLangData lang="it">
+									<style text="Salta questa intro in futuro"/>
+								</LocLangData>
+							</children>
+						</localization>
+					</DesignCheckBox>
+					<DesignButton id="36382">
+						<style align="center" name="Launch Button" text="Next Page"/>
+						<localization so="1">
+							<children>
+								<LocLangData lang="en-US">
+									<style text="Next Page"/>
+								</LocLangData>
+								<LocLangData lang="de">
+									<style text="Nächste Seite"/>
+								</LocLangData>
+								<LocLangData lang="it">
+									<style text="Pagina successiva"/>
+								</LocLangData>
+								<LocLangData lang="fr">
+									<style text="Page suivante"/>
+								</LocLangData>
+								<LocLangData lang="es">
+									<style text="Siguiente página"/>
+								</LocLangData>
+							</children>
+						</localization>
+						<controlActions id="36383">
+							<children>
+								<DesignActionGotoPage id="36386" showLoadToppageMsg="0" processRef="58"/>
+							</children>
+						</controlActions>
+					</DesignButton>
+				</children>
+				<onPageLoadActions id="41">
+					<children>
+						<DesignActionCondition id="36404" condition="$PERSISTENT/Root/skipIntro = &apos;true&apos;">
+							<children>
+								<DesignActionConditionTrue id="36405">
+									<children>
+										<DesignActionGotoPage id="36406" processRef="58"/>
+									</children>
+								</DesignActionConditionTrue>
+							</children>
+						</DesignActionCondition>
+					</children>
+				</onPageLoadActions>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<ActionGroupRoot id="55">
+		<children>
+			<DesignActionGroup id="253" name="Load localized messages">
+				<children>
+					<DesignActionUpdateNode id="254" updAt="$PERSISTENT/Root/defaultMsg" resOf="mt-load-string(&apos;default_message&apos;)"/>
+					<DesignActionUpdateNode id="255" updAt="$PERSISTENT/Root/closeMsg" resOf="mt-load-string(&apos;close_message&apos;)"/>
+					<DesignActionUpdateNode id="256" updAt="$PERSISTENT/Root/goodbyeMsg" resOf="mt-load-string(&apos;goodbye_message&apos;)"/>
+					<DesignActionUpdateNode id="345" updAt="$PERSISTENT/Root/restartMsg" resOf="mt-load-string(&apos;restart_message&apos;)"/>
+					<DesignActionUpdateNode id="347" updAt="$PERSISTENT/Root/workingText" resOf="mt-load-string(&apos;startup_text&apos;)"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="252" name="Close App">
+				<children>
+					<DesignActionTextToSpeech id="375" speechText="$PERSISTENT/Root/closeMsg" speechLang="$PERSISTENT/Root/userLanguage"/>
+					<DesignActionMessageBox id="245" msgBoxKind="okcancel" msgBoxTitle="mt-load-string(&apos;msg_header_2&apos;)" msgBoxMsg="concat($PERSISTENT/Root/closeMsg, &apos;?&apos;)">
+						<children>
+							<DesignActionMessageBoxButton id="246">
+								<children>
+									<DesignActionTextToSpeech id="376" speechText="$PERSISTENT/Root/goodbyeMsg" speechLang="$PERSISTENT/Root/userLanguage"/>
+									<DesignActionLoop id="368" needsClient="1" needsClientView="1" breakLoopIf="mt-text-to-speech-is-speaking() = false()">
+										<children>
+											<DesignActionUpdateNode id="369" updAt="$PERSISTENT/Root" resOf="sleep(100)"/>
+										</children>
+									</DesignActionLoop>
+									<DesignActionWorkflowExecution id="275" cancel="1"/>
+								</children>
+							</DesignActionMessageBoxButton>
+							<DesignActionMessageBoxButton id="249"/>
+						</children>
+					</DesignActionMessageBox>
+				</children>
+			</DesignActionGroup>
+		</children>
+	</ActionGroupRoot>
+	<PageXMLNamespaceRoot id="61">
+		<children>
+			<PageXMLNamespace id="62" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="63" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="64" name="Root">
+				<children>
+					<PageXMLElement id="225" name="workingText" mustExist="1" default="Can you recommend a good restaurant for lunch?"/>
+					<PageXMLElement id="238" name="defaultMsg" mustExist="1" default="I do not have anything to say"/>
+					<PageXMLElement id="231" name="closeMsg" mustExist="1" default="Are you sure you want to close this app"/>
+					<PageXMLElement id="257" name="goodbyeMsg" mustExist="1" default="Okay goodbye"/>
+					<PageXMLElement id="344" name="restartMsg" mustExist="1" default="This will restart the app"/>
+					<PageXMLElement id="339" name="userLanguage" mustExist="1"/>
+					<PageXMLElement id="359" name="userChoice" mustExist="1"/>
+					<PageXMLElement id="384" name="skipIntro" mustExist="1" default="false"/>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLPersistentRoot>
+	<WorkflowRoot id="57">
+		<children>
+			<WorkflowPageRef id="36403" page="36387"/>
+			<WorkflowPageRef id="58" page="7"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="65">
+		<children>
+			<GlobalVariable id="66" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="67" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="68" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="69" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="70" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="71" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="72" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="73" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="74" sysVar="MT_DPIX"/>
+			<GlobalVariable id="75" sysVar="MT_DPIY"/>
+			<GlobalVariable id="76" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="77" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="78" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="79" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="80" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="81" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="82" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="83" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="84" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="85" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="86" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="87" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="88" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="89" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="90" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="91" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="92" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="93" sysVar="MT_ControlName"/>
+			<GlobalVariable id="94" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="95" sysVar="MT_PageName"/>
+			<GlobalVariable id="96" sysVar="MT_UserName"/>
+			<GlobalVariable id="97" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="98" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="99" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="100" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="101" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="102" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="103" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="104" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="105" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="106" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="107" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="108" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="109" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="110" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="111" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="112" sysVar="MT_NFCAvailable"/>
+			<GlobalVariable id="120" sysVar="MT_IsEmbedded"/>
+		</children>
+	</GlobalVariables>
+	<CustomerAppSettings so="1" id="56"/>
+	<LocalizableStrings>
+		<LocLangData>
+			<String name="default_message" text="I do not have anything to say"/>
+			<String name="msg_header_1" text="Set Language"/>
+			<String name="msg_header_2" text="Close App"/>
+			<String name="close_message" text="Are you sure you want to quit this app"/>
+			<String name="goodbye_message" text="Okay, goodbye"/>
+			<String name="restart_message" text="This will restart the app"/>
+			<String name="startup_text" text="Can you recommend a good restaurant for lunch?"/>
+		</LocLangData>
+		<LocLangData lang="en">
+			<String name="default_message" text="I do not have anything to say"/>
+			<String name="msg_header_1" text="Are you sure you want to quit this app"/>
+			<String name="msg_header_2" text="Are you sure you want to quit this app"/>
+			<String name="close_message" text="Are you sure you want to quit this app"/>
+			<String name="goodbye_message" text="Okay, goodbye"/>
+		</LocLangData>
+		<LocLangData lang="es">
+			<String name="default_message" text="No tengo nada que decir"/>
+			<String name="msg_header_1" text="Elegir lenguaje"/>
+			<String name="msg_header_2" text="Cerrar App"/>
+			<String name="close_message" text="¿Seguro que quieres salir de esta aplicación"/>
+			<String name="goodbye_message" text="Vale adios"/>
+			<String name="restart_message" text="Esto reiniciará la aplicación"/>
+			<String name="startup_text" text="¿Me puede recomendar un buen restaurante para el almuerzo?"/>
+		</LocLangData>
+		<LocLangData lang="fr">
+			<String name="default_message" text="Je n&apos;ai rien à dire"/>
+			<String name="msg_header_1" text="Définir la langue"/>
+			<String name="msg_header_2" text="Fermer l&apos;application"/>
+			<String name="close_message" text="Êtes-vous sûr de vouloir quitter cette application"/>
+			<String name="goodbye_message" text="D&apos;accord, au revoir"/>
+			<String name="restart_message" text="Cela va redémarrer l&apos;application"/>
+			<String name="startup_text" text="Pouvez-vous recommander un bon restaurant pour le déjeuner?"/>
+		</LocLangData>
+		<LocLangData lang="de">
+			<String name="default_message" text="Ich habe nichts zu sagen"/>
+			<String name="msg_header_1" text="Sprache einstellen"/>
+			<String name="msg_header_2" text="Schließen Sie die App"/>
+			<String name="close_message" text="Sind Sie sicher, dass Sie diese App beenden möchten"/>
+			<String name="goodbye_message" text="Okay auf Wiedersehen"/>
+			<String name="restart_message" text="Dies wird die App neu starten"/>
+			<String name="startup_text" text="Kannst du ein gutes Restaurant zum Mittagessen empfehlen?"/>
+		</LocLangData>
+		<LocLangData lang="it">
+			<String name="default_message" text="Non ho nulla da dire"/>
+			<String name="msg_header_1" text="Imposta la lingua"/>
+			<String name="msg_header_2" text="Chiudi l&apos;applicazione"/>
+			<String name="close_message" text="Sei sicuro di voler uscire da questa applicazione"/>
+			<String name="goodbye_message" text="Ok arrivederci"/>
+			<String name="restart_message" text="Ciò riavviare l&apos;applicazione"/>
+			<String name="startup_text" text="Puoi consigliare un buon ristorante per pranzo?"/>
+		</LocLangData>
+		<LocLangData lang="en-US">
+			<String name="msg_header_1" text="Set Language"/>
+			<String name="msg_header_2" text="Close App"/>
+		</LocLangData>
+	</LocalizableStrings>
+	<languages lang="en-US" lang1="de" lang2="fr" lang3="es" lang4="it" langName="en-US" langName1="de" langName2="fr" langName3="es" langName4="Italian"/>
+</MobileTogetherDesign>
