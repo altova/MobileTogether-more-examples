@@ -1,5 +1,5 @@
 # MobileTogether-more-examples
-More MobileTogether examples, including sound effects, localization, holiday schedule, push notifications, etc. 
+More MobileTogether examples, including cross-platform mobile apps to demonstrate sound effects, localization, holiday schedule, push notifications, etc. 
 
 We invite you to download these apps, open them in the MobileTogether Designer, execute them in the Simulator window, and examine them to familiarize yourself with mobile app development using MobileTogether.
 
