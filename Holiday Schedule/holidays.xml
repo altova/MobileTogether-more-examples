@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-<holiday><name>New Year's Day</name><observed>1-1-2018</observed><location>Both</location><selected>0</selected></holiday>
-<holiday><name>Epiphany</name><observed>1-6-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Martin Luther King Jr. Day</name><observed>1-15-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Presidents Day</name><observed>2-19-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Easter Monday</name><observed>4-2-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Labor Day</name><observed>5-1-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Ascension Day</name><observed>5-10-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Whit Monday</name><observed>5-21-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Memorial Day</name><observed>5-28-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Corpus Christi</name><observed>5-31-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Independence Day</name><observed>7-4-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Assumption Day</name><observed>8-15-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Labor Day</name><observed>9-3-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Columbus Day</name><observed>10-8-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>National Day</name><observed>10-26-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>All Saints Day</name><observed>11-1-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Veterans Day</name><observed>11-12-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Thanksgiving Day</name><observed>11-22-2018</observed><location>US</location><selected>0</selected></holiday>
-<holiday><name>Immaculate Conception</name><observed>12-8-2018</observed><location>EU</location><selected>0</selected></holiday>
-<holiday><name>Christmas Day</name><observed>12-25-2018</observed><location>Both</location><selected>0</selected></holiday>
-<holiday><name>St Stephen's Day</name><observed>12-26-2018</observed><location>EU</location><selected>0</selected></holiday>
+	<holiday>
+		<name>New Year's Day</name>
+		<observed>1-1-2018</observed>
+		<location>Both</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Epiphany</name>
+		<observed>1-6-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Martin Luther King Jr. Day</name>
+		<observed>1-15-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Presidents Day</name>
+		<observed>2-19-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Easter Monday</name>
+		<observed>4-2-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Labor Day</name>
+		<observed>5-1-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Ascension Day</name>
+		<observed>5-10-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Whit Monday</name>
+		<observed>5-21-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Memorial Day</name>
+		<observed>5-28-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Corpus Christi</name>
+		<observed>5-31-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Independence Day</name>
+		<observed>7-4-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Assumption Day</name>
+		<observed>8-15-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Labor Day</name>
+		<observed>9-3-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Columbus Day</name>
+		<observed>10-8-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>National Day</name>
+		<observed>10-26-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>All Saints Day</name>
+		<observed>11-1-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Veterans Day</name>
+		<observed>11-12-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Thanksgiving Day</name>
+		<observed>11-22-2018</observed>
+		<location>US</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Immaculate Conception</name>
+		<observed>12-8-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>Christmas Day</name>
+		<observed>12-25-2018</observed>
+		<location>Both</location>
+		<selected>0</selected>
+	</holiday>
+	<holiday>
+		<name>St Stephen's Day</name>
+		<observed>12-26-2018</observed>
+		<location>EU</location>
+		<selected>0</selected>
+	</holiday>
 </events>
