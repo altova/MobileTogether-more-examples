@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 sp1 (http://www.altova.com) by Niki Devgood (Altova, Inc.) -->
+<Root>
+	<Geolocations>
+		<Geolocation>
+			<Location Latitude="38.32068" Longitude="-122.30654" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94558" AdminArea="" Thoroughfare="3278 California Way">
+				<AddressLine>3278 California Way, Napa, CA 94558</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.321408" Longitude="-122.308053" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94558" AdminArea="" Thoroughfare="Redwood Rd">
+				<AddressLine>Redwood Rd, Napa, CA 94558</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.321025" Longitude="-122.308939" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94558" AdminArea="" Thoroughfare="Ramp">
+				<AddressLine>Ramp, Napa, CA 94558</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.298705" Longitude="-122.302496" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="CA-29 S">
+				<AddressLine>CA-29 S, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.273951" Longitude="-122.298948" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94558" AdminArea="" Thoroughfare="CA-121 S">
+				<AddressLine>CA-121 S, Napa, CA 94558</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.25805" Longitude="-122.30261" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94558" AdminArea="" Thoroughfare="CA-121 S">
+				<AddressLine>CA-121 S, Napa, CA 94558</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.258961" Longitude="-122.311056" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="3173 CA-12">
+				<AddressLine>3173 CA-12, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.255338" Longitude="-122.331803" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="CA-12">
+				<AddressLine>CA-12, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.255419" Longitude="-122.342473" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Old Sonoma Rd">
+				<AddressLine>Old Sonoma Rd, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.258749" Longitude="-122.338879" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1023 Dealy Ln">
+				<AddressLine>1023 Dealy Ln, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.269901" Longitude="-122.348096" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1292 Dealy Ln">
+				<AddressLine>1292 Dealy Ln, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.271409" Longitude="-122.347609" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1297 Dealy Ln">
+				<AddressLine>1297 Dealy Ln, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.274441" Longitude="-122.351942" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1310 Henry Rd">
+				<AddressLine>1310 Henry Rd, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.2728" Longitude="-122.355981" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.271831" Longitude="-122.356065" Provider="gps"/>
+			<Address CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.270656" Longitude="-122.354628" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.270032" Longitude="-122.354223" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.26891" Longitude="-122.353879" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.26882" Longitude="-122.354533" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.268568" Longitude="-122.355924" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.268372" Longitude="-122.355943" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>1345 Henry Road, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.268877" Longitude="-122.354977" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.268727" Longitude="-122.354085" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.269384" Longitude="-122.354216" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.270581" Longitude="-122.354374" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.271884" Longitude="-122.356094" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.272933" Longitude="-122.355835" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Street">
+				<AddressLine>Street, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.275012" Longitude="-122.352792" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="Henry Rd">
+				<AddressLine>Henry Rd, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.271164" Longitude="-122.347469" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1296 Dealy Ln">
+				<AddressLine>1296 Dealy Ln, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.268328" Longitude="-122.346967" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="1274 Dealy Ln">
+				<AddressLine>1274 Dealy Ln, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.257631" Longitude="-122.338023" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="5289 Old Sonoma Rd">
+				<AddressLine>5289 Old Sonoma Rd, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.25609" Longitude="-122.341897" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="5416 Old Sonoma Rd">
+				<AddressLine>5416 Old Sonoma Rd, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.25548" Longitude="-122.343062" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="5019 CA-12">
+				<AddressLine>5019 CA-12, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.256142" Longitude="-122.36365" Provider="gps"/>
+			<Address Locality="Napa" CountryName="United States" CountryCode="US" PostalCode="94559" AdminArea="" Thoroughfare="5573 CA-12">
+				<AddressLine>5573 CA-12, Napa, CA 94559</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.25219" Longitude="-122.388978" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="4490 CA-12">
+				<AddressLine>4490 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.253238" Longitude="-122.394462" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="4247 CA-12">
+				<AddressLine>4247 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.25182" Longitude="-122.399435" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="3942 CA-12">
+				<AddressLine>3942 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.252002" Longitude="-122.406061" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="3552 CA-12">
+				<AddressLine>3552 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.248463" Longitude="-122.410813" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="3175 CA-12">
+				<AddressLine>3175 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.246458" Longitude="-122.422514" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="2448 CA-12">
+				<AddressLine>2448 CA-12, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.244856" Longitude="-122.445867" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="CA-121">
+				<AddressLine>CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.240359" Longitude="-122.451547" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="832 CA-121">
+				<AddressLine>832 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.238279" Longitude="-122.455151" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="449 CA-121">
+				<AddressLine>449 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.236835" Longitude="-122.459534" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="53 CA-121">
+				<AddressLine>53 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.232698" Longitude="-122.460202" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="23235 CA-121">
+				<AddressLine>23235 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.204397" Longitude="-122.450452" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="25237 CA-121">
+				<AddressLine>25237 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.181357" Longitude="-122.444162" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="27174 CA-121">
+				<AddressLine>27174 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.171728" Longitude="-122.456617" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="73 CA-121">
+				<AddressLine>73 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.152557" Longitude="-122.448429" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" AdminArea="" Thoroughfare="3 CA-121">
+				<AddressLine>3 CA-121, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.146014" Longitude="-122.456651" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" Thoroughfare="CA-37 W">
+				<AddressLine>CA-37 W, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.134653" Longitude="-122.475641" Provider="gps"/>
+			<Address Locality="Sonoma" CountryName="United States" CountryCode="US" PostalCode="95476" AdminArea="" Thoroughfare="CA-37 W">
+				<AddressLine>CA-37 W, Sonoma, CA 95476</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.11526" Longitude="-122.506059" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="94945" AdminArea="" Thoroughfare="CA-37 W">
+				<AddressLine>CA-37 W, Novato, CA 94945</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.097365" Longitude="-122.521916" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="94945" AdminArea="">
+				<AddressLine>CA-37 W, Novato, CA 94945</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.080321" Longitude="-122.545932" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="" AdminArea="" Thoroughfare="Novato">
+				<AddressLine>Novato, CA</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.078224" Longitude="-122.546306" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="94947" AdminArea="" Thoroughfare="Ramp">
+				<AddressLine>Ramp, Novato, CA 94947</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.075642" Longitude="-122.542472" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="94949" AdminArea="" Thoroughfare="Ramp">
+				<AddressLine>Ramp, Novato, CA 94949</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.06015" Longitude="-122.532218" Provider="gps"/>
+			<Address Locality="Novato" CountryName="United States" CountryCode="US" PostalCode="94949" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Novato, CA 94949</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.036589" Longitude="-122.536708" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94903" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94903</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="38.008023" Longitude="-122.541944" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94903" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94903</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.996919" Longitude="-122.534346" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94903" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94903</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.984572" Longitude="-122.523651" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94901" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94901</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.971596" Longitude="-122.521897" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94901" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94901</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.967375" Longitude="-122.518913" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94901" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94901</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.953462" Longitude="-122.508679" Provider="gps"/>
+			<Address Locality="San Rafael" CountryName="United States" CountryCode="US" PostalCode="94901" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, San Rafael, CA 94901</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.930073" Longitude="-122.515844" Provider="gps"/>
+			<Address Locality="Corte Madera" CountryName="United States" CountryCode="US" PostalCode="94925" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Corte Madera, CA 94925</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.903833" Longitude="-122.515735" Provider="gps"/>
+			<Address Locality="Mill Valley" CountryName="United States" CountryCode="US" PostalCode="94941" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Mill Valley, CA 94941</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.875824" Longitude="-122.510674" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.857557" Longitude="-122.498938" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.855184" Longitude="-122.49386" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.850557" Longitude="-122.490025" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.843202" Longitude="-122.48593" Provider="gps"/>
+			<Address CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S"/>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.840497" Longitude="-122.486753" Provider="gps"/>
+			<Address AdminArea="">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.838028" Longitude="-122.486367" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.834732" Longitude="-122.484224" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.832288" Longitude="-122.480853" Provider="gps"/>
+			<Address Locality="Sausalito" CountryName="United States" CountryCode="US" PostalCode="94965" AdminArea="" Thoroughfare="US-101 S">
+				<AddressLine>US-101 S, Sausalito, CA 94965</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.809907" Longitude="-122.477445" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94129" AdminArea="" Thoroughfare="Golden Gate Bridge">
+				<AddressLine>Golden Gate Bridge, San Francisco, CA 94129</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.802516" Longitude="-122.469712" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94129" AdminArea="" Thoroughfare="Ramp">
+				<AddressLine>Ramp, San Francisco, CA 94129</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.79588" Longitude="-122.469583" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94129" AdminArea="" Thoroughfare="CA-1 S">
+				<AddressLine>CA-1 S, San Francisco, CA 94129</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.784626" Longitude="-122.472617" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94118" AdminArea="" Thoroughfare="Park Presidio Blvd">
+				<AddressLine>Park Presidio Blvd, San Francisco, CA 94118</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.780704" Longitude="-122.47265" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94118" AdminArea="" Thoroughfare="4978 Geary Blvd">
+				<AddressLine>4978 Geary Blvd, San Francisco, CA 94118</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.780424" Longitude="-122.47868" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="5532 Geary Blvd">
+				<AddressLine>5532 Geary Blvd, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.780038" Longitude="-122.487576" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="6364 Geary Blvd">
+				<AddressLine>6364 Geary Blvd, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.779761" Longitude="-122.492938" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="Geary Blvd">
+				<AddressLine>Geary Blvd, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.779404" Longitude="-122.500652" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="Geary Blvd">
+				<AddressLine>Geary Blvd, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.779915" Longitude="-122.50615" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="291 Point Lobos Ave">
+				<AddressLine>291 Point Lobos Ave, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+		<Geolocation>
+			<Location Latitude="37.77906" Longitude="-122.512377" Provider="gps"/>
+			<Address Locality="San Francisco" CountryName="United States" CountryCode="US" PostalCode="94121" AdminArea="" Thoroughfare="948 Point Lobos Ave">
+				<AddressLine>948 Point Lobos Ave, San Francisco, CA 94121</AddressLine>
+			</Address>
+		</Geolocation>
+	</Geolocations>
+</Root>

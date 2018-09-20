@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="MobileTogether" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<trk>
+		<trkseg>
+			<trkpt lat="0.00" lon="0.00">
+				<time>2001-01-01T12:00:00Z</time>
+				<cmt/>
+			</trkpt>
+		</trkseg>
+	</trk>
+</gpx>
