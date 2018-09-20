@@ -3438,6 +3438,30 @@ fields/state
 						</children>
 						<appliedVar ref="106"/>
 					</DesignTable>
+					<DesignTable id="47579">
+						<style marginBottom_x="$PERSISTENT/Root/margFactor * 2" marginTop_x="$PERSISTENT/Root/margFactor * 4" name="Table10" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="47580">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="47581"/>
+							<DesignTableCol id="47582"/>
+							<DesignTableRow id="47583">
+								<children>
+									<DesignTableCellEmpty id="47584">
+										<style valign="middle"/>
+									</DesignTableCellEmpty>
+									<DesignRadioButton id="47585" pageXML="47589" checkedValues="f">
+										<style name="Radio Button3" text=" fahrenheit" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									</DesignRadioButton>
+									<DesignRadioButton id="47587" pageXML="47589" checkedValues="c">
+										<style name="Radio Button4" text=" celsius" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									</DesignRadioButton>
+								</children>
+							</DesignTableRow>
+						</children>
+						<appliedVar ref="106"/>
+					</DesignTable>
 					<DesignTable id="43426">
 						<style marginTop_x="$PERSISTENT/Root/margFactor * 4" name="Table7" tablePadding="0"/>
 						<children>
@@ -3733,9 +3757,15 @@ fields/state
 																<style multiLine="1" name="Label12" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 															</DesignLabel>
 															<DesignLabel id="41550">
-																<style multiLine="1" name="Label17" text_x="concat( round( $HTTP1_current_weather/current/temperature/@value ,  0 ) ,
+																<style multiLine="1" name="Label17" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
+
+
+concat( round( $HTTP1_current_weather/current/temperature/@value ,  0 ) ,
  &apos; degrees &apos;,
-substring( $HTTP1_current_weather/current/temperature/@unit ,  1 ,  1 ) )" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+substring( $HTTP1_current_weather/current/temperature/@unit ,  1 ,  1 ) )
+else 
+concat( round( ($HTTP1_current_weather/current/temperature/@value - 32) * 0.5556,  0 ) ,
+ &apos; degrees C&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 															</DesignLabel>
 														</children>
 													</DesignTableRow>
@@ -5792,6 +5822,7 @@ adjust-dateTime-to-timezone( $a)) ,
 							<PageXMLElement id="36526" name="showAddress" mustExist="1" default="false"/>
 							<PageXMLElement id="36537" name="textSize" mustExist="1" default="round( ($MT_DeviceHeight * $PERSISTENT/Root/textFactor),  0 )" defValueIsXPath="1"/>
 							<PageXMLElement id="38932" name="distance" mustExist="1" default="m"/>
+							<PageXMLElement id="47589" name="temperature" mustExist="1" default="f"/>
 							<PageXMLElement id="38957" name="searchEngine" mustExist="1" default="www.google.com/search?q="/>
 							<PageXMLElement id="40487" name="buttonSoundEffects" mustExist="1" default="0"/>
 							<PageXMLElement id="40488" name="buttonSound" mustExist="1" default="1"/>
