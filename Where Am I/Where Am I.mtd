@@ -122,14 +122,14 @@
 												<children>
 													<DesignTableCol id="47235"/>
 													<DesignTableCol id="47236">
-														<style colWidth="60%"/>
+														<style colWidth="65%"/>
 													</DesignTableCol>
 													<DesignTableCol id="47237"/>
 													<DesignTableRow id="47238">
 														<children>
 															<DesignTableCellEmpty id="47239"/>
 															<DesignButton id="47240">
-																<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;true&quot; )" margin_x="$PERSISTENT/Root/margFactor" name="Button6" text="Get Curent Location" textSize_x="$PERSISTENT/Root/userSettings/textSize + 2"/>
+																<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;true&quot; )" margin_x="$PERSISTENT/Root/margFactor" name="Button6" text="Get Current Location" textSize_x="$PERSISTENT/Root/userSettings/textSize + 2"/>
 																<controlActions id="47241">
 																	<children>
 																		<DesignActionGeolocationRead id="47244" readAction="LatLngAddress"/>
