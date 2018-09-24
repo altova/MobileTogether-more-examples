@@ -3532,7 +3532,7 @@ fields/state
 										<controlActions id="40167">
 											<children>
 												<DesignActionUpdateNode id="40170" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="1"/>
-												<DesignActionGotoSubpage id="40171" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="round($MT_CanvasX * 0.85, 0)" modalDialogHeightXPath="round($MT_CanvasY * 0.65, 0)"/>
+												<DesignActionGotoPage id="47591" showLoadToppageMsg="0" processRef="47593"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -3550,7 +3550,7 @@ fields/state
 										<controlActions id="40192">
 											<children>
 												<DesignActionUpdateNode id="40195" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="2"/>
-												<DesignActionGotoSubpage id="40196" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="round($MT_CanvasX * 0.85, 0)" modalDialogHeightXPath="round($MT_CanvasY * 0.65, 0)"/>
+												<DesignActionGotoPage id="47592" processRef="47593"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -3568,7 +3568,7 @@ fields/state
 										<controlActions id="42247">
 											<children>
 												<DesignActionUpdateNode id="42250" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="3"/>
-												<DesignActionGotoSubpage id="42251" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="round($MT_CanvasX * 0.85, 0)" modalDialogHeightXPath="round($MT_CanvasY * 0.65, 0)"/>
+												<DesignActionGotoPage id="47594" showLoadToppageMsg="0" processRef="47593"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -3586,7 +3586,7 @@ fields/state
 										<controlActions id="42255">
 											<children>
 												<DesignActionUpdateNode id="42258" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="4"/>
-												<DesignActionGotoSubpage id="42259" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="round($MT_CanvasX * 0.85, 0)" modalDialogHeightXPath="round($MT_CanvasY * 0.65, 0)"/>
+												<DesignActionGotoPage id="47595" showLoadToppageMsg="0" processRef="47593"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -4422,7 +4422,7 @@ displayString
 					<PageXMLRootRef id="40841" refXMLRoot="40669"/>
 				</xmlRoots>
 			</DesignPage>
-			<DesignPage id="39015" subPage="1">
+			<DesignPage id="39015">
 				<style name="API Key Update" showTitleBar="0"/>
 				<children>
 					<DesignTable id="39034">
@@ -4477,7 +4477,14 @@ $PERSISTENT/Root/api_data/EventfulKey/@URL" textColor="blue" textSize_x="$PERSIS
 												<DesignActionOpenUrlOrFile id="43315" url="if ( $PERSISTENT/Root/api_data/APIswitch = 1 ) then 
 $PERSISTENT/Root/api_data/GoogleKey/@URL
  else
-$PERSISTENT/Root/api_data/MapQuestKey/@URL"/>
+ if ( $PERSISTENT/Root/api_data/APIswitch = 2 ) then
+$PERSISTENT/Root/api_data/MapQuestKey/@URL
+else
+if ( $PERSISTENT/Root/api_data/APIswitch = 3 ) then
+$PERSISTENT/Root/api_data/OpenWeatherKey/@URL
+else
+$PERSISTENT/Root/api_data/EventfulKey/@URL"/>
+												<DesignActionGotoPage id="47597" showLoadToppageMsg="0" processRef="38899"/>
 											</children>
 										</controlActions>
 									</DesignLabel>
@@ -4594,7 +4601,7 @@ This will replace your existing API Key!&apos;">
 													</children>
 												</DesignActionMessageBox>
 												<DesignActionUpdateNode id="39088" updAt="$PERSISTENT/Root/tempInput" resOf="&apos;&apos;"/>
-												<DesignActionReturnFromSubpage id="39118"/>
+												<DesignActionGotoPage id="47596" processRef="38899"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -5791,7 +5798,7 @@ adjust-dateTime-to-timezone( $a)) ,
 								<children>
 									<PageXMLAttribute id="41213" name="name" mustExist="1" default="openweathermap.org"/>
 									<PageXMLAttribute id="41214" name="URL" mustExist="1" default="&apos;https://openweathermap.org/current&apos;" defValueIsXPath="1"/>
-									<PageXMLAttribute id="41215" name="key" mustExist="1" default="&apos;&apos;" defValueIsXPath="1"/>
+									<PageXMLAttribute id="41215" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 							<PageXMLElement id="41734" name="EventfulKey">
@@ -6614,6 +6621,7 @@ current-dateTime-no-TZ(),
 			<WorkflowPageRef id="38434" page="38127"/>
 			<WorkflowPageRef id="40840" page="40810"/>
 			<WorkflowPageRef id="38899" page="38877"/>
+			<WorkflowPageRef id="47593" page="39015"/>
 		</children>
 	</WorkflowRoot>
 	<GlobalVariables id="94">
