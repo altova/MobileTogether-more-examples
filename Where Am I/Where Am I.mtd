@@ -64,7 +64,7 @@
 																<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;false&quot; )" margin_x="$PERSISTENT/Root/margFactor" name="Button4" text="Start GPS" textSize_x="$PERSISTENT/Root/userSettings/textSize + 2"/>
 																<controlActions id="47209">
 																	<children>
-																		<DesignActionGeolocationStartStop id="47212" provider="gps" simulationfilename="&quot;GeolocationSimulation.xml&quot;"/>
+																		<DesignActionGeolocationStartStop id="47212" simulationfilename="&quot;GeolocationSimulation.xml&quot;"/>
 																		<DesignActionUpdateNode id="47213" updAt="$Temp/Root/GPS_State" resOf="&quot;true&quot;"/>
 																	</children>
 																</controlActions>
@@ -1486,8 +1486,26 @@ Paste your key into the Settings page&apos;">
 																						<DesignActionConditionFalse id="46302">
 																							<children>
 																								<DesignActionGroupRef id="46303" groupRef="37283"/>
-																								<DesignActionReloadData id="46304" reloadRef="41218"/>
-																								<DesignActionGotoSubpage id="46305" loadSubpageMsg="&apos;Getting current conditions&apos;" showCloseSubpageMsg="0" pageRef="41497"/>
+																								<DesignActionReloadData id="46304" onError="continue" reloadRef="41218">
+																									<children>
+																										<DesignActionOnSuccess id="47992">
+																											<children>
+																												<DesignActionGotoSubpage id="47990" loadSubpageMsg="&apos;Getting current conditions&apos;" showCloseSubpageMsg="0" pageRef="41497"/>
+																											</children>
+																										</DesignActionOnSuccess>
+																										<DesignActionOnError id="47993">
+																											<children>
+																												<DesignActionMessageBox id="47988" msgBoxMsg="&quot;Can&apos;t get any information right now.
+
+Please try again later.&quot;">
+																													<children>
+																														<DesignActionMessageBoxButton id="47989"/>
+																													</children>
+																												</DesignActionMessageBox>
+																											</children>
+																										</DesignActionOnError>
+																									</children>
+																								</DesignActionReloadData>
 																							</children>
 																						</DesignActionConditionFalse>
 																					</children>
@@ -3700,7 +3718,7 @@ fields/state
 										<ImgFileSettings id="44076" url="tool_icons\my_home.png" createDirs="0" embeddedImage="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"/>
 									</DesignImage>
 									<DesignLabel id="44077">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label6" text="Current Weather" textColor="white" textSize="medium" weight="1"/>
+										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label6" text="Weather" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="44079">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label19" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
@@ -3714,21 +3732,213 @@ fields/state
 							</DesignTableRow>
 						</children>
 					</DesignTable>
-					<DesignTable id="41679">
-						<style name="Table2" tablePadding="0"/>
+					<DesignTable id="47883">
+						<style name="Table8" tablePadding="0"/>
 						<children>
-							<DesignTableCol id="41680"/>
-							<DesignTableRow id="41685">
+							<DesignTableCol id="47884"/>
+							<DesignTableRow id="47885">
 								<children>
-									<DesignLabel id="41676" pageXML="41227">
+									<DesignLabel id="47886" pageXML="41227">
 										<style align="center" marginTop_x="$PERSISTENT/Root/margFactor * 2" multiLine="1" name="Label4" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
 						</children>
 					</DesignTable>
+					<DesignTable id="47648">
+						<style addDelPossible="0" name="Table9" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="47649"/>
+							<DesignTableRow id="47937">
+								<children>
+									<DesignVSpace id="47938">
+										<style name="Space11"/>
+									</DesignVSpace>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="47654">
+								<children>
+									<DesignLabel id="47933">
+										<style align="center" multiLine="1" name="Label31" text_x="if ($PERSISTENT/Root/userSettings/weather_type = &apos;current&apos;)
+then &apos;Current conditions&apos;
+else &apos;Future prediction&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="47892">
+						<style name="Table10" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="47893"/>
+							<DesignTableCol id="47894">
+								<style colWidth="40%"/>
+							</DesignTableCol>
+							<DesignTableCol id="47895"/>
+							<DesignTableCol id="47896">
+								<style colWidth="40%"/>
+							</DesignTableCol>
+							<DesignTableCol id="47897"/>
+							<DesignTableRow id="47898">
+								<children>
+									<DesignVSpace id="47899">
+										<style colSpan="5" name="Space15"/>
+									</DesignVSpace>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="47901">
+								<children>
+									<DesignTableCellEmpty id="47902"/>
+									<DesignButton id="47903">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="$PERSISTENT/Root/w_num &gt; 0" name="Button1" text="&lt;"/>
+										<controlActions id="47904">
+											<children>
+												<DesignActionCondition id="47907" condition="$PERSISTENT/Root/w_num = 2">
+													<children>
+														<DesignActionConditionTrue id="47908">
+															<children>
+																<DesignActionUpdateNode id="47909" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+																<DesignActionUpdateNode id="47926" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="47910">
+															<children>
+																<DesignActionCondition id="47956" condition="$PERSISTENT/Root/w_num = 0">
+																	<children>
+																		<DesignActionConditionTrue id="47957">
+																			<children>
+																				<DesignActionUpdateNode id="47958" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
+																				<DesignActionUpdateNode id="47959" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																		<DesignActionConditionFalse id="47960">
+																			<children>
+																				<DesignActionCondition id="47961" condition="$PERSISTENT/Root/w_num = 8">
+																					<children>
+																						<DesignActionConditionTrue id="47962">
+																							<children>
+																								<DesignActionUpdateNode id="47963" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
+																							</children>
+																						</DesignActionConditionTrue>
+																						<DesignActionConditionFalse id="47965">
+																							<children>
+																								<DesignActionCondition id="47966" condition="$PERSISTENT/Root/w_num = 5">
+																									<children>
+																										<DesignActionConditionTrue id="47967">
+																											<children>
+																												<DesignActionUpdateNode id="47968" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
+																											</children>
+																										</DesignActionConditionTrue>
+																										<DesignActionConditionFalse id="47969">
+																											<children>
+																												<DesignActionCondition id="47978" condition="$PERSISTENT/Root/w_num = 3">
+																													<children>
+																														<DesignActionConditionTrue id="47979">
+																															<children>
+																																<DesignActionUpdateNode id="47977" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
+																															</children>
+																														</DesignActionConditionTrue>
+																													</children>
+																												</DesignActionCondition>
+																											</children>
+																										</DesignActionConditionFalse>
+																									</children>
+																								</DesignActionCondition>
+																							</children>
+																						</DesignActionConditionFalse>
+																					</children>
+																				</DesignActionCondition>
+																			</children>
+																		</DesignActionConditionFalse>
+																	</children>
+																</DesignActionCondition>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignVSpace id="47912">
+										<style name="Space7"/>
+									</DesignVSpace>
+									<DesignButton id="47914">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" name="Button2" text="&gt;"/>
+										<controlActions id="47915">
+											<children>
+												<DesignActionCondition id="47918" condition="$PERSISTENT/Root/w_num = 0">
+													<children>
+														<DesignActionConditionTrue id="47919">
+															<children>
+																<DesignActionUpdateNode id="47920" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
+																<DesignActionUpdateNode id="47927" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="47921">
+															<children>
+																<DesignActionCondition id="47940" condition="$PERSISTENT/Root/w_num = 8">
+																	<children>
+																		<DesignActionConditionTrue id="47941">
+																			<children>
+																				<DesignActionUpdateNode id="47942" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+																				<DesignActionUpdateNode id="47943" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																		<DesignActionConditionFalse id="47944">
+																			<children>
+																				<DesignActionCondition id="47945" condition="$PERSISTENT/Root/w_num = 5">
+																					<children>
+																						<DesignActionConditionTrue id="47946">
+																							<children>
+																								<DesignActionUpdateNode id="47947" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
+																							</children>
+																						</DesignActionConditionTrue>
+																						<DesignActionConditionFalse id="47948">
+																							<children>
+																								<DesignActionCondition id="47949" condition="$PERSISTENT/Root/w_num = 3">
+																									<children>
+																										<DesignActionConditionTrue id="47950">
+																											<children>
+																												<DesignActionUpdateNode id="47951" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
+																											</children>
+																										</DesignActionConditionTrue>
+																										<DesignActionConditionFalse id="47952">
+																											<children>
+																												<DesignActionCondition id="47953" condition="$PERSISTENT/Root/w_num = 2">
+																													<children>
+																														<DesignActionConditionTrue id="47954">
+																															<children>
+																																<DesignActionUpdateNode id="47955" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
+																															</children>
+																														</DesignActionConditionTrue>
+																													</children>
+																												</DesignActionCondition>
+																											</children>
+																										</DesignActionConditionFalse>
+																									</children>
+																								</DesignActionCondition>
+																							</children>
+																						</DesignActionConditionFalse>
+																					</children>
+																				</DesignActionCondition>
+																			</children>
+																		</DesignActionConditionFalse>
+																	</children>
+																</DesignActionCondition>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="47923"/>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
 					<DesignTable id="41577">
-						<style addDelPossible="0" name="Table1"/>
+						<style addDelPossible="0" name="Table1" visible_x="$PERSISTENT/Root/userSettings/weather_type = &apos;current&apos;"/>
 						<children>
 							<DesignTableCol id="41578"/>
 							<DesignTableScrollableArea id="41598">
@@ -3743,6 +3953,21 @@ fields/state
 														<style colWidth="40%"/>
 													</DesignTableCol>
 													<DesignTableCol id="41534"/>
+													<DesignTableRow id="47691">
+														<children>
+															<DesignVSpace id="47683">
+																<style name="Space5"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47685"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47692">
+														<children>
+															<DesignLabel id="47686">
+																<style colSpan="2" multiLine="1" name="Label27" text="Latest recorded measurements:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
 													<DesignTableRow id="41668">
 														<children>
 															<DesignVSpace id="41669">
@@ -3842,21 +4067,151 @@ else $HTTP1_current_weather/current/precipitation/@mode" textSize_x="$PERSISTENT
 															</DesignLabel>
 														</children>
 													</DesignTableRow>
-													<DesignTableRow id="41664">
+												</children>
+											</DesignTable>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignTable id="47697">
+						<style addDelPossible="0" name="Table4" visible_x="$PERSISTENT/Root/userSettings/weather_type != &apos;current&apos;"/>
+						<children>
+							<DesignTableCol id="47698"/>
+							<DesignTableScrollableArea id="47699">
+								<style maxTableY="RestScreenYAlways"/>
+								<children>
+									<DesignTableRow id="47700">
+										<children>
+											<DesignTable id="47701">
+												<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table6" tablePadding="0"/>
+												<children>
+													<DesignTableCol id="47702">
+														<style colWidth="40%"/>
+													</DesignTableCol>
+													<DesignTableCol id="47703"/>
+													<DesignTableRow id="47704">
 														<children>
-															<DesignVSpace id="41665">
-																<style name="Space5"/>
+															<DesignVSpace id="47705">
+																<style name="Space8"/>
 															</DesignVSpace>
-															<DesignTableCellEmpty id="41667"/>
+															<DesignTableCellEmpty id="47707"/>
 														</children>
 													</DesignTableRow>
-													<DesignTableRow id="41641">
+													<DesignTableRow id="47708">
 														<children>
-															<DesignLabel id="41636">
-																<style multiLine="1" name="Label27" text="Updated:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															<DesignLabel id="47709">
+																<style multiLine="1" name="Label29" text="Forecast:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 															</DesignLabel>
-															<DesignLabel id="41639">
-																<style dtFormat="[M01]/[D01]/[Y0001] at [H01]:[m01] [z]" multiLine="1" name="Label28" text_x="AdjustTimezone($HTTP1_current_weather/current/lastupdate/@value)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															<DesignLabel id="47711">
+																<style dtFormat="[M01]/[D01]/[Y0001] at [H01]:[m01] [z]" multiLine="1" name="Label30" text_x="if ($PERSISTENT/Root/w_num = 2 ) then &apos;3 hours from now&apos; else
+if ($PERSISTENT/Root/w_num = 3 ) then &apos;6 hours from now&apos; else
+if ($PERSISTENT/Root/w_num = 5 ) then &apos;12 hours from now&apos; else
+&apos;24 hours from now&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47713">
+														<children>
+															<DesignVSpace id="47714">
+																<style name="Space9"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47716"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47717">
+														<children>
+															<DesignLabel id="47718">
+																<style multiLine="1" name="Label21" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+															<DesignLabel id="47720">
+																<style multiLine="1" name="Label26" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
+
+
+concat( round( ((($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/temperature/@value - 273.15) *1.8) + 32 )
+,  0 ) ,
+ &apos; degrees f&apos; )
+else 
+concat( round( ($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/temperature/@value  - 273.15),  0 ) ,
+ &apos; degrees C&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47722">
+														<children>
+															<DesignVSpace id="47723">
+																<style name="Space10"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47725"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47735">
+														<children>
+															<DesignLabel id="47736">
+																<style multiLine="1" name="Label33" text="Humidity:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+															<DesignLabel id="47738">
+																<style multiLine="1" name="Label34" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/humidity/@value,
+$HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/humidity/@unit)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47740">
+														<children>
+															<DesignVSpace id="47741">
+																<style name="Space12"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47743"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47744">
+														<children>
+															<DesignLabel id="47745">
+																<style multiLine="1" name="Label35" text="Wind:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+															<DesignLabel id="47747">
+																<style multiLine="1" name="Label36" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/windSpeed/@name, &apos; &apos;,
+ $HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/windDirection/@code)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47749">
+														<children>
+															<DesignVSpace id="47750">
+																<style name="Space13"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47752"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47753">
+														<children>
+															<DesignLabel id="47754">
+																<style multiLine="1" name="Label37" text="Sky:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+															<DesignLabel id="47756">
+																<style multiLine="1" name="Label38" text_x="$HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/clouds/@value" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47758">
+														<children>
+															<DesignVSpace id="47759">
+																<style name="Space14"/>
+															</DesignVSpace>
+															<DesignTableCellEmpty id="47761"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="47762">
+														<children>
+															<DesignLabel id="47763">
+																<style multiLine="1" name="Label39" text="Precipitation:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+															</DesignLabel>
+															<DesignLabel id="47765">
+																<style multiLine="1" name="Label40" text_x="if ( exists($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/precipitation/@type)) 
+then 
+$HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/precipitation/@type
+else &apos;none&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 															</DesignLabel>
 														</children>
 													</DesignTableRow>
@@ -3869,6 +4224,13 @@ else $HTTP1_current_weather/current/precipitation/@mode" textSize_x="$PERSISTENT
 						</children>
 					</DesignTable>
 				</children>
+				<onPageLoadActions id="514">
+					<children>
+						<DesignActionReloadData id="47602" reloadRef="47600"/>
+						<DesignActionUpdateNode id="47646" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
+						<DesignActionUpdateNode id="47647" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+					</children>
+				</onPageLoadActions>
 				<onBackButtonActions id="675">
 					<children>
 						<DesignActionReturnFromSubpage id="45423"/>
@@ -3876,6 +4238,8 @@ else $HTTP1_current_weather/current/precipitation/@mode" textSize_x="$PERSISTENT
 				</onBackButtonActions>
 				<xmlRoots>
 					<PageXMLRootRef id="41519" refXMLRoot="41218"/>
+					<PageXMLRootRef id="47598" refXMLRoot="36746"/>
+					<PageXMLRootRef id="47599" refXMLRoot="47600"/>
 				</xmlRoots>
 			</DesignPage>
 			<DesignPage id="41991" subPage="1" IsNeedsTableRestOfScreenHandling="1">
@@ -4750,7 +5114,7 @@ This will replace your existing API Key!&apos;">
 																		<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;false&quot; )" margin_x="$PERSISTENT/Root/margFactor" name="Button5" text="Start GPS" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 																		<controlActions id="45895">
 																			<children>
-																				<DesignActionGeolocationStartStop id="45898" provider="gps" simulationfilename="&quot;GeolocationSimulation.xml&quot;"/>
+																				<DesignActionGeolocationStartStop id="45898" simulationfilename="&quot;GeolocationSimulation.xml&quot;"/>
 																				<DesignActionUpdateNode id="45899" updAt="$Temp/Root/GPS_State" resOf="&quot;true&quot;"/>
 																			</children>
 																		</controlActions>
@@ -5291,8 +5655,26 @@ Paste your key into the Settings page&apos;">
 																						<DesignActionConditionFalse id="45215">
 																							<children>
 																								<DesignActionGroupRef id="45216" groupRef="42987"/>
-																								<DesignActionReloadData id="45217" reloadRef="41218"/>
-																								<DesignActionGotoSubpage id="45424" loadSubpageMsg="&apos;Checking weather conditions&apos;" showCloseSubpageMsg="0" pageRef="41497"/>
+																								<DesignActionReloadData id="45217" onError="continue" reloadRef="41218">
+																									<children>
+																										<DesignActionOnSuccess id="47986">
+																											<children>
+																												<DesignActionGotoSubpage id="47982" loadSubpageMsg="&apos;Checking weather conditions&apos;" showCloseSubpageMsg="0" pageRef="41497"/>
+																											</children>
+																										</DesignActionOnSuccess>
+																										<DesignActionOnError id="47987">
+																											<children>
+																												<DesignActionMessageBox id="47984" msgBoxMsg="&quot;Can&apos;t get any information right now.
+
+Please try again later.&quot;">
+																													<children>
+																														<DesignActionMessageBoxButton id="47985"/>
+																													</children>
+																												</DesignActionMessageBox>
+																											</children>
+																										</DesignActionOnError>
+																									</children>
+																								</DesignActionReloadData>
 																							</children>
 																						</DesignActionConditionFalse>
 																					</children>
@@ -5340,8 +5722,26 @@ Paste your key into the Settings page&apos;">
 																						<DesignActionConditionFalse id="45234">
 																							<children>
 																								<DesignActionGroupRef id="45235" groupRef="42987"/>
-																								<DesignActionReloadData id="45236" reloadRef="41732"/>
-																								<DesignActionGotoSubpage id="45432" loadSubpageMsg="&apos;Checking event schedule&apos;" showCloseSubpageMsg="0" pageRef="41991"/>
+																								<DesignActionReloadData id="45236" onError="continue" reloadRef="41732">
+																									<children>
+																										<DesignActionOnSuccess id="47998">
+																											<children>
+																												<DesignActionGotoSubpage id="47994" loadSubpageMsg="&apos;Checking event schedule&apos;" showCloseSubpageMsg="0" pageRef="41991"/>
+																											</children>
+																										</DesignActionOnSuccess>
+																										<DesignActionOnError id="47999">
+																											<children>
+																												<DesignActionMessageBox id="47996" msgBoxMsg="&quot;Can&apos;t get any information right now.
+
+Please try again later.&quot;">
+																													<children>
+																														<DesignActionMessageBoxButton id="47997"/>
+																													</children>
+																												</DesignActionMessageBox>
+																											</children>
+																										</DesignActionOnError>
+																									</children>
+																								</DesignActionReloadData>
 																							</children>
 																						</DesignActionConditionFalse>
 																					</children>
@@ -5777,6 +6177,7 @@ adjust-dateTime-to-timezone( $a)) ,
 					<PageXMLElement id="47086" name="spcHeight" mustExist="1" default="round($MT_CanvasY * 0.035, 0)" defValueIsXPath="1"/>
 					<PageXMLElement id="47376" name="imgWidth" mustExist="1" default="if ( round($MT_CanvasX * 0.9, 0 ) &gt; 640 ) then 640 else round($MT_CanvasX * 0.9, 0 )" defValueIsXPath="1"/>
 					<PageXMLElement id="47375" name="imgHeight" mustExist="1" default="if ( round($MT_CanvasX * 0.9, 0 ) &gt; 640 ) then 480 else round($MT_CanvasX * 0.6, 0 )" defValueIsXPath="1"/>
+					<PageXMLElement id="47644" name="w_num" mustExist="1" default="1"/>
 					<PageXMLElement id="39027" name="api_data">
 						<children>
 							<PageXMLElement id="39014" name="APIswitch" mustExist="1" default="1"/>
@@ -5835,6 +6236,7 @@ adjust-dateTime-to-timezone( $a)) ,
 							<PageXMLElement id="40488" name="buttonSound" mustExist="1" default="1"/>
 							<PageXMLElement id="40508" name="soundShort" mustExist="1" default="KeyClickTick"/>
 							<PageXMLElement id="40509" name="soundLong" mustExist="1" default="KeyClickTock"/>
+							<PageXMLElement id="47645" name="weather_type" mustExist="1" default="current"/>
 						</children>
 					</PageXMLElement>
 				</children>
@@ -6607,6 +7009,116 @@ current-dateTime-no-TZ(),
 					</PageXMLElement>
 				</children>
 			</PageXMLRootXML>
+			<PageXMLRootHttp id="47600" name="HTTP1_weather_forecast" loadBeforePageOpen="never">
+				<children>
+					<PageXMLElement id="47795" name="weatherdata">
+						<children>
+							<PageXMLElement id="47796" name="location">
+								<children>
+									<PageXMLElement id="47797" name="name"/>
+									<PageXMLElement id="47798" name="type"/>
+									<PageXMLElement id="47799" name="country"/>
+									<PageXMLElement id="47800" name="timezone"/>
+									<PageXMLElement id="47801" name="location">
+										<children>
+											<PageXMLAttribute id="47802" name="altitude"/>
+											<PageXMLAttribute id="47803" name="latitude"/>
+											<PageXMLAttribute id="47804" name="longitude"/>
+											<PageXMLAttribute id="47805" name="geobase"/>
+											<PageXMLAttribute id="47806" name="geobaseid"/>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="47807" name="credit"/>
+							<PageXMLElement id="47808" name="meta">
+								<children>
+									<PageXMLElement id="47809" name="lastupdate"/>
+									<PageXMLElement id="47810" name="calctime"/>
+									<PageXMLElement id="47811" name="nextupdate"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="47812" name="sun">
+								<children>
+									<PageXMLAttribute id="47813" name="rise"/>
+									<PageXMLAttribute id="47814" name="set"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="47815" name="forecast">
+								<children>
+									<PageXMLElement id="47816" name="time">
+										<children>
+											<PageXMLAttribute id="47817" name="from"/>
+											<PageXMLAttribute id="47818" name="to"/>
+											<PageXMLElement id="47819" name="symbol">
+												<children>
+													<PageXMLAttribute id="47820" name="number"/>
+													<PageXMLAttribute id="47821" name="name"/>
+													<PageXMLAttribute id="47822" name="var"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47823" name="precipitation">
+												<children>
+													<PageXMLAttribute id="47824" name="unit"/>
+													<PageXMLAttribute id="47825" name="value"/>
+													<PageXMLAttribute id="47826" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47827" name="windDirection">
+												<children>
+													<PageXMLAttribute id="47828" name="deg"/>
+													<PageXMLAttribute id="47829" name="code"/>
+													<PageXMLAttribute id="47830" name="name"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47831" name="windSpeed">
+												<children>
+													<PageXMLAttribute id="47832" name="mps"/>
+													<PageXMLAttribute id="47833" name="name"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47834" name="temperature">
+												<children>
+													<PageXMLAttribute id="47835" name="unit"/>
+													<PageXMLAttribute id="47836" name="value"/>
+													<PageXMLAttribute id="47837" name="min"/>
+													<PageXMLAttribute id="47838" name="max"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47839" name="pressure">
+												<children>
+													<PageXMLAttribute id="47840" name="unit"/>
+													<PageXMLAttribute id="47841" name="value"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47842" name="humidity">
+												<children>
+													<PageXMLAttribute id="47843" name="value"/>
+													<PageXMLAttribute id="47844" name="unit"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="47845" name="clouds">
+												<children>
+													<PageXMLAttribute id="47846" name="value"/>
+													<PageXMLAttribute id="47847" name="all"/>
+													<PageXMLAttribute id="47848" name="unit"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<HttpSettings so="1" id="47601" url_so="http://api.openweathermap.org/data/2.5/forecast?lat={lat}&amp;lon={lon}&amp;mode=xml&amp;appid={key}" type_so="REST" returnsNewXML_so="1">
+					<Params>
+						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param name="key" type="string" value="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
+					</Params>
+				</HttpSettings>
+			</PageXMLRootHttp>
 		</children>
 	</PageXMLRoots>
 	<WorkflowRoot id="58">
