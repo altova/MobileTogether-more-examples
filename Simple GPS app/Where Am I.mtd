@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Where Am I" deploymentDescription_so="Retrieve your current latitude and longitude and visualize your location" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="14">
+		<style askCancelWorkflow="1" timeoutClient="30" timeoutDataRetrieval="20" workflowIcon="globe.png"/>
+		<children>
+			<DesignPage id="15">
+				<style name="Where Am I" showTitleBar="0"/>
+				<children>
+					<DesignTable id="428">
+						<style name="Table5"/>
+						<children>
+							<DesignTableCol id="429">
+								<style colWidth="10%"/>
+							</DesignTableCol>
+							<DesignTableCol id="430"/>
+							<DesignTableRow id="431">
+								<children>
+									<DesignButton id="418">
+										<style align="left" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" name="Button7" text="&lt;" textSize="medium" visible_x="not($MT_Android)" weight="1"/>
+										<controlActions id="419">
+											<children>
+												<DesignActionMessageBox id="422" msgBoxMsg="&apos;Do you really want to exit?&apos;">
+													<children>
+														<DesignActionMessageBoxButton id="423">
+															<children>
+																<DesignActionGeolocationStartStop id="424" start="0"/>
+																<DesignActionWorkflowExecution id="425" cancel="1"/>
+															</children>
+														</DesignActionMessageBoxButton>
+													</children>
+												</DesignActionMessageBox>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignLabel id="426">
+										<style align="center" name="Label1" text="Where am I?  " textSize="large" visible="1" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="20">
+						<style name="Table1"/>
+						<children>
+							<DesignTableCol id="21"/>
+							<DesignTableCol id="22"/>
+							<DesignTableRow id="23">
+								<children>
+									<DesignButton id="11">
+										<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;false&quot; )" marginBottom="4px" marginLeft="4px" marginRight="4px" marginTop="4px" name="Button2" text="Start GPS"/>
+										<controlActions id="24">
+											<children>
+												<DesignActionCtrlClick id="25">
+													<children>
+														<DesignActionGeolocationStartStop id="26" simulationfilename="&quot;GeolocationSimulation.xml&quot;"/>
+														<DesignActionUpdateNode id="182" updAt="$Temp/Root/GPS_State" resOf="&quot;true&quot;"/>
+													</children>
+												</DesignActionCtrlClick>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignButton id="12">
+										<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $Temp/Root/GPS_State = &quot;true&quot; )" marginBottom="4px" marginLeft="4px" marginRight="4px" marginTop="4px" name="Button3" text="Stop GPS"/>
+										<controlActions id="28">
+											<children>
+												<DesignActionCtrlClick id="29">
+													<children>
+														<DesignActionGeolocationStartStop id="30" start="0"/>
+														<DesignActionUpdateNode id="180" updAt="$Temp/Root/GPS_State" resOf="&quot;false&quot;"/>
+													</children>
+												</DesignActionCtrlClick>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="409">
+								<children>
+									<DesignButton id="401">
+										<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" colSpan="2" enabled_x="( $Temp/Root/GPS_State = &quot;true&quot; )" marginBottom="4px" marginLeft="4px" marginRight="4px" marginTop="4px" name="Button1" text="Get GPS"/>
+										<controlActions id="402">
+											<children>
+												<DesignActionGeolocationRead id="405" readAction="LatLngAddress"/>
+												<DesignActionReloadData id="406" actionEnabled="0"/>
+												<DesignActionUpdateNode id="407" actionEnabled="0" updAt="$Temp/Root/Date" resOf="reverse( for $dt in $EarthAssets/json/results/item/date return substring-before( $dt, &quot;T&quot; ) )[1]"/>
+												<DesignActionReloadData id="408" actionEnabled="0"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="1">
+						<style name="Table2"/>
+						<children>
+							<DesignTableCol id="2">
+								<style colWidth="30%"/>
+							</DesignTableCol>
+							<DesignTableCol id="3"/>
+							<DesignTableRow id="4">
+								<children>
+									<DesignLabel id="5">
+										<style name="Label2" text="Lat:"/>
+									</DesignLabel>
+									<DesignLabel id="219" pageXML="70">
+										<style name="Label6"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="7">
+								<children>
+									<DesignLabel id="8">
+										<style name="Label3" text="Lon:"/>
+									</DesignLabel>
+									<DesignLabel id="220" pageXML="71">
+										<style name="Label7"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="453">
+						<style name="Table4" visible_x="not( $MT_GEOLOCATION = &quot;&quot; )"/>
+						<children>
+							<DesignTableCol id="512">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableCol id="489"/>
+							<DesignTableCol id="490">
+								<style colWidth="wrap_content"/>
+							</DesignTableCol>
+							<DesignTableRow id="456">
+								<children>
+									<DesignButton id="434">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" colSpan="3" marginBottom="8px" marginLeft="4px" marginRight="4px" marginTop="8px" name="Button5" text="Map View"/>
+										<controlActions id="435">
+											<children>
+												<DesignActionOpenUrlOrFile id="438" actionEnabled="0" url="concat(&apos;https://www.google.com/maps/@&apos;,$MT_GEOLOCATION/Root/Location/@Latitude,&apos;,&apos;,$MT_GEOLOCATION/Root/Location/@Longitude,&apos;z&apos;)"/>
+												<DesignActionShowGeolocationInMap id="440" location="$MT_GEOLOCATION/Root/Location/@Geolocation" zoom="10"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="499">
+								<children>
+									<DesignLabel id="496">
+										<style align="center" colSpan="3" marginBottom="8px" marginTop="8px" multiLine="1" name="Label4" text="Google Satellite View"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="471">
+								<children>
+									<DesignLabel id="515">
+										<style name="Label5" text="Zoom: "/>
+									</DesignLabel>
+									<DesignHSlider id="510" pageXML="474">
+										<style marginLeft="4px" marginRight="4px" maxSliderValue="20" minSliderValue="1" name="Zoom Slider"/>
+									</DesignHSlider>
+									<DesignButton id="482">
+										<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" name="Button4" text="  Go  "/>
+										<controlActions id="495">
+											<children>
+												<DesignActionCondition id="503" condition="$PERSISTENT/Root/apiKey = &apos;xxxxxxxxxxxx&apos;">
+													<children>
+														<DesignActionConditionTrue id="504">
+															<children>
+																<DesignActionMessageBox id="508" msgBoxTitle="&apos;To Activate This Feature:&apos;" msgBoxMsg="&apos;Request an API key for Google maps at https://developers.google.com/maps/documentation/embed/get-api-key
+
+In the MobileTogether Designer paste your key into the Page Source $PERSISTENT/Root/apiKey, or paste it into the Edit Field on the Intro page&apos;">
+																	<children>
+																		<DesignActionMessageBoxButton id="509"/>
+																	</children>
+																</DesignActionMessageBox>
+															</children>
+														</DesignActionConditionTrue>
+														<DesignActionConditionFalse id="505">
+															<children>
+																<DesignActionOpenUrlOrFile id="506" url="concat(&apos;https://maps.googleapis.com/maps/api/staticmap?center=&apos;,
+$MT_GEOLOCATION/Root/Location/@Latitude,&apos;,&apos;,$MT_GEOLOCATION/Root/Location/@Longitude,
+&apos;&amp;zoom=&apos;,$PERSISTENT/Root/zoom,
+&apos;&amp;size=&apos;,$MT_WindowWidth,&apos;x&apos;,$MT_WindowHeight,&apos;&amp;markers=color:blue&apos;,
+&apos;%7Csize:small%7C&apos;,$MT_GEOLOCATION/Root/Location/@Latitude,&apos;,&apos;,$MT_GEOLOCATION/Root/Location/@Longitude,
+&apos;&amp;maptype=satellite&amp;key=&apos;,$PERSISTENT/Root/apiKey)"/>
+															</children>
+														</DesignActionConditionFalse>
+													</children>
+												</DesignActionCondition>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+				<xmlRoots>
+					<PageXMLRootRef id="183" refXMLRoot="184"/>
+				</xmlRoots>
+			</DesignPage>
+			<DesignPage id="36389" IsNeedsTableRestOfScreenHandling="1">
+				<style name="Intro" showTitleBar="0"/>
+				<children>
+					<DesignLabel id="36374">
+						<style align="center" name="Label1" text="Where am I?" textSize="large" weight="1"/>
+					</DesignLabel>
+					<DesignTable id="36379">
+						<style addDelPossible="0" margin="4px" name="Table2"/>
+						<children>
+							<DesignTableCol id="36380"/>
+							<DesignTableScrollableArea id="36396">
+								<style maxTableY="RestScreenYMax"/>
+								<children>
+									<DesignTableRow id="36381">
+										<children>
+											<DesignLabel id="36377">
+												<style marginBottom="8px" marginLeft="4px" marginRight="4px" multiLine="1" name="Label2" text="This app demonstrates basic geolocation functionality, with buttons to start and stop GPS, labels to display captured latitude and longitude, interface to the client device default map application, and API to Google maps."/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36382">
+										<children>
+											<DesignLabel id="36388">
+												<style marginBottom="8px" marginLeft="4px" marginRight="4px" multiLine="1" name="Label3" text="You will need a Google Maps API key to unlock Google satellite views. If you have a key, you may paste it here:"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36384">
+										<children>
+											<DesignEditField id="36402" pageXML="502">
+												<style align="center" name="Edit Field1"/>
+											</DesignEditField>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignTable id="36419">
+						<style name="Table1"/>
+						<children>
+							<DesignTableCol id="36420"/>
+							<DesignTableRow id="36421">
+								<children>
+									<DesignCheckBox id="36422" pageXML="36416">
+										<style autoCorrectValue="0" cbRight="0" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
+									</DesignCheckBox>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignButton id="36424">
+						<style align="center" name="Launch Button" text="Next Page"/>
+						<controlActions id="36425">
+							<children>
+								<DesignActionGotoPage id="36428" showLoadToppageMsg="0" processRef="59"/>
+							</children>
+						</controlActions>
+					</DesignButton>
+				</children>
+				<onPageLoadActions id="36407">
+					<children>
+						<DesignActionCondition id="36430" condition="$PERSISTENT/Root/skipIntro = &apos;true&apos;">
+							<children>
+								<DesignActionConditionTrue id="36431">
+									<children>
+										<DesignActionGotoPage id="36432" showLoadToppageMsg="0" processRef="59"/>
+									</children>
+								</DesignActionConditionTrue>
+							</children>
+						</DesignActionCondition>
+						<DesignActionHideKeyboard id="36433"/>
+					</children>
+				</onPageLoadActions>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<PageXMLNamespaceRoot id="62">
+		<children>
+			<PageXMLNamespace id="63" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="64" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="65" name="Root">
+				<children>
+					<PageXMLElement id="474" name="zoom" mustExist="1" default="13"/>
+					<PageXMLElement id="502" name="apiKey" mustExist="1" default="xxxxxxxxxxxx"/>
+					<PageXMLElement id="36416" name="skipIntro" mustExist="1" default="false"/>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLPersistentRoot>
+	<PageXMLRootGeolocation id="66" name="MT_GEOLOCATION" readOnlyXML="1">
+		<children>
+			<PageXMLElement id="67" name="Root">
+				<children>
+					<PageXMLElement id="68" name="Location">
+						<children>
+							<PageXMLAttribute id="69" name="Provider"/>
+							<PageXMLAttribute id="70" name="Latitude"/>
+							<PageXMLAttribute id="71" name="Longitude"/>
+							<PageXMLAttribute id="72" name="Geolocation"/>
+							<PageXMLAttribute id="73" name="Altitude"/>
+							<PageXMLAttribute id="74" name="AccuracyVertical"/>
+							<PageXMLAttribute id="75" name="AccuracyHorizontal"/>
+							<PageXMLAttribute id="76" name="Speed"/>
+							<PageXMLAttribute id="77" name="Time"/>
+							<PageXMLAttribute id="78" name="MagneticHeading"/>
+						</children>
+					</PageXMLElement>
+					<PageXMLElement id="79" name="Address">
+						<children>
+							<PageXMLAttribute id="80" name="Locality"/>
+							<PageXMLAttribute id="81" name="SubLocality"/>
+							<PageXMLAttribute id="82" name="CountryName"/>
+							<PageXMLAttribute id="83" name="CountryCode"/>
+							<PageXMLAttribute id="84" name="PostalCode"/>
+							<PageXMLAttribute id="85" name="AdminArea"/>
+							<PageXMLAttribute id="86" name="SubAdminArea"/>
+							<PageXMLAttribute id="87" name="FeatureName"/>
+							<PageXMLAttribute id="88" name="Thoroughfare"/>
+							<PageXMLAttribute id="89" name="SubThoroughfare"/>
+							<PageXMLAttribute id="90" name="Phone"/>
+							<PageXMLAttribute id="91" name="Url"/>
+							<PageXMLAttribute id="92" name="Premises"/>
+							<PageXMLElement id="93" name="AddressLine"/>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLRootGeolocation>
+	<PageXMLRoots id="56">
+		<children>
+			<PageXMLRootXML id="184" name="Temp">
+				<children>
+					<PageXMLElement id="185" name="Root">
+						<children>
+							<PageXMLElement id="166" name="Date" mustExist="1"/>
+							<PageXMLElement id="167" name="ImageURL" mustExist="1"/>
+							<PageXMLElement id="186" name="GPS_State" mustExist="1" default="false"/>
+						</children>
+					</PageXMLElement>
+				</children>
+			</PageXMLRootXML>
+		</children>
+	</PageXMLRoots>
+	<WorkflowRoot id="58">
+		<children>
+			<WorkflowPageRef id="36415" page="36389"/>
+			<WorkflowPageRef id="59" page="15"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="94">
+		<children>
+			<GlobalVariable id="95" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="96" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="97" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="98" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="99" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="100" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="101" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="102" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="103" sysVar="MT_DPIX"/>
+			<GlobalVariable id="104" sysVar="MT_DPIY"/>
+			<GlobalVariable id="105" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="106" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="107" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="108" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="109" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="110" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="111" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="112" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="113" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="114" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="115" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="116" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="117" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="118" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="119" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="120" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="121" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="122" sysVar="MT_ControlName"/>
+			<GlobalVariable id="123" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="124" sysVar="MT_PageName"/>
+			<GlobalVariable id="125" sysVar="MT_UserName"/>
+			<GlobalVariable id="126" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="127" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="128" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="129" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="130" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="131" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="132" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="133" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="134" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="135" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="320" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="321" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="322" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="323" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="324" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="325" sysVar="MT_NFCAvailable"/>
+			<GlobalVariable id="326" sysVar="MT_IsEmbedded"/>
+		</children>
+	</GlobalVariables>
+	<CustomerAppSettings so="1" id="57"/>
+</MobileTogetherDesign>
