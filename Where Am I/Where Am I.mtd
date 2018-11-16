@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MobileTogetherDesign versionClient="58" versionServer="58" deploymentPath_so="/public/Where Am I" deploymentDescription_so="Retrieve your current latitude and longitude, visualize your location, search surrounding area, get weather, nearby events using colorful tool icons" deploymentGlobalResourceConfig_so="Default">
+<MobileTogetherDesign versionClient="59" versionServer="59" deploymentPath_so="/public/Where Am I" deploymentDescription_so="Retrieve your current latitude and longitude, visualize your location, search surrounding area, get weather, nearby events using colorful tool icons" deploymentGlobalResourceConfig_so="Default">
 	<DesignRoot id="14">
 		<style lightTheme="1" timeoutClient="30" timeoutDataRetrieval="20" workflowIcon="tool_icons\compass200.png"/>
 		<children>
@@ -352,7 +352,7 @@
 							<children>
 								<DesignActionConditionTrue id="48010">
 									<children>
-										<DesignActionLoadSaveFile id="48012" actionEnabled="0" needsServer="1" xmlRootRef="37041">
+										<DesignActionLoadSaveFile id="48012" actionEnabled="0" xmlRootRef="37041">
 											<FileSettings so="1" id="48013" url="gpx_example.xml" deployable_so="37062" createDirs="0"/>
 										</DesignActionLoadSaveFile>
 										<DesignActionReloadData id="48014" reloadRef="37041"/>
@@ -451,7 +451,7 @@
 							<DesignTableRow id="36421">
 								<children>
 									<DesignCheckBox id="36422" pageXML="36416">
-										<style autoCorrectValue="0" cbRight="0" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
+										<style autoCorrectValue="0" cbRight="0" checkedUnchecked="true 1 false" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
 									</DesignCheckBox>
 								</children>
 							</DesignTableRow>
@@ -566,14 +566,7 @@
 									<DesignLabel id="45336">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label8" text="Manual Entry" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="45338">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="45339">
-											<children>
-												<DesignActionGotoSubpage id="45342" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48240"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -1000,14 +993,7 @@ $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 									<DesignLabel id="45481">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label16" text="Where Was I?" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="45483">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label17" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="45484">
-											<children>
-												<DesignActionGotoSubpage id="45487" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48241"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -1734,14 +1720,7 @@ Paste your key into the Settings page&apos;">
 									<DesignLabel id="44307">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label3" text="Search Nearby" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="44309">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="44310">
-											<children>
-												<DesignActionGotoSubpage id="44313" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48242"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -2297,14 +2276,7 @@ string-join( $userLocation/Root/Address/AddressLine, &apos;
 									<DesignLabel id="43535">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label4" text="Search Results" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="43537">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="43538">
-											<children>
-												<DesignActionGotoSubpage id="43541" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48243"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -2611,7 +2583,7 @@ fields/state
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label1" text="User Settings" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
 									<DesignLabel id="43398">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
+										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" visible="0" weight="1"/>
 										<controlActions id="43399">
 											<children>
 												<DesignActionGotoSubpage id="43402" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
@@ -2635,6 +2607,39 @@ fields/state
 							</DesignTableRow>
 						</children>
 						<appliedVar ref="105"/>
+					</DesignTable>
+					<DesignTable id="48081">
+						<style marginTop_x="$PERSISTENT/Root/margFactor * 4" name="Table13" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="48082">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="48083"/>
+							<DesignTableCol id="48084">
+								<style colWidth="30%"/>
+							</DesignTableCol>
+							<DesignTableCol id="48085">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableRow id="48086">
+								<children>
+									<DesignTableCellEmpty id="48087"/>
+									<DesignLabel id="48088">
+										<style align="left" marginBottom_x="$PERSISTENT/Root/margFactor * 4" multiLine="1" name="Label10" text="Application text size:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+									<DesignButton id="48090">
+										<style backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" multiLine="1" name="Button1" text="Adjust" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+										<controlActions id="48091">
+											<children>
+												<DesignActionGotoSubpage id="48094" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="48097"/>
+								</children>
+							</DesignTableRow>
+						</children>
+						<appliedVar ref="106"/>
 					</DesignTable>
 					<DesignTable id="43471">
 						<style name="Table9" tablePadding="0"/>
@@ -2667,11 +2672,11 @@ fields/state
 									<DesignTableCellEmpty id="43191">
 										<style valign="middle"/>
 									</DesignTableCellEmpty>
-									<DesignRadioButton id="38919" pageXML="38932" checkedValues="m">
-										<style name="Radio Button1" text=" miles" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									<DesignRadioButton id="38919" pageXML="38932">
+										<style checked="m" name="Radio Button1" text=" miles" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
 									</DesignRadioButton>
-									<DesignRadioButton id="38921" pageXML="38932" checkedValues="k">
-										<style name="Radio Button2" text=" kilometers" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									<DesignRadioButton id="38921" pageXML="38932">
+										<style checked="k" name="Radio Button2" text=" kilometers" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
 									</DesignRadioButton>
 								</children>
 							</DesignTableRow>
@@ -2691,11 +2696,11 @@ fields/state
 									<DesignTableCellEmpty id="47584">
 										<style valign="middle"/>
 									</DesignTableCellEmpty>
-									<DesignRadioButton id="47585" pageXML="47589" checkedValues="f">
-										<style name="Radio Button3" text=" fahrenheit" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									<DesignRadioButton id="47585" pageXML="47589">
+										<style checked="f" name="Radio Button3" text=" fahrenheit" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
 									</DesignRadioButton>
-									<DesignRadioButton id="47587" pageXML="47589" checkedValues="c">
-										<style name="Radio Button4" text=" celsius" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
+									<DesignRadioButton id="47587" pageXML="47589">
+										<style checked="c" name="Radio Button4" text=" celsius" textSize_x="$PERSISTENT/Root/userSettings/textSize" valign="middle"/>
 									</DesignRadioButton>
 								</children>
 							</DesignTableRow>
@@ -2772,7 +2777,7 @@ fields/state
 										<controlActions id="40167">
 											<children>
 												<DesignActionUpdateNode id="40170" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="1"/>
-												<DesignActionGotoSubpage id="48000" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015"/>
+												<DesignActionGotoSubpage id="48000" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="&apos;80%&apos;" modalLandscapeDialogWidthXPath="&apos;80%&apos;"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -2790,7 +2795,7 @@ fields/state
 										<controlActions id="40192">
 											<children>
 												<DesignActionUpdateNode id="40195" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="2"/>
-												<DesignActionGotoSubpage id="48002" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015"/>
+												<DesignActionGotoSubpage id="48002" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="&apos;80%&apos;"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -2808,7 +2813,7 @@ fields/state
 										<controlActions id="42247">
 											<children>
 												<DesignActionUpdateNode id="42250" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="3"/>
-												<DesignActionGotoSubpage id="48004" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015"/>
+												<DesignActionGotoSubpage id="48004" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="&apos;80%&apos;"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -2826,7 +2831,7 @@ fields/state
 										<controlActions id="42255">
 											<children>
 												<DesignActionUpdateNode id="42258" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="4"/>
-												<DesignActionGotoSubpage id="48006" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015"/>
+												<DesignActionGotoSubpage id="48006" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="&apos;80%&apos;"/>
 											</children>
 										</controlActions>
 									</DesignButton>
@@ -2852,8 +2857,8 @@ fields/state
 									<DesignLabel id="40475">
 										<style align="left" multiLine="1" name="Label7" text="Tool Icon Sound Effects:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									</DesignLabel>
-									<DesignSwitch id="40481" pageXML="40487" checkedValues="1" uncheckedValue="0">
-										<style align="center" name="Switch1" toggleOffText="Off" toggleOnText="On"/>
+									<DesignSwitch id="40481" pageXML="40487">
+										<style align="center" checkedUnchecked="1 0" name="Switch1" toggleOffText="Off" toggleOnText="On"/>
 									</DesignSwitch>
 								</children>
 							</DesignTableRow>
@@ -2899,7 +2904,7 @@ fields/state
 				<style name="API Key Update" showTitleBar="0"/>
 				<children>
 					<DesignTable id="39034">
-						<style margin_x="$PERSISTENT/Root/margFactor" name="Table1" tablePadding="0"/>
+						<style margin_x="$PERSISTENT/Root/margFactor" marginBottom="0px" name="Table1" tablePadding="0"/>
 						<children>
 							<DesignTableCol id="39035">
 								<style colWidth="40%"/>
@@ -3004,79 +3009,122 @@ $PERSISTENT/Root/api_data/EventfulKey/@key" textSize_x="$PERSISTENT/Root/userSet
 									</DesignEditField>
 								</children>
 							</DesignTableRow>
-							<DesignTableRow id="39100">
+						</children>
+					</DesignTable>
+					<DesignTable id="48223">
+						<style name="Table2" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="48230">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="48224"/>
+							<DesignTableCol id="48231">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="48225"/>
+							<DesignTableCol id="48232">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableRow id="48233">
 								<children>
-									<DesignButton id="39067">
-										<style align="center" colSpan="2" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Button1" text="Update" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
-										<controlActions id="39079">
+									<DesignVSpace id="48235">
+										<style colSpan="5" name="Space1"/>
+									</DesignVSpace>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="48226">
+								<children>
+									<DesignTableCellEmpty id="48229"/>
+									<DesignButton id="48166">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Button1" text="Update" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+										<controlActions id="48167">
 											<children>
-												<DesignActionHideKeyboard id="44091"/>
-												<DesignActionMessageBox id="39082" msgBoxKind="okcancel" msgBoxTitle="&apos;Update API Key&apos;" msgBoxMsg="&apos;Are you sure?
+												<DesignActionHideKeyboard id="48170"/>
+												<DesignActionMessageBox id="48171" msgBoxKind="okcancel" msgBoxTitle="&apos;Update API Key&apos;" msgBoxMsg="&apos;Are you sure?
  
 This will replace your existing API Key!&apos;">
 													<children>
-														<DesignActionMessageBoxButton id="39083">
+														<DesignActionMessageBoxButton id="48172">
 															<children>
-																<DesignActionCondition id="39084" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
+																<DesignActionCondition id="48173" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
 																	<children>
-																		<DesignActionConditionTrue id="39085">
+																		<DesignActionConditionTrue id="48174">
 																			<children>
-																				<DesignActionUpdateNode id="39068" updAt="$PERSISTENT/Root/api_data/GoogleKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48175" updAt="$PERSISTENT/Root/api_data/GoogleKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
-																		<DesignActionConditionFalse id="39086">
+																		<DesignActionConditionFalse id="48176">
 																			<children>
-																				<DesignActionUpdateNode id="39070" updAt="$PERSISTENT/Root/api_data/MapQuestKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48177" updAt="$PERSISTENT/Root/api_data/MapQuestKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionFalse>
 																	</children>
 																</DesignActionCondition>
-																<DesignActionCondition id="42314" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
+																<DesignActionCondition id="48178" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
 																	<children>
-																		<DesignActionConditionTrue id="42315">
+																		<DesignActionConditionTrue id="48179">
 																			<children>
-																				<DesignActionUpdateNode id="42313" updAt="$PERSISTENT/Root/api_data/GoogleKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48180" updAt="$PERSISTENT/Root/api_data/GoogleKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
 																	</children>
 																</DesignActionCondition>
-																<DesignActionCondition id="42316" condition="$PERSISTENT/Root/api_data/APIswitch = 2">
+																<DesignActionCondition id="48181" condition="$PERSISTENT/Root/api_data/APIswitch = 2">
 																	<children>
-																		<DesignActionConditionTrue id="42317">
+																		<DesignActionConditionTrue id="48182">
 																			<children>
-																				<DesignActionUpdateNode id="42318" updAt="$PERSISTENT/Root/api_data/MapQuestKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48183" updAt="$PERSISTENT/Root/api_data/MapQuestKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
 																	</children>
 																</DesignActionCondition>
-																<DesignActionCondition id="42319" condition="$PERSISTENT/Root/api_data/APIswitch = 3">
+																<DesignActionCondition id="48184" condition="$PERSISTENT/Root/api_data/APIswitch = 3">
 																	<children>
-																		<DesignActionConditionTrue id="42320">
+																		<DesignActionConditionTrue id="48185">
 																			<children>
-																				<DesignActionUpdateNode id="42321" updAt="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48186" updAt="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
 																	</children>
 																</DesignActionCondition>
-																<DesignActionCondition id="42322" condition="$PERSISTENT/Root/api_data/APIswitch = 4">
+																<DesignActionCondition id="48187" condition="$PERSISTENT/Root/api_data/APIswitch = 4">
 																	<children>
-																		<DesignActionConditionTrue id="42323">
+																		<DesignActionConditionTrue id="48188">
 																			<children>
-																				<DesignActionUpdateNode id="42324" updAt="$PERSISTENT/Root/api_data/EventfulKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																				<DesignActionUpdateNode id="48189" updAt="$PERSISTENT/Root/api_data/EventfulKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
 																	</children>
 																</DesignActionCondition>
 															</children>
 														</DesignActionMessageBoxButton>
-														<DesignActionMessageBoxButton id="39087"/>
+														<DesignActionMessageBoxButton id="48190"/>
 													</children>
 												</DesignActionMessageBox>
-												<DesignActionUpdateNode id="39088" updAt="$PERSISTENT/Root/tempInput" resOf="&apos;&apos;"/>
-												<DesignActionReturnFromSubpage id="48008"/>
+												<DesignActionUpdateNode id="48191" updAt="$PERSISTENT/Root/tempInput" resOf="&apos;&apos;"/>
+												<DesignActionReturnFromSubpage id="48192"/>
 											</children>
 										</controlActions>
 									</DesignButton>
+									<DesignTableCellEmpty id="48227"/>
+									<DesignButton id="48194">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Button2" text="Cancel" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+										<controlActions id="48195">
+											<children>
+												<DesignActionHideKeyboard id="48198"/>
+												<DesignActionUpdateNode id="48219" updAt="$PERSISTENT/Root/tempInput" resOf="&apos;&apos;"/>
+												<DesignActionReturnFromSubpage id="48220"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="48228"/>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="48237">
+								<children>
+									<DesignVSpace id="48238">
+										<style colSpan="5" name="Space2"/>
+									</DesignVSpace>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -3136,14 +3184,7 @@ This will replace your existing API Key!&apos;">
 									<DesignLabel id="44077">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label6" text="Weather" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="44079">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label19" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="44080">
-											<children>
-												<DesignActionGotoSubpage id="44083" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48245"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -3705,14 +3746,7 @@ else &apos;none&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									<DesignLabel id="44229">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label4" text="Events Nearby" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="44231">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="44232">
-											<children>
-												<DesignActionGotoSubpage id="44235" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48246"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -3992,14 +4026,7 @@ substring( start_time ,  1 ,  16 )" textSize_x="$PERSISTENT/Root/userSettings/te
 									<DesignLabel id="44027">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label4" text="Search Results" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="44029">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="44030">
-											<children>
-												<DesignActionGotoSubpage id="44033" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48244"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -4229,7 +4256,7 @@ displayString
 										</controlActions>
 									</DesignLabel>
 									<DesignHSlider id="43232" pageXML="36537">
-										<style maxSliderValue="160" minSliderValue="13" name="Horizontal Slider1"/>
+										<style maxSliderValue_x="$PERSISTENT/Root/maxText" minSliderValue_x="$PERSISTENT/Root/minText" name="Horizontal Slider1"/>
 									</DesignHSlider>
 									<DesignLabel id="43202">
 										<style align="center" name="Label3" text="+" textSize="medium" underline="0"/>
@@ -4300,14 +4327,7 @@ displayString
 									<DesignLabel id="44412">
 										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label4" text="I Am Here" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
-									<DesignLabel id="44414">
-										<style align="center" backgroundColor="#0071BC" height="fill_parent" name="Label16" text="Abc±" textColor="white" textSize="small" underline="0" valign="middle" weight="1"/>
-										<controlActions id="44415">
-											<children>
-												<DesignActionGotoSubpage id="44418" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="43204" asModalDialog="1" modalDialogWidthXPath="$MT_CanvasX * .8"/>
-											</children>
-										</controlActions>
-									</DesignLabel>
+									<DesignTableCellEmpty id="48239"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -5115,15 +5135,33 @@ Longitude: &apos;,round($MT_GEOLOCATION/Root/Location/@Longitude,6) )"/>
 			</DesignActionGroup>
 			<DesignActionGroup id="37443" name="Decrease Text Size">
 				<children>
-					<DesignActionUpdateNode id="37442" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="if ( $PERSISTENT/Root/userSettings/textSize &gt; 13 ) then 
-$PERSISTENT/Root/userSettings/textSize - 2 else 
-13"/>
+					<DesignActionUpdateNode id="37442" actionEnabled="0" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="if ( $PERSISTENT/Root/userSettings/textSize &gt; $PERSISTENT/Root/minText ) then 
+$PERSISTENT/Root/userSettings/textSize - 1 else 
+$PERSISTENT/Root/minText"/>
+					<DesignActionCondition id="48099" condition="$PERSISTENT/Root/userSettings/textSize &gt; $PERSISTENT/Root/minText">
+						<children>
+							<DesignActionConditionTrue id="48100">
+								<children>
+									<DesignActionUpdateNode id="48109" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="$PERSISTENT/Root/userSettings/textSize - 1"/>
+								</children>
+							</DesignActionConditionTrue>
+						</children>
+					</DesignActionCondition>
 				</children>
 			</DesignActionGroup>
 			<DesignActionGroup id="37451" name="Increase Text Size">
 				<children>
-					<DesignActionUpdateNode id="37444" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="if ( $PERSISTENT/Root/userSettings/textSize &lt; 160 ) then 
-$PERSISTENT/Root/userSettings/textSize+ 2 else 160"/>
+					<DesignActionUpdateNode id="37444" actionEnabled="0" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="if ( $PERSISTENT/Root/userSettings/textSize &lt; $PERSISTENT/Root/maxText ) then 
+$PERSISTENT/Root/userSettings/textSize + 1 else $PERSISTENT/Root/maxText"/>
+					<DesignActionCondition id="48101" condition="$PERSISTENT/Root/userSettings/textSize &lt; $PERSISTENT/Root/maxText">
+						<children>
+							<DesignActionConditionTrue id="48102">
+								<children>
+									<DesignActionUpdateNode id="48108" updAt="$PERSISTENT/Root/userSettings/textSize" resOf="$PERSISTENT/Root/userSettings/textSize + 1"/>
+								</children>
+							</DesignActionConditionTrue>
+						</children>
+					</DesignActionCondition>
 				</children>
 			</DesignActionGroup>
 			<DesignActionGroup id="37936" name="Close App">
@@ -5221,7 +5259,7 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 										<SoundBank id="41188" fileOnClient="1"/>
 										<SoundBankCache id="41189" fileOnClient="1"/>
 									</DesignActionAudio>
-									<DesignActionLoop id="41190" needsClient="1" breakLoopIf="mt-audio-is-playing(1) = false()">
+									<DesignActionLoop id="41190" breakLoopIf="mt-audio-is-playing(1) = false()">
 										<children>
 											<DesignActionUpdateNode id="41191" updAt="$PERSISTENT/Root" resOf="sleep(100)"/>
 										</children>
@@ -5244,7 +5282,7 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 										<SoundBank id="40520" fileOnClient="1"/>
 										<SoundBankCache id="40521" fileOnClient="1"/>
 									</DesignActionAudio>
-									<DesignActionLoop id="40564" needsClient="1" breakLoopIf="mt-audio-is-playing(1) = false()">
+									<DesignActionLoop id="40564" breakLoopIf="mt-audio-is-playing(1) = false()">
 										<children>
 											<DesignActionUpdateNode id="40565" updAt="$PERSISTENT/Root" resOf="sleep(100)"/>
 										</children>
@@ -5377,6 +5415,8 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 					<PageXMLElement id="36822" name="userInputGood" mustExist="1" default="0"/>
 					<PageXMLElement id="37279" name="currentNode" mustExist="1" default="7"/>
 					<PageXMLElement id="37452" name="textFactor" mustExist="1" default="0.027"/>
+					<PageXMLElement id="48015" name="minText" mustExist="1" default="round( ($MT_DeviceHeight * $PERSISTENT/Root/textFactor) * 0.5,  0 )" defValueIsXPath="1"/>
+					<PageXMLElement id="48016" name="maxText" mustExist="1" default="round( ($MT_DeviceHeight * $PERSISTENT/Root/textFactor) * 2,  0 )" defValueIsXPath="1"/>
 					<PageXMLElement id="37660" name="margFactor" mustExist="1" default="$MT_DeviceWidth idiv 100" defValueIsXPath="1"/>
 					<PageXMLElement id="38060" name="gotFirst" mustExist="1" default="0"/>
 					<PageXMLElement id="39227" name="iconWidth" mustExist="1" default="10%"/>
@@ -5394,28 +5434,28 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 								<children>
 									<PageXMLAttribute id="39007" name="name" mustExist="1" default="Google"/>
 									<PageXMLAttribute id="39008" name="URL" mustExist="1" default="https://developers.google.com/maps/documentation/static-maps/intro"/>
-									<PageXMLAttribute id="39009" name="key" mustExist="1" default="AIzaSyAOxXvRO1n0AVNTZYu4VCB-ogWHRkhcrJ4"/>
+									<PageXMLAttribute id="39009" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 							<PageXMLElement id="39010" name="MapQuestKey">
 								<children>
 									<PageXMLAttribute id="39011" name="name" mustExist="1" default="MapQuest"/>
 									<PageXMLAttribute id="39012" name="URL" mustExist="1" default="https://developer.mapquest.com/documentation/geocoding-api/"/>
-									<PageXMLAttribute id="39013" name="key" mustExist="1" default="AbA72LomLoofLpEf27OyhJMxNRAflTLm"/>
+									<PageXMLAttribute id="39013" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 							<PageXMLElement id="41212" name="OpenWeatherKey">
 								<children>
 									<PageXMLAttribute id="41213" name="name" mustExist="1" default="openweathermap.org"/>
 									<PageXMLAttribute id="41214" name="URL" mustExist="1" default="&apos;https://openweathermap.org/current&apos;" defValueIsXPath="1"/>
-									<PageXMLAttribute id="41215" name="key" mustExist="1" default="&apos;1bd13562cee97be2f4fa519c58aed885&apos;" defValueIsXPath="1"/>
+									<PageXMLAttribute id="41215" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 							<PageXMLElement id="41734" name="EventfulKey">
 								<children>
 									<PageXMLAttribute id="41735" name="name" mustExist="1" default="eventful.com/events"/>
 									<PageXMLAttribute id="41736" name="URL" mustExist="1" default="api.eventful.com"/>
-									<PageXMLAttribute id="41737" name="key" mustExist="1" default="c4GNwG8jNXx3ZF8h"/>
+									<PageXMLAttribute id="41737" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 						</children>
@@ -5609,9 +5649,9 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 			<PageXMLRootHttp id="38002" name="HTTP1_address_lookup" readOnlyXML="1" loadBeforePageOpen="never">
 				<HttpSettings so="1" id="38003" url_so="https://www.mapquestapi.com/geocoding/v1/reverse?key={key}&amp;location={lat}%2C{long}&amp;outFormat=xml&amp;thumbMaps=false" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="api key"/>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="user latitude"/>
-						<param name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="user longitude"/>
+						<param id="844" name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="api key"/>
+						<param id="846" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="user latitude"/>
+						<param id="848" name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="user longitude"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
@@ -5745,13 +5785,13 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 				</children>
 				<HttpSettings so="1" id="38249" url_so="https://www.mapquestapi.com/search/v2/radius?origin={lat},+{long}&amp;radius={radius}&amp;units={units}&amp;maxMatches={matches}&amp;ambiguities=ignore&amp;hostedData=mqap.ntpois|group_sic_code=?|{sicCode}&amp;outFormat=xml&amp;key={key}" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="MapQuest key"/>
-						<param name="radius" type="string" value="$PERSISTENT/Root/searchParams/searchRadius" valueType="XPath" location="URLTemplate" documentation="Search radius"/>
-						<param name="units" type="string" value="$PERSISTENT/Root/userSettings/distance" valueType="XPath" location="URLTemplate" documentation="radious units m or k"/>
-						<param name="matches" type="string" value="$PERSISTENT/Root/searchParams/maxResults" valueType="XPath" location="URLTemplate" documentation="Max matches desired"/>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
-						<param name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
-						<param name="sicCode" type="string" value="$PERSISTENT/Root/searchParams/searchTarget" valueType="XPath" location="URLTemplate" documentation="MQ defined code"/>
+						<param id="850" name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="MapQuest key"/>
+						<param id="852" name="radius" type="string" value="$PERSISTENT/Root/searchParams/searchRadius" valueType="XPath" location="URLTemplate" documentation="Search radius"/>
+						<param id="854" name="units" type="string" value="$PERSISTENT/Root/userSettings/distance" valueType="XPath" location="URLTemplate" documentation="radious units m or k"/>
+						<param id="856" name="matches" type="string" value="$PERSISTENT/Root/searchParams/maxResults" valueType="XPath" location="URLTemplate" documentation="Max matches desired"/>
+						<param id="858" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param id="860" name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param id="862" name="sicCode" type="string" value="$PERSISTENT/Root/searchParams/searchTarget" valueType="XPath" location="URLTemplate" documentation="MQ defined code"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
@@ -5935,14 +5975,14 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 				</children>
 				<HttpSettings so="1" id="40671" url_so="https://www.mapquestapi.com/search/v4/place?location={long}%2C%20{lat}&amp;sort=distance&amp;feedback=false&amp;key={key}&amp;circle={long2}%2C%20{lat2}%2C{radius}&amp;pageSize={results}&amp;page=1&amp;q={query}" ParseAs="JSON" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="MapQuest Key"/>
-						<param name="long2" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate"/>
-						<param name="radius" type="string" value="if ( $PERSISTENT/Root/userSettings/distance = &apos;m&apos; ) then ($PERSISTENT/Root/searchParams/searchRadius *  1609) else $PERSISTENT/Root/searchParams/searchRadius" valueType="XPath" location="URLTemplate" documentation="radius to search"/>
-						<param name="lat2" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate"/>
-						<param name="results" type="string" value="$PERSISTENT/Root/searchParams/maxResults" valueType="XPath" location="URLTemplate" documentation="max results"/>
-						<param name="query" type="string" value="replace( $PERSISTENT/Root/tempInput ,  &apos; &apos; ,  &apos;%20&apos; )" valueType="XPath" location="URLTemplate" documentation="search target"/>
+						<param id="864" name="long" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param id="866" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param id="868" name="key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="MapQuest Key"/>
+						<param id="870" name="long2" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate"/>
+						<param id="872" name="radius" type="string" value="if ( $PERSISTENT/Root/userSettings/distance = &apos;m&apos; ) then ($PERSISTENT/Root/searchParams/searchRadius *  1609) else $PERSISTENT/Root/searchParams/searchRadius" valueType="XPath" location="URLTemplate" documentation="radius to search"/>
+						<param id="874" name="lat2" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate"/>
+						<param id="876" name="results" type="string" value="$PERSISTENT/Root/searchParams/maxResults" valueType="XPath" location="URLTemplate" documentation="max results"/>
+						<param id="878" name="query" type="string" value="replace( $PERSISTENT/Root/tempInput ,  &apos; &apos; ,  &apos;%20&apos; )" valueType="XPath" location="URLTemplate" documentation="search target"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
@@ -6040,9 +6080,9 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 				</children>
 				<HttpSettings so="1" id="41223" url_so="https://api.openweathermap.org/data/2.5/weather?lat={lat}&amp;lon={lon}&amp;units=imperial&amp;mode=xml&amp;appid={key}" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
-						<param name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
+						<param id="880" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param id="882" name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param id="884" name="key" type="string" value="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
@@ -6178,9 +6218,9 @@ $HTTP1_address_lookup/response/results/result/locations/location/adminArea1)
 				</children>
 				<HttpSettings so="1" id="41733" url_so="http://api.eventful.com/rest/events/search?&amp;where={lat},{lon}&amp;within=10&amp;date={2days}&amp;sort=date&amp;page_size=50&amp;sort_direction=ascending&amp;include=categories,links&amp;app_key={key}" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
-						<param name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
-						<param name="2days" type="string" value="concat(
+						<param id="886" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param id="888" name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param id="890" name="2days" type="string" value="concat(
 replace(
 replace(
 substring( 
@@ -6194,7 +6234,7 @@ current-dateTime-no-TZ(),
 1)
 ), 1, 13),&apos;-&apos;,&apos;&apos;), &apos;T&apos;,&apos;&apos;)
 )" valueType="XPath" location="URLTemplate" documentation="today and tomorrow"/>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/EventfulKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
+						<param id="892" name="key" type="string" value="$PERSISTENT/Root/api_data/EventfulKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
@@ -6311,9 +6351,9 @@ current-dateTime-no-TZ(),
 				</children>
 				<HttpSettings so="1" id="47601" url_so="http://api.openweathermap.org/data/2.5/forecast?lat={lat}&amp;lon={lon}&amp;mode=xml&amp;appid={key}" type_so="REST" returnsNewXML_so="1">
 					<Params>
-						<param name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
-						<param name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
-						<param name="key" type="string" value="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
+						<param id="896" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="latitude"/>
+						<param id="898" name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="longitude"/>
+						<param id="900" name="key" type="string" value="$PERSISTENT/Root/api_data/OpenWeatherKey/@key" valueType="XPath" location="URLTemplate" documentation="API key"/>
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
