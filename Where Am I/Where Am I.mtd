@@ -3312,7 +3312,7 @@ This will replace your existing API Key!&apos;">
 							<DesignTableRow id="49730">
 								<children>
 									<DesignLabel id="49729">
-										<style align="center" dtFormat="[M01]/[D01]/[Y0001] at [h01]:[m01] [P]" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label1" text_x="if ($PERSISTENT/Root/api_data/TimeZoneDB/key = &apos;&apos;) then
+										<style align="center" dtFormat="[M01]/[D01]/[Y0001] at [h01]:[m01] [P]" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label1" text_x="if ($PERSISTENT/Root/api_data/TimeZoneDB/@key = &apos;&apos;) then
 &apos;Missing TimeZoneDB API key&apos;
 else
 replace($HTTP1_TimeZoneDB/result/formatted, &apos; &apos;, &apos;T&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
@@ -7803,7 +7803,7 @@ current-dateTime-no-TZ(),
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
-			<PageXMLRootHttp id="48523" name="HTTP1_get_coordinates" readOnlyXML="1">
+			<PageXMLRootHttp id="48523" name="HTTP1_get_coordinates" readOnlyXML="1" loadBeforePageOpen="never">
 				<children>
 					<PageXMLElement id="48536" name="response">
 						<children>
