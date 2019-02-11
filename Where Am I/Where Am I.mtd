@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MobileTogetherDesign versionClient="59" versionServer="59" deploymentPath_so="/public/Where Am I" deploymentDescription_so="Retrieve your current latitude and longitude, visualize your location, search surrounding area, get weather, nearby events using colorful tool icons" deploymentGlobalResourceConfig_so="Default">
-	<DesignRoot id="14">
+	<DesignRoot id="14" isNeedsTextToSpeech="1">
 		<style lightTheme="1" timeoutClient="30" timeoutDataRetrieval="20" workflowIcon="tool_icons\compass200.png"/>
 		<children>
 			<DesignPage id="15" IsNeedsTableRestOfScreenHandling="1">
@@ -682,6 +682,11 @@
 									</DesignTable>
 								</children>
 							</DesignTableRow>
+							<DesignTableRow id="48988">
+								<children>
+									<DesignTableCellEmpty id="49160"/>
+								</children>
+							</DesignTableRow>
 						</children>
 					</DesignTable>
 					<DesignTable id="46358">
@@ -936,6 +941,7 @@ $userLocation/Root/Location/@Latitude,&apos;,&apos;,$userLocation/Root/Location/
 $userLocation/Root/Location/@Longitude,
 $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 						<DesignActionUpdateNode id="36821" updAt="$PERSISTENT/Root/userInputgood" resOf="0"/>
+						<DesignActionScrollTo id="49493" scrolltoTarget="control" subject="control" scrollSubject="45616"/>
 					</children>
 				</onPageLoadActions>
 				<onBackButtonActions id="252">
@@ -956,6 +962,7 @@ $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 					<PageXMLRootRef id="42861" refXMLRoot="41218"/>
 					<PageXMLRootRef id="43038" refXMLRoot="184"/>
 					<PageXMLRootRef id="45398" refXMLRoot="44342"/>
+					<PageXMLRootRef id="49013" refXMLRoot="48975"/>
 				</xmlRoots>
 			</DesignPage>
 			<DesignPage id="36905" IsNeedsTableRestOfScreenHandling="1">
@@ -1019,15 +1026,22 @@ $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 									<DesignTable id="37266">
 										<style addDelPossible="0" name="Table2"/>
 										<children>
+											<DesignTableCol id="49712">
+												<style colWidth="5%"/>
+											</DesignTableCol>
 											<DesignTableCol id="37267">
-												<style colWidth="20%"/>
+												<style colWidth="25%"/>
 											</DesignTableCol>
 											<DesignTableCol id="45491"/>
 											<DesignTableCol id="37268">
-												<style colWidth="20%"/>
+												<style colWidth="25%"/>
+											</DesignTableCol>
+											<DesignTableCol id="49713">
+												<style colWidth="5%"/>
 											</DesignTableCol>
 											<DesignTableRow id="37269">
 												<children>
+													<DesignTableCellEmpty id="49714"/>
 													<DesignButton id="37249">
 														<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="( $PERSISTENT/Root/currentNode &gt; 1 )" margin_x="$PERSISTENT/Root/margFactor" name="Manual Entry2" text="&lt;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 														<controlActions id="37250">
@@ -1053,6 +1067,7 @@ $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 															</children>
 														</controlActions>
 													</DesignButton>
+													<DesignTableCellEmpty id="49715"/>
 												</children>
 											</DesignTableRow>
 										</children>
@@ -1360,56 +1375,54 @@ $userLocation/Root/Location/@Latitude,&apos;,&apos;,$userLocation/Root/Location/
 													<DesignTableRow id="46230">
 														<children>
 															<DesignTableCellEmpty id="46231"/>
-															<DesignImage id="46232">
-																<style align="center" name="Image2" width="fill_parent"/>
-																<controlActions id="46233">
+															<DesignImage id="49900">
+																<style align="center" name="Image4" width="fill_parent"/>
+																<controlActions id="49901">
 																	<children>
-																		<DesignActionCtrlClick id="46234">
+																		<DesignActionCtrlClick id="49902">
 																			<children>
-																				<DesignActionGroupRef id="46235" groupRef="40501"/>
-																				<DesignActionEmail id="46236" subject="concat(&apos;Locations Archive as of: &apos;, current-dateTime-no-TZ() )" body="&apos;Your saved locations data is attached&apos;" attachments="mt-email-attachment( 
-concat( &apos;mt-&apos;, current-dateTime-no-TZ(),&apos;.gpx&apos;) ,
-$XML1_gpx_data/ns1:gpx , &quot;xml&quot; )"/>
+																				<DesignActionGroupRef id="49903" groupRef="40501"/>
+																				<DesignActionShowGeolocationInMap id="49904" location="$userLocation/Root/Location/@Geolocation" zoom="if ( $MT_iOS ) then 50 else 10"/>
 																			</children>
 																		</DesignActionCtrlClick>
-																		<DesignActionCtrlLongClick id="46237">
+																		<DesignActionCtrlLongClick id="49905">
 																			<children>
-																				<DesignActionGroupRef id="46238" groupRef="40507"/>
-																				<DesignActionMessageBox id="46239" msgBoxMsg="&apos;Send email with location list as an attachment.&apos;">
+																				<DesignActionGroupRef id="49906" groupRef="40507"/>
+																				<DesignActionMessageBox id="49907" msgBoxMsg="&apos;Show current location on map.&apos;">
 																					<children>
-																						<DesignActionMessageBoxButton id="46240"/>
+																						<DesignActionMessageBoxButton id="49908"/>
 																					</children>
 																				</DesignActionMessageBox>
 																			</children>
 																		</DesignActionCtrlLongClick>
 																	</children>
 																</controlActions>
-																<ImgFileSettings id="46241" url="tool_icons\email.png" createDirs="0" embeddedImage="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"/>
+																<ImgFileSettings id="49909" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXR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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="46242"/>
-															<DesignImage id="46243">
-																<style align="center" name="Image4" width="fill_parent"/>
-																<controlActions id="46244">
+															<DesignImage id="49910">
+																<style align="center" name="Image20" width="fill_parent"/>
+																<controlActions id="49911">
 																	<children>
-																		<DesignActionCtrlClick id="46245">
+																		<DesignActionCtrlClick id="49912">
 																			<children>
-																				<DesignActionGroupRef id="46246" groupRef="40501"/>
-																				<DesignActionShowGeolocationInMap id="46247" location="$userLocation/Root/Location/@Geolocation" zoom="if ( $MT_iOS ) then 50 else 10"/>
+																				<DesignActionGroupRef id="49913" groupRef="40501"/>
+																				<DesignActionGroupRef id="49915" groupRef="49487"/>
 																			</children>
 																		</DesignActionCtrlClick>
-																		<DesignActionCtrlLongClick id="46248">
+																		<DesignActionCtrlLongClick id="49916">
 																			<children>
-																				<DesignActionGroupRef id="46249" groupRef="40507"/>
-																				<DesignActionMessageBox id="46250" msgBoxMsg="&apos;Show current location on map.&apos;">
+																				<DesignActionGroupRef id="49917" groupRef="40507"/>
+																				<DesignActionMessageBox id="49918" msgBoxMsg="&apos;Search for any nearby traffic alerts.&apos;">
 																					<children>
-																						<DesignActionMessageBoxButton id="46251"/>
+																						<DesignActionMessageBoxButton id="49919"/>
 																					</children>
 																				</DesignActionMessageBox>
 																			</children>
 																		</DesignActionCtrlLongClick>
 																	</children>
 																</controlActions>
-																<ImgFileSettings id="46252" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXR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"/>
+																<ImgFileSettings id="49920" url="tool_icons\traffic_alert.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZJQTFRFoc3omMjlc7TcVKXTZK3Xv9zudLba0Obzs9fpQJXN0efzgLjeEHrA7/b7frrfSZ/PIIPE3+33XKnVa7DZTaHQerjej8TgUKPRYKvWb7Lan8rmi8Lgy+LvDnm/Z67YMIzJd7bdXKnUUaPRarDX8/n85/L5WKfUG4DDoszlNo/K6PP5aK/XYKbVvdvrxeDwbK7Xj8Hios3n3O32cK/ZudrtUJ3Rh73ez+Xwr9Pqos7mUZ7Qz+TyksTklcThksXjsdXszeTwyOHvKYjG0+fxrtTqyOLxTqLQmsnmerXaxuDuRJfNf7zdX6bUc7XZos7noc3ll8jkYavVrdTpQZrNvNzrhb/eIYTFfLrcsNPor9Lqv9vuV6fTFn/CCHa+f7jdcrPcI4fFPJjMNJLKerfelsjjEHrBQZfOMY3KBHS9GoLDdbPZzOTySZvQUaDTmMjic7XbbrLZDXm/UJ7RSpzQYqnXkcTjEXzBWKfTV6TTfbncqtLnWaXVEXvBZ6zYXarVOZLMRZ3OAHG8grzg2Ory////////tMFTIAAAAIZ0Uk5T/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDZmVodAAAI4klEQVR42uydZ1/bSBCHiRuQuBewMTGYMw7B4IAhBEJLgRBSSEL6Jbn0cr33Zgvne5+q2ZVWdUdacT/935BgW5pHOzs7Myusvo9HXH0BQAAQAAQAAUAAEAAEAAFAABAABAABQAAQAAQAAUAAEAAEAAHA/x2g1U+rGkOA6fJEm16NRVYAt9tAarSYAJTbYJpoMQBYaQNqouY5wLR44lQxRKlcWDxQ2XMA0YGGkxy9ciLBtNcAQvxJSfaHIg6VK4ifjwgA+x4DNIWTFvmzJ4spCt8Ph4RDCP/6tc+aNrcnQQBEDxrnuPEU5fTN8gR14R/WvXGtHwBA8KA8gP0igTgLcjamzdokLUBL9qBh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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="46253"/>
 															<DesignImage id="46254">
@@ -1586,57 +1599,100 @@ Paste your key into the Settings page&apos;">
 																<ImgFileSettings id="46329" url="tool_icons\search.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAadQTFRFCHa+UaDT8Pf6yeLxYKbVaq7ZIYTFerfe/f7+3+70n8rm7/b7QZfO3+33EHrAj8HiGH/DYqnXhbzbIIPEQJXNMY3K3u33ps/iEHrBWaPRz+Tyb7DW2uvzC3e/crPc+Pv9kMLdrdPqQpfL+vz+IYTE4O73Fn7BWaXVuNntOZLMv9zu9/v9LIrGKYjHSZvQUJ7RsdXsgLjey+LvMIzJf7jdTZ3O0ObzcK/ZisDiZKnTerbYr9Lqh73ebK7Xwd7w6PL5qdHqqNDkmcnmrtPlN5DJksTkm8ngUZ7QDnm/hb7gKYjGi8HhNo/Kv9vuoszludnulcThr9Pqoc3oyOLx2Or1sNPoG4DD7/f75PD4UJ3Rvdvrs9bs7PX5cbLbQJbNRJfN9Pn8X6bU2er1c7HZbq/a5/L3sNTriL3gt9fsqdDpvdrt+vz9m8fk8/j7sNPqerXaaa3Z1Oj0V6PTx+Dxw9/wPZPMVKHT9fr8fbnewN3voMvnmcjlg7zf6fP6aKvYSZrQcbHbjL/fvtzvUZ/S3e30mcflsdXlgrzgqNDpAHG82Ory////////6AYRfwAAAI10Uk5T//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A2F5VawAADQxJREFUeNrsnedf20gagO3E2LuWZYFLbMzBEUIJpoXQQwgsS8nlIG032WR3b9v13ntvyJb4o89TZEuj0WiaDNyP96ND0PMw7Z0mp86veKSuBf7PBIxTa3WpUmnjqFSWVq1T44oINKylcpsa5SWrcckFjHym2GZGMZM3Lq3A9lKbKzLbl1HAXPVXnOn54a1S6egMRq1U2ho+mPRXplXzkgmYmR7d/HDpjBql4XlfMZiXSKCHPzrx4IwZDyZGk1BQEjA2PKSDGHrPwfv5DeMyCORxvzM6XDvjjKNhXAzF/IULmHi0mh45E4nayDQe48yL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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="46330"/>
-															<DesignImage id="46331">
-																<style name="Image3" width="fill_parent"/>
-																<controlActions id="46332">
+															<DesignImage id="49865">
+																<style align="center" name="Image2" width="fill_parent"/>
+																<controlActions id="49866">
 																	<children>
-																		<DesignActionCtrlClick id="46333">
+																		<DesignActionCtrlClick id="49867">
 																			<children>
-																				<DesignActionGroupRef id="46334" groupRef="40501"/>
-																				<DesignActionMessageBox id="46335" msgBoxKind="okcancel" msgBoxTitle="&apos;Are you sure?&apos;" msgBoxMsg="&apos;This will erase all stored user locations and create a default GPX file with a few interesting places.&apos;">
-																					<children>
-																						<DesignActionMessageBoxButton id="46336">
-																							<children>
-																								<DesignActionUpdateNode id="46337" updAt="$XML1_gpx_data/ns1:gpx/ns1:metadata/ns1:time" resOf="current-dateTime-no-TZ()"/>
-																								<DesignActionCondition id="46338" condition="count( $XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg ) &gt; 7">
-																									<children>
-																										<DesignActionConditionTrue id="46339">
-																											<children>
-																												<DesignActionUpdateNode id="46340" updAt="$PERSISTENT/Root/nodeCount" resOf="count( $XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg )"/>
-																												<DesignActionLoop id="46341" varName="i" forEach="( 8 to $PERSISTENT/Root/nodeCount )">
-																													<children>
-																														<DesignActionDeleteNode id="46342" delAt="$XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg[8]"/>
-																													</children>
-																												</DesignActionLoop>
-																												<DesignActionUpdateNode id="46343" updAt="$PERSISTENT/Root/locationSaved" resOf="0"/>
-																												<DesignActionUpdateNode id="46344" updAt="$PERSISTENT/Root/currentNode" resOf="7"/>
-																												<DesignActionGroupRef id="46345" groupRef="37283"/>
-																											</children>
-																										</DesignActionConditionTrue>
-																									</children>
-																								</DesignActionCondition>
-																							</children>
-																						</DesignActionMessageBoxButton>
-																						<DesignActionMessageBoxButton id="46346"/>
-																					</children>
-																				</DesignActionMessageBox>
+																				<DesignActionGroupRef id="49868" groupRef="40501"/>
+																				<DesignActionEmail id="49869" subject="concat(&apos;Locations Archive as of: &apos;, current-dateTime-no-TZ() )" body="&apos;Your saved locations data is attached&apos;" attachments="mt-email-attachment( 
+concat( &apos;mt-&apos;, current-dateTime-no-TZ(),&apos;.gpx&apos;) ,
+$XML1_gpx_data/ns1:gpx , &quot;xml&quot; )"/>
 																			</children>
 																		</DesignActionCtrlClick>
-																		<DesignActionCtrlLongClick id="46347">
+																		<DesignActionCtrlLongClick id="49870">
 																			<children>
-																				<DesignActionGroupRef id="46348" groupRef="40507"/>
-																				<DesignActionMessageBox id="46349" msgBoxMsg="&apos;Erase all stored user locations and create a default GPX file with a few interesting places.&apos;">
+																				<DesignActionGroupRef id="49871" groupRef="40507"/>
+																				<DesignActionMessageBox id="49872" msgBoxMsg="&apos;Send email with location list as an attachment.&apos;">
 																					<children>
-																						<DesignActionMessageBoxButton id="46350"/>
+																						<DesignActionMessageBoxButton id="49873"/>
 																					</children>
 																				</DesignActionMessageBox>
 																			</children>
 																		</DesignActionCtrlLongClick>
 																	</children>
 																</controlActions>
-																<ImgFileSettings id="46351" url="tool_icons\erase_list.png" createDirs="0" embeddedImage="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"/>
+																<ImgFileSettings id="49874" url="tool_icons\email.png" createDirs="0" embeddedImage="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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="46352"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="49922">
+														<children>
+															<DesignVSpace id="49923">
+																<style colSpan="7" name="Space3"/>
+															</DesignVSpace>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="49925">
+														<children>
+															<DesignTableCellEmpty id="49926"/>
+															<DesignTableCellEmpty id="49927"/>
+															<DesignTableCellEmpty id="49928"/>
+															<DesignImage id="49844">
+																<style name="Image3" width="fill_parent"/>
+																<controlActions id="49845">
+																	<children>
+																		<DesignActionCtrlClick id="49846">
+																			<children>
+																				<DesignActionGroupRef id="49847" groupRef="40501"/>
+																				<DesignActionMessageBox id="49848" msgBoxKind="okcancel" msgBoxTitle="&apos;Are you sure?&apos;" msgBoxMsg="&apos;This will erase all stored user locations and create a default GPX file with a few interesting places.&apos;">
+																					<children>
+																						<DesignActionMessageBoxButton id="49849">
+																							<children>
+																								<DesignActionUpdateNode id="49850" updAt="$XML1_gpx_data/ns1:gpx/ns1:metadata/ns1:time" resOf="current-dateTime-no-TZ()"/>
+																								<DesignActionCondition id="49851" condition="count( $XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg ) &gt; 7">
+																									<children>
+																										<DesignActionConditionTrue id="49852">
+																											<children>
+																												<DesignActionUpdateNode id="49853" updAt="$PERSISTENT/Root/nodeCount" resOf="count( $XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg )"/>
+																												<DesignActionLoop id="49854" varName="i" forEach="( 8 to $PERSISTENT/Root/nodeCount )">
+																													<children>
+																														<DesignActionDeleteNode id="49855" delAt="$XML1_gpx_data/ns1:gpx/ns1:trk/ns1:trkseg[8]"/>
+																													</children>
+																												</DesignActionLoop>
+																												<DesignActionUpdateNode id="49856" updAt="$PERSISTENT/Root/locationSaved" resOf="0"/>
+																												<DesignActionUpdateNode id="49857" updAt="$PERSISTENT/Root/currentNode" resOf="7"/>
+																												<DesignActionGroupRef id="49858" groupRef="37283"/>
+																											</children>
+																										</DesignActionConditionTrue>
+																									</children>
+																								</DesignActionCondition>
+																							</children>
+																						</DesignActionMessageBoxButton>
+																						<DesignActionMessageBoxButton id="49859"/>
+																					</children>
+																				</DesignActionMessageBox>
+																			</children>
+																		</DesignActionCtrlClick>
+																		<DesignActionCtrlLongClick id="49860">
+																			<children>
+																				<DesignActionGroupRef id="49861" groupRef="40507"/>
+																				<DesignActionMessageBox id="49862" msgBoxMsg="&apos;Erase all stored user locations and create a default GPX file with a few interesting places.&apos;">
+																					<children>
+																						<DesignActionMessageBoxButton id="49863"/>
+																					</children>
+																				</DesignActionMessageBox>
+																			</children>
+																		</DesignActionCtrlLongClick>
+																	</children>
+																</controlActions>
+																<ImgFileSettings id="49864" url="tool_icons\erase_list.png" createDirs="0" embeddedImage="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"/>
+															</DesignImage>
+															<DesignTableCellEmpty id="49929"/>
+															<DesignTableCellEmpty id="49930"/>
+															<DesignTableCellEmpty id="49931"/>
 														</children>
 													</DesignTableRow>
 												</children>
@@ -1670,6 +1726,7 @@ Paste your key into the Settings page&apos;">
 					<PageXMLRootRef id="42865" refXMLRoot="41732"/>
 					<PageXMLRootRef id="43040" refXMLRoot="184"/>
 					<PageXMLRootRef id="45562" refXMLRoot="44342"/>
+					<PageXMLRootRef id="49284" refXMLRoot="48975"/>
 				</xmlRoots>
 			</DesignPage>
 			<DesignPage id="38098" IsNeedsTableRestOfScreenHandling="1">
@@ -2860,7 +2917,7 @@ fields/state
 										<style align="left" multiLine="1" name="Label14" text="Eventful API key:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									</DesignLabel>
 									<DesignButton id="42254">
-										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Manual Entry11" text_x="if ( $PERSISTENT/Root/api_data/EventfulKey/@key = &apos;&apos; ) then &apos;Install&apos; else &apos;Update&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" margin_x="$PERSISTENT/Root/margFactor" marginBottom_x="$PERSISTENT/Root/margFactor * 4" multiLine="1" name="Manual Entry11" text_x="if ( $PERSISTENT/Root/api_data/EventfulKey/@key = &apos;&apos; ) then &apos;Install&apos; else &apos;Update&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 										<controlActions id="42255">
 											<children>
 												<DesignActionUpdateNode id="42258" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="4"/>
@@ -2869,6 +2926,24 @@ fields/state
 										</controlActions>
 									</DesignButton>
 									<DesignTableCellEmpty id="43336"/>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49958">
+								<children>
+									<DesignTableCellEmpty id="49959"/>
+									<DesignLabel id="49947">
+										<style align="left" marginTop_x="$PERSISTENT/Root/margFactor * 4" multiLine="1" name="Label15" text="TimezoneDB API key:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+									<DesignButton id="49950">
+										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Manual Entry12" text_x="if ( $PERSISTENT/Root/api_data/TimeZoneDB/@key = &apos;&apos; ) then &apos;Install&apos; else &apos;Update&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+										<controlActions id="49951">
+											<children>
+												<DesignActionUpdateNode id="49954" updAt="$PERSISTENT/Root/api_data/APIswitch" resOf="5"/>
+												<DesignActionGotoSubpage id="49955" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="39015" asModalDialog="1" modalDialogWidthXPath="&apos;80%&apos;"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+									<DesignTableCellEmpty id="49962"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -2946,7 +3021,7 @@ fields/state
 							<DesignTableRow id="39036">
 								<children>
 									<DesignLabel id="39029">
-										<style align="center" backgroundColor="#0071BC" colSpan="2" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label1" text="API Information" textColor="white" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+										<style align="center" backgroundColor="#0071BC" colSpan="2" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label1" text="API Information" textColor="white" textSize="medium" weight="1"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
@@ -2964,7 +3039,9 @@ else
 if 
 ( $PERSISTENT/Root/api_data/APIswitch = 3 ) then $PERSISTENT/Root/api_data/OpenWeatherKey/@name
 else 
-$PERSISTENT/Root/api_data/EventfulKey/@name" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+if 
+( $PERSISTENT/Root/api_data/APIswitch = 4 ) then $PERSISTENT/Root/api_data/EventfulKey/@name
+else $PERSISTENT/Root/api_data/TimeZoneDB/@name" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
@@ -2982,7 +3059,9 @@ else
 if 
 ( $PERSISTENT/Root/api_data/APIswitch = 3 ) then $PERSISTENT/Root/api_data/OpenWeatherKey/@URL
 else 
-$PERSISTENT/Root/api_data/EventfulKey/@URL" textColor="blue" textSize_x="$PERSISTENT/Root/userSettings/textSize" underline="0"/>
+if 
+( $PERSISTENT/Root/api_data/APIswitch = 4 ) then $PERSISTENT/Root/api_data/EventfulKey/@URL
+else $PERSISTENT/Root/api_data/TimeZoneDB/@URL" textColor="blue" textSize_x="$PERSISTENT/Root/userSettings/textSize" underline="0"/>
 										<controlActions id="43312">
 											<children>
 												<DesignActionOpenUrlOrFile id="43315" url="if ( $PERSISTENT/Root/api_data/APIswitch = 1 ) then 
@@ -3024,7 +3103,9 @@ else
 if 
 ( $PERSISTENT/Root/api_data/APIswitch = 3 ) then $PERSISTENT/Root/api_data/OpenWeatherKey/@key
 else 
-$PERSISTENT/Root/api_data/EventfulKey/@key" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+if 
+( $PERSISTENT/Root/api_data/APIswitch = 4 ) then $PERSISTENT/Root/api_data/EventfulKey/@key
+else $PERSISTENT/Root/api_data/TimeZoneDB/@key" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									</DesignLabel>
 								</children>
 							</DesignTableRow>
@@ -3079,20 +3160,6 @@ This will replace your existing API Key!&apos;">
 													<children>
 														<DesignActionMessageBoxButton id="48172">
 															<children>
-																<DesignActionCondition id="48173" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
-																	<children>
-																		<DesignActionConditionTrue id="48174">
-																			<children>
-																				<DesignActionUpdateNode id="48175" updAt="$PERSISTENT/Root/api_data/GoogleKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
-																			</children>
-																		</DesignActionConditionTrue>
-																		<DesignActionConditionFalse id="48176">
-																			<children>
-																				<DesignActionUpdateNode id="48177" updAt="$PERSISTENT/Root/api_data/MapQuestKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
-																			</children>
-																		</DesignActionConditionFalse>
-																	</children>
-																</DesignActionCondition>
 																<DesignActionCondition id="48178" condition="$PERSISTENT/Root/api_data/APIswitch = 1">
 																	<children>
 																		<DesignActionConditionTrue id="48179">
@@ -3125,6 +3192,15 @@ This will replace your existing API Key!&apos;">
 																		<DesignActionConditionTrue id="48188">
 																			<children>
 																				<DesignActionUpdateNode id="48189" updAt="$PERSISTENT/Root/api_data/EventfulKey/@key" resOf="$PERSISTENT/Root/tempInput"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																	</children>
+																</DesignActionCondition>
+																<DesignActionCondition id="49996" condition="$PERSISTENT/Root/api_data/APIswitch = 5">
+																	<children>
+																		<DesignActionConditionTrue id="49997">
+																			<children>
+																				<DesignActionUpdateNode id="49998" updAt="$PERSISTENT/Root/api_data/TimeZoneDB/@key" resOf="$PERSISTENT/Root/tempInput"/>
 																			</children>
 																		</DesignActionConditionTrue>
 																	</children>
@@ -3228,9 +3304,66 @@ This will replace your existing API Key!&apos;">
 							<DesignTableCol id="47884"/>
 							<DesignTableRow id="47885">
 								<children>
-									<DesignLabel id="47886" pageXML="41227">
-										<style align="center" marginTop_x="$PERSISTENT/Root/margFactor * 2" multiLine="1" name="Label4" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+									<DesignLabel id="47886">
+										<style align="center" marginTop_x="$PERSISTENT/Root/margFactor * 2" multiLine="1" name="Label4" text_x="$HTTP1_current_weather/current/city/@name" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
 									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49730">
+								<children>
+									<DesignLabel id="49729">
+										<style align="center" dtFormat="[M01]/[D01]/[Y0001] at [h01]:[m01] [P]" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label1" text_x="if ($PERSISTENT/Root/api_data/TimeZoneDB/key = &apos;&apos;) then
+&apos;Missing TimeZoneDB API key&apos;
+else
+replace($HTTP1_TimeZoneDB/result/formatted, &apos; &apos;, &apos;T&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49990">
+								<children>
+									<DesignLabel id="49988">
+										<style align="center" margin_x="$PERSISTENT/Root/margFactor" name="Label2" text="5-Day Forecast" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49565">
+								<children>
+									<DesignTable id="49566">
+										<style addDelPossible="0" name="Table2" tablePadding="0"/>
+										<children>
+											<DesignTableCol id="49567">
+												<style colWidth="5%"/>
+											</DesignTableCol>
+											<DesignTableCol id="49568">
+												<style colWidth="90%"/>
+											</DesignTableCol>
+											<DesignTableCol id="49569">
+												<style colWidth="5%"/>
+											</DesignTableCol>
+											<DesignTableRow id="49570">
+												<children>
+													<DesignTableCellEmpty id="49562"/>
+													<DesignChart id="49571" chartSettings="49576">
+														<style chartHeight_x="round($MT_DeviceHeight * 0.3, 0)" name="Chart1"/>
+														<controlActions id="49572">
+															<children>
+																<DesignActionCtrlLongClick id="49574">
+																	<children>
+																		<DesignActionMessageBox id="49710" msgBoxMsg="&apos;Each X-axis mark = 3 hours.&apos;">
+																			<children>
+																				<DesignActionMessageBoxButton id="49711"/>
+																			</children>
+																		</DesignActionMessageBox>
+																	</children>
+																</DesignActionCtrlLongClick>
+															</children>
+														</controlActions>
+													</DesignChart>
+													<DesignTableCellEmpty id="49563"/>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTable>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -3241,188 +3374,16 @@ This will replace your existing API Key!&apos;">
 							<DesignTableCol id="47649"/>
 							<DesignTableRow id="47937">
 								<children>
-									<DesignVSpace id="47938">
-										<style name="Space11"/>
-									</DesignVSpace>
-								</children>
-							</DesignTableRow>
-							<DesignTableRow id="47654">
-								<children>
-									<DesignLabel id="47933">
-										<style align="center" multiLine="1" name="Label31" text_x="if ($PERSISTENT/Root/userSettings/weather_type = &apos;current&apos;)
-then &apos;Current conditions&apos;
-else &apos;Future prediction&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									<DesignLabel id="49722">
+										<style align="center" colSpan="1" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label31" text_x="if ( $PERSISTENT/Root/userSettings/distance= &apos;m&apos; ) then 
+concat(&apos;Total precipitation: &apos;,
+round(
+sum($HTTP1_weather_forecast/weatherdata/forecast/time/precipitation/@value) div 25.4, 2), &apos; inches&apos;)
+
+else 
+concat(&apos;Total precipitation: &apos;,
+sum($HTTP1_weather_forecast/weatherdata/forecast/time/precipitation/@value) , &apos; mm&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 									</DesignLabel>
-								</children>
-							</DesignTableRow>
-						</children>
-					</DesignTable>
-					<DesignTable id="47892">
-						<style name="Table10" tablePadding="0"/>
-						<children>
-							<DesignTableCol id="47893"/>
-							<DesignTableCol id="47894">
-								<style colWidth="40%"/>
-							</DesignTableCol>
-							<DesignTableCol id="47895"/>
-							<DesignTableCol id="47896">
-								<style colWidth="40%"/>
-							</DesignTableCol>
-							<DesignTableCol id="47897"/>
-							<DesignTableRow id="47898">
-								<children>
-									<DesignVSpace id="47899">
-										<style colSpan="5" name="Space15"/>
-									</DesignVSpace>
-								</children>
-							</DesignTableRow>
-							<DesignTableRow id="47901">
-								<children>
-									<DesignTableCellEmpty id="47902"/>
-									<DesignButton id="47903">
-										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="$PERSISTENT/Root/w_num &gt; 0" name="Button1" text="&lt;"/>
-										<controlActions id="47904">
-											<children>
-												<DesignActionCondition id="47907" condition="$PERSISTENT/Root/w_num = 2">
-													<children>
-														<DesignActionConditionTrue id="47908">
-															<children>
-																<DesignActionUpdateNode id="47909" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
-																<DesignActionUpdateNode id="47926" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
-															</children>
-														</DesignActionConditionTrue>
-														<DesignActionConditionFalse id="47910">
-															<children>
-																<DesignActionCondition id="47956" condition="$PERSISTENT/Root/w_num = 0">
-																	<children>
-																		<DesignActionConditionTrue id="47957">
-																			<children>
-																				<DesignActionUpdateNode id="47958" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
-																				<DesignActionUpdateNode id="47959" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
-																			</children>
-																		</DesignActionConditionTrue>
-																		<DesignActionConditionFalse id="47960">
-																			<children>
-																				<DesignActionCondition id="47961" condition="$PERSISTENT/Root/w_num = 8">
-																					<children>
-																						<DesignActionConditionTrue id="47962">
-																							<children>
-																								<DesignActionUpdateNode id="47963" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
-																							</children>
-																						</DesignActionConditionTrue>
-																						<DesignActionConditionFalse id="47965">
-																							<children>
-																								<DesignActionCondition id="47966" condition="$PERSISTENT/Root/w_num = 5">
-																									<children>
-																										<DesignActionConditionTrue id="47967">
-																											<children>
-																												<DesignActionUpdateNode id="47968" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
-																											</children>
-																										</DesignActionConditionTrue>
-																										<DesignActionConditionFalse id="47969">
-																											<children>
-																												<DesignActionCondition id="47978" condition="$PERSISTENT/Root/w_num = 3">
-																													<children>
-																														<DesignActionConditionTrue id="47979">
-																															<children>
-																																<DesignActionUpdateNode id="47977" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
-																															</children>
-																														</DesignActionConditionTrue>
-																													</children>
-																												</DesignActionCondition>
-																											</children>
-																										</DesignActionConditionFalse>
-																									</children>
-																								</DesignActionCondition>
-																							</children>
-																						</DesignActionConditionFalse>
-																					</children>
-																				</DesignActionCondition>
-																			</children>
-																		</DesignActionConditionFalse>
-																	</children>
-																</DesignActionCondition>
-															</children>
-														</DesignActionConditionFalse>
-													</children>
-												</DesignActionCondition>
-											</children>
-										</controlActions>
-									</DesignButton>
-									<DesignVSpace id="47912">
-										<style name="Space7"/>
-									</DesignVSpace>
-									<DesignButton id="47914">
-										<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" name="Button2" text="&gt;"/>
-										<controlActions id="47915">
-											<children>
-												<DesignActionCondition id="47918" condition="$PERSISTENT/Root/w_num = 0">
-													<children>
-														<DesignActionConditionTrue id="47919">
-															<children>
-																<DesignActionUpdateNode id="47920" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
-																<DesignActionUpdateNode id="47927" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
-															</children>
-														</DesignActionConditionTrue>
-														<DesignActionConditionFalse id="47921">
-															<children>
-																<DesignActionCondition id="47940" condition="$PERSISTENT/Root/w_num = 8">
-																	<children>
-																		<DesignActionConditionTrue id="47941">
-																			<children>
-																				<DesignActionUpdateNode id="47942" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
-																				<DesignActionUpdateNode id="47943" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
-																			</children>
-																		</DesignActionConditionTrue>
-																		<DesignActionConditionFalse id="47944">
-																			<children>
-																				<DesignActionCondition id="47945" condition="$PERSISTENT/Root/w_num = 5">
-																					<children>
-																						<DesignActionConditionTrue id="47946">
-																							<children>
-																								<DesignActionUpdateNode id="47947" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
-																							</children>
-																						</DesignActionConditionTrue>
-																						<DesignActionConditionFalse id="47948">
-																							<children>
-																								<DesignActionCondition id="47949" condition="$PERSISTENT/Root/w_num = 3">
-																									<children>
-																										<DesignActionConditionTrue id="47950">
-																											<children>
-																												<DesignActionUpdateNode id="47951" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
-																											</children>
-																										</DesignActionConditionTrue>
-																										<DesignActionConditionFalse id="47952">
-																											<children>
-																												<DesignActionCondition id="47953" condition="$PERSISTENT/Root/w_num = 2">
-																													<children>
-																														<DesignActionConditionTrue id="47954">
-																															<children>
-																																<DesignActionUpdateNode id="47955" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
-																															</children>
-																														</DesignActionConditionTrue>
-																													</children>
-																												</DesignActionCondition>
-																											</children>
-																										</DesignActionConditionFalse>
-																									</children>
-																								</DesignActionCondition>
-																							</children>
-																						</DesignActionConditionFalse>
-																					</children>
-																				</DesignActionCondition>
-																			</children>
-																		</DesignActionConditionFalse>
-																	</children>
-																</DesignActionCondition>
-															</children>
-														</DesignActionConditionFalse>
-													</children>
-												</DesignActionCondition>
-											</children>
-										</controlActions>
-									</DesignButton>
-									<DesignTableCellEmpty id="47923"/>
 								</children>
 							</DesignTableRow>
 						</children>
@@ -3431,48 +3392,34 @@ else &apos;Future prediction&apos;" textSize_x="$PERSISTENT/Root/userSettings/te
 						<style addDelPossible="0" name="Table1" visible_x="$PERSISTENT/Root/userSettings/weather_type = &apos;current&apos;"/>
 						<children>
 							<DesignTableCol id="41578"/>
-							<DesignTableScrollableArea id="41598">
-								<style maxTableY="RestScreenYAlways"/>
+							<DesignTableRow id="41580">
 								<children>
-									<DesignTableRow id="41580">
+									<DesignTable id="41532">
+										<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table3" tablePadding="0"/>
 										<children>
-											<DesignTable id="41532">
-												<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table3" tablePadding="0"/>
+											<DesignTableCol id="49734">
+												<style colWidth="5%"/>
+											</DesignTableCol>
+											<DesignTableCol id="41533">
+												<style colWidth="40%"/>
+											</DesignTableCol>
+											<DesignTableCol id="41534"/>
+											<DesignTableRow id="47692">
 												<children>
-													<DesignTableCol id="41533">
-														<style colWidth="40%"/>
-													</DesignTableCol>
-													<DesignTableCol id="41534"/>
-													<DesignTableRow id="47691">
-														<children>
-															<DesignVSpace id="47683">
-																<style name="Space5"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47685"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47692">
-														<children>
-															<DesignLabel id="47686">
-																<style colSpan="2" multiLine="1" name="Label27" text="Latest recorded measurements:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41668">
-														<children>
-															<DesignVSpace id="41669">
-																<style name="Space6"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="41671"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41547">
-														<children>
-															<DesignLabel id="41548">
-																<style multiLine="1" name="Label12" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="41550">
-																<style multiLine="1" name="Label17" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
+													<DesignTableCellEmpty id="49735"/>
+													<DesignLabel id="47686">
+														<style colSpan="2" marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label27" text="Latest recorded measurements:" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="41547">
+												<children>
+													<DesignTableCellEmpty id="49736"/>
+													<DesignLabel id="41548">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label12" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="41550">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label17" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
 
 
 concat( round( $HTTP1_current_weather/current/temperature/@value ,  0 ) ,
@@ -3481,142 +3428,98 @@ substring( $HTTP1_current_weather/current/temperature/@unit ,  1 ,  1 ) )
 else 
 concat( round( ($HTTP1_current_weather/current/temperature/@value - 32) * 0.5556,  0 ) ,
  &apos; degrees C&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41648">
-														<children>
-															<DesignVSpace id="41649">
-																<style name="Space1"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="41651"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41562">
-														<children>
-															<DesignLabel id="41599">
-																<style multiLine="1" name="Label13" text="Humidity:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="41603">
-																<style multiLine="1" name="Label14" text_x="concat($HTTP1_current_weather/current/humidity/@value,$HTTP1_current_weather/current/humidity/@unit)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41652">
-														<children>
-															<DesignVSpace id="41653">
-																<style name="Space2"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="41655"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41565">
-														<children>
-															<DesignLabel id="41605">
-																<style multiLine="1" name="Label15" text="Wind:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="41607">
-																<style multiLine="1" name="Label16" text_x="concat($HTTP1_current_weather/current/wind/speed/@name, &apos; &apos;, $HTTP1_current_weather/current/wind/direction/@code)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41656">
-														<children>
-															<DesignVSpace id="41657">
-																<style name="Space3"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="41659"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41568">
-														<children>
-															<DesignLabel id="41611">
-																<style multiLine="1" name="Label22" text="Sky:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="41613">
-																<style multiLine="1" name="Label23" text_x="$HTTP1_current_weather/current/clouds/@name" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41660">
-														<children>
-															<DesignVSpace id="41661">
-																<style name="Space4"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="41663"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="41571">
-														<children>
-															<DesignLabel id="41623">
-																<style multiLine="1" name="Label24" text="Precipitation:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="41625">
-																<style multiLine="1" name="Label25" text_x="if ( $HTTP1_current_weather/current/precipitation/@mode = &apos;no&apos; ) then &apos;none&apos;
-else $HTTP1_current_weather/current/precipitation/@mode" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
+													</DesignLabel>
 												</children>
-											</DesignTable>
+											</DesignTableRow>
+											<DesignTableRow id="41562">
+												<children>
+													<DesignTableCellEmpty id="49737"/>
+													<DesignLabel id="41599">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label13" text="Humidity:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="41603">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label14" text_x="concat($HTTP1_current_weather/current/humidity/@value,$HTTP1_current_weather/current/humidity/@unit)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="41565">
+												<children>
+													<DesignTableCellEmpty id="49738"/>
+													<DesignLabel id="41605">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label15" text="Wind:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="41607">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label16" text_x="concat($HTTP1_current_weather/current/wind/speed/@name, &apos; &apos;, $HTTP1_current_weather/current/wind/direction/@code)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="41568">
+												<children>
+													<DesignTableCellEmpty id="49739"/>
+													<DesignLabel id="41611">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label22" text="Sky:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="41613">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label23" text_x="$HTTP1_current_weather/current/clouds/@name" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="41571">
+												<children>
+													<DesignTableCellEmpty id="49740"/>
+													<DesignLabel id="41623">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label24" text="Precipitation:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="41625">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label25" text_x="if ( $HTTP1_current_weather/current/precipitation/@mode = &apos;no&apos; ) then &apos;none&apos;
+else $HTTP1_current_weather/current/precipitation/@mode" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
 										</children>
-									</DesignTableRow>
+									</DesignTable>
 								</children>
-							</DesignTableScrollableArea>
+							</DesignTableRow>
 						</children>
 					</DesignTable>
 					<DesignTable id="47697">
 						<style addDelPossible="0" name="Table4" visible_x="$PERSISTENT/Root/userSettings/weather_type != &apos;current&apos;"/>
 						<children>
 							<DesignTableCol id="47698"/>
-							<DesignTableScrollableArea id="47699">
-								<style maxTableY="RestScreenYAlways"/>
+							<DesignTableRow id="47700">
 								<children>
-									<DesignTableRow id="47700">
+									<DesignTable id="47701">
+										<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table6" tablePadding="0"/>
 										<children>
-											<DesignTable id="47701">
-												<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table6" tablePadding="0"/>
+											<DesignTableCol id="49741">
+												<style colWidth="5%"/>
+											</DesignTableCol>
+											<DesignTableCol id="47702">
+												<style colWidth="40%"/>
+											</DesignTableCol>
+											<DesignTableCol id="47703"/>
+											<DesignTableRow id="47708">
 												<children>
-													<DesignTableCol id="47702">
-														<style colWidth="40%"/>
-													</DesignTableCol>
-													<DesignTableCol id="47703"/>
-													<DesignTableRow id="47704">
-														<children>
-															<DesignVSpace id="47705">
-																<style name="Space8"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47707"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47708">
-														<children>
-															<DesignLabel id="47709">
-																<style multiLine="1" name="Label29" text="Forecast:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47711">
-																<style dtFormat="[M01]/[D01]/[Y0001] at [H01]:[m01] [z]" multiLine="1" name="Label30" text_x="if ($PERSISTENT/Root/w_num = 2 ) then &apos;3 hours from now&apos; else
+													<DesignTableCellEmpty id="49742"/>
+													<DesignLabel id="47709">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label29" text="Forecast:" textSize_x="$PERSISTENT/Root/userSettings/textSize" weight="1"/>
+													</DesignLabel>
+													<DesignLabel id="47711">
+														<style dtFormat="[M01]/[D01]/[Y0001] at [H01]:[m01] [z]" marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label30" text_x="if ($PERSISTENT/Root/w_num = 2 ) then &apos;3 hours from now&apos; else
 if ($PERSISTENT/Root/w_num = 3 ) then &apos;6 hours from now&apos; else
 if ($PERSISTENT/Root/w_num = 5 ) then &apos;12 hours from now&apos; else
 &apos;24 hours from now&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47713">
-														<children>
-															<DesignVSpace id="47714">
-																<style name="Space9"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47716"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47717">
-														<children>
-															<DesignLabel id="47718">
-																<style multiLine="1" name="Label21" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47720">
-																<style multiLine="1" name="Label26" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="47717">
+												<children>
+													<DesignTableCellEmpty id="49743"/>
+													<DesignLabel id="47718">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label21" text="Temperature:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="47720">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label26" text_x="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
 
 
 concat( round( ((($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/temperature/@value - 273.15) *1.8) + 32 )
@@ -3625,88 +3528,226 @@ concat( round( ((($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($
 else 
 concat( round( ($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/temperature/@value  - 273.15),  0 ) ,
  &apos; degrees C&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47722">
-														<children>
-															<DesignVSpace id="47723">
-																<style name="Space10"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47725"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47735">
-														<children>
-															<DesignLabel id="47736">
-																<style multiLine="1" name="Label33" text="Humidity:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47738">
-																<style multiLine="1" name="Label34" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/humidity/@value,
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="47735">
+												<children>
+													<DesignTableCellEmpty id="49744"/>
+													<DesignLabel id="47736">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label33" text="Humidity:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="47738">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label34" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/humidity/@value,
 $HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/humidity/@unit)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47740">
-														<children>
-															<DesignVSpace id="47741">
-																<style name="Space12"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47743"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47744">
-														<children>
-															<DesignLabel id="47745">
-																<style multiLine="1" name="Label35" text="Wind:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47747">
-																<style multiLine="1" name="Label36" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/windSpeed/@name, &apos; &apos;,
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="47744">
+												<children>
+													<DesignTableCellEmpty id="49745"/>
+													<DesignLabel id="47745">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label35" text="Wind:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="47747">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label36" text_x="concat($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/windSpeed/@name, &apos; &apos;,
  $HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/windDirection/@code)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47749">
-														<children>
-															<DesignVSpace id="47750">
-																<style name="Space13"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47752"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47753">
-														<children>
-															<DesignLabel id="47754">
-																<style multiLine="1" name="Label37" text="Sky:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47756">
-																<style multiLine="1" name="Label38" text_x="$HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/clouds/@value" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47758">
-														<children>
-															<DesignVSpace id="47759">
-																<style name="Space14"/>
-															</DesignVSpace>
-															<DesignTableCellEmpty id="47761"/>
-														</children>
-													</DesignTableRow>
-													<DesignTableRow id="47762">
-														<children>
-															<DesignLabel id="47763">
-																<style multiLine="1" name="Label39" text="Precipitation:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-															<DesignLabel id="47765">
-																<style multiLine="1" name="Label40" text_x="if ( exists($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/precipitation/@type)) 
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="47753">
+												<children>
+													<DesignTableCellEmpty id="49746"/>
+													<DesignLabel id="47754">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label37" text="Sky:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="47756">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label38" text_x="$HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/clouds/@value" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="47762">
+												<children>
+													<DesignTableCellEmpty id="49747"/>
+													<DesignLabel id="47763">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label39" text="Precipitation:" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
+													<DesignLabel id="47765">
+														<style marginTop_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Label40" text_x="if ( exists($HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/precipitation/@type)) 
 then 
 $HTTP1_weather_forecast/weatherdata/forecast/time[xs:integer($PERSISTENT/Root/w_num)]/precipitation/@type
-else &apos;none&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
-															</DesignLabel>
-														</children>
-													</DesignTableRow>
+else &apos;none forecast&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+													</DesignLabel>
 												</children>
-											</DesignTable>
+											</DesignTableRow>
+										</children>
+									</DesignTable>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="49644">
+						<style addDelPossible="0" name="Table11" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="49645"/>
+							<DesignTableCol id="49646">
+								<style colWidth="40%"/>
+							</DesignTableCol>
+							<DesignTableCol id="49647"/>
+							<DesignTableCol id="49648">
+								<style colWidth="40%"/>
+							</DesignTableCol>
+							<DesignTableCol id="49649"/>
+							<DesignTableScrollableArea id="49716">
+								<style maxTableY="RestScreenYAlways"/>
+								<children>
+									<DesignTableRow id="49653">
+										<children>
+											<DesignTableCellEmpty id="49654"/>
+											<DesignButton id="49655">
+												<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="$PERSISTENT/Root/w_num &gt; 0" name="Button3" text="&lt;"/>
+												<controlActions id="49656">
+													<children>
+														<DesignActionCondition id="49659" condition="$PERSISTENT/Root/w_num = 2">
+															<children>
+																<DesignActionConditionTrue id="49660">
+																	<children>
+																		<DesignActionUpdateNode id="49661" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+																		<DesignActionUpdateNode id="49662" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
+																	</children>
+																</DesignActionConditionTrue>
+																<DesignActionConditionFalse id="49663">
+																	<children>
+																		<DesignActionCondition id="49664" condition="$PERSISTENT/Root/w_num = 0">
+																			<children>
+																				<DesignActionConditionTrue id="49665">
+																					<children>
+																						<DesignActionUpdateNode id="49666" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
+																						<DesignActionUpdateNode id="49667" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
+																					</children>
+																				</DesignActionConditionTrue>
+																				<DesignActionConditionFalse id="49668">
+																					<children>
+																						<DesignActionCondition id="49669" condition="$PERSISTENT/Root/w_num = 8">
+																							<children>
+																								<DesignActionConditionTrue id="49670">
+																									<children>
+																										<DesignActionUpdateNode id="49671" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
+																									</children>
+																								</DesignActionConditionTrue>
+																								<DesignActionConditionFalse id="49672">
+																									<children>
+																										<DesignActionCondition id="49673" condition="$PERSISTENT/Root/w_num = 5">
+																											<children>
+																												<DesignActionConditionTrue id="49674">
+																													<children>
+																														<DesignActionUpdateNode id="49675" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
+																													</children>
+																												</DesignActionConditionTrue>
+																												<DesignActionConditionFalse id="49676">
+																													<children>
+																														<DesignActionCondition id="49677" condition="$PERSISTENT/Root/w_num = 3">
+																															<children>
+																																<DesignActionConditionTrue id="49678">
+																																	<children>
+																																		<DesignActionUpdateNode id="49679" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
+																																	</children>
+																																</DesignActionConditionTrue>
+																															</children>
+																														</DesignActionCondition>
+																													</children>
+																												</DesignActionConditionFalse>
+																											</children>
+																										</DesignActionCondition>
+																									</children>
+																								</DesignActionConditionFalse>
+																							</children>
+																						</DesignActionCondition>
+																					</children>
+																				</DesignActionConditionFalse>
+																			</children>
+																		</DesignActionCondition>
+																	</children>
+																</DesignActionConditionFalse>
+															</children>
+														</DesignActionCondition>
+													</children>
+												</controlActions>
+											</DesignButton>
+											<DesignVSpace id="49681">
+												<style name="Space17"/>
+											</DesignVSpace>
+											<DesignButton id="49683">
+												<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" name="Button4" text="&gt;"/>
+												<controlActions id="49684">
+													<children>
+														<DesignActionCondition id="49687" condition="$PERSISTENT/Root/w_num = 0">
+															<children>
+																<DesignActionConditionTrue id="49688">
+																	<children>
+																		<DesignActionUpdateNode id="49689" updAt="$PERSISTENT/Root/w_num" resOf="2"/>
+																		<DesignActionUpdateNode id="49690" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;forecast&apos;"/>
+																	</children>
+																</DesignActionConditionTrue>
+																<DesignActionConditionFalse id="49691">
+																	<children>
+																		<DesignActionCondition id="49692" condition="$PERSISTENT/Root/w_num = 8">
+																			<children>
+																				<DesignActionConditionTrue id="49693">
+																					<children>
+																						<DesignActionUpdateNode id="49694" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+																						<DesignActionUpdateNode id="49695" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
+																					</children>
+																				</DesignActionConditionTrue>
+																				<DesignActionConditionFalse id="49696">
+																					<children>
+																						<DesignActionCondition id="49697" condition="$PERSISTENT/Root/w_num = 5">
+																							<children>
+																								<DesignActionConditionTrue id="49698">
+																									<children>
+																										<DesignActionUpdateNode id="49699" updAt="$PERSISTENT/Root/w_num" resOf="8"/>
+																									</children>
+																								</DesignActionConditionTrue>
+																								<DesignActionConditionFalse id="49700">
+																									<children>
+																										<DesignActionCondition id="49701" condition="$PERSISTENT/Root/w_num = 3">
+																											<children>
+																												<DesignActionConditionTrue id="49702">
+																													<children>
+																														<DesignActionUpdateNode id="49703" updAt="$PERSISTENT/Root/w_num" resOf="5"/>
+																													</children>
+																												</DesignActionConditionTrue>
+																												<DesignActionConditionFalse id="49704">
+																													<children>
+																														<DesignActionCondition id="49705" condition="$PERSISTENT/Root/w_num = 2">
+																															<children>
+																																<DesignActionConditionTrue id="49706">
+																																	<children>
+																																		<DesignActionUpdateNode id="49707" updAt="$PERSISTENT/Root/w_num" resOf="3"/>
+																																	</children>
+																																</DesignActionConditionTrue>
+																															</children>
+																														</DesignActionCondition>
+																													</children>
+																												</DesignActionConditionFalse>
+																											</children>
+																										</DesignActionCondition>
+																									</children>
+																								</DesignActionConditionFalse>
+																							</children>
+																						</DesignActionCondition>
+																					</children>
+																				</DesignActionConditionFalse>
+																			</children>
+																		</DesignActionCondition>
+																	</children>
+																</DesignActionConditionFalse>
+															</children>
+														</DesignActionCondition>
+													</children>
+												</controlActions>
+											</DesignButton>
+											<DesignTableCellEmpty id="49709"/>
 										</children>
 									</DesignTableRow>
 								</children>
@@ -3716,9 +3757,11 @@ else &apos;none&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 				</children>
 				<onPageLoadActions id="514">
 					<children>
+						<DesignActionReloadData id="49972" reloadRef="49964"/>
 						<DesignActionReloadData id="47602" reloadRef="47600"/>
 						<DesignActionUpdateNode id="47646" updAt="$PERSISTENT/Root/userSettings/weather_type" resOf="&apos;current&apos;"/>
 						<DesignActionUpdateNode id="47647" updAt="$PERSISTENT/Root/w_num" resOf="0"/>
+						<DesignActionReloadData id="49577" reloadRef="49571"/>
 					</children>
 				</onPageLoadActions>
 				<onBackButtonActions id="675">
@@ -3730,6 +3773,7 @@ else &apos;none&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
 					<PageXMLRootRef id="41519" refXMLRoot="41218"/>
 					<PageXMLRootRef id="47598" refXMLRoot="36746"/>
 					<PageXMLRootRef id="47599" refXMLRoot="47600"/>
+					<PageXMLRootRef id="49963" refXMLRoot="49964"/>
 				</xmlRoots>
 			</DesignPage>
 			<DesignPage id="41991" subPage="1" IsNeedsTableRestOfScreenHandling="1">
@@ -4738,59 +4782,101 @@ $MT_GEOLOCATION/Root/Location/@Latitude,&apos;,&apos;,$MT_GEOLOCATION/Root/Locat
 													<DesignTableCol id="45140">
 														<style colWidth="10%"/>
 													</DesignTableCol>
+													<DesignTableRow id="49786">
+														<children>
+															<DesignTableCellEmpty id="49787"/>
+															<DesignTableCellEmpty id="49770"/>
+															<DesignTableCellEmpty id="49788"/>
+															<DesignImage id="49748">
+																<style align="center" name="Image14" width="fill_parent"/>
+																<controlActions id="49749">
+																	<children>
+																		<DesignActionCtrlClick id="49750">
+																			<children>
+																				<DesignActionGroupRef id="49751" groupRef="40501"/>
+																				<DesignActionGroupRef id="49752" groupRef="42360"/>
+																				<DesignActionGroupRef id="49753" groupRef="36827"/>
+																			</children>
+																		</DesignActionCtrlClick>
+																		<DesignActionCtrlLongClick id="49754">
+																			<children>
+																				<DesignActionGroupRef id="49755" groupRef="40507"/>
+																				<DesignActionMessageBox id="49756" msgBoxMsg="&apos;Send a text message with current location.&apos;">
+																					<children>
+																						<DesignActionMessageBoxButton id="49757"/>
+																					</children>
+																				</DesignActionMessageBox>
+																			</children>
+																		</DesignActionCtrlLongClick>
+																	</children>
+																</controlActions>
+																<ImgFileSettings id="49758" url="tool_icons\text_message.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBQTFRF7/b7yeLx8Pf6EHrA3+70/f7+IIPE3+33YKbVgLjen8rmMIzJQJXNz+Tyv9zu3u33j8Hif7jdrdPqcK/Z+vz+uNntUJ3RbK7XUJ7R5/L3Dnm/r9Pqy+Lvv9vur9Lqh73eNo/KerXaKYjG+Pv9G4DDsNPooszlvdvr2uvzUZ7QX6bU5PD4lcThRJfN9Pn86fP6s9bs2er18/j73e301Oj0pM3l7PX5vdrtw9/wvtzvqdDnAHG8qNDp2Ory////////ZmcQBQAAAEB0Uk5T////////////////////////////////////////////////////////////////////////////////////AMJ7sUQAAAfJSURBVHja7N1ZW+JIFAbgstOdnRiMAiOIYCuO2uvsM1n4//9qpCpIAllqOacKn4dzNRc98r3UQqWykfU7L3ICnADvEUBu/KEbhkFaVhCG7tC/Ie8B4MyHoZW2lBUO584RA8jctdPest05OUYA8Scpd018cmSAeT19MPK8KIqKsl7/0/NGQd0wPx4AGVZ6TpD4g6KlBn5SUdhDchQAx7V23XtKip4i091AsVzHOIAkb+mTQcFZg+TNkBCzgOH223enhVBN3W0rDA0Cbsov0vKcQrgcr8TbN4YA295jeaSQKrIldPQjgv71S8evEtobAQ8wZF/eyCmUyhmxvzPUDCDsh8ueFso1ZS05IToBhP0ejUgBUIQ1QkD0AQa051p+AVQ++3sDXQCW3x4UYDWw2wQELX9ACsBifbJBgABwaH4XNP+rgP4yWw4+gH1XbgFebuNIhgdMkPKXggk2YAjf/+vjYIgLuMHL/yqgc9ENJoB+hDUokIrObzZBBNAO5Bdo5R90IliAQ9cPBWLRVYWDBgg3HYhgAsimE4VYADqC4wK14r1xTKAbwC6Qy643AYEeAT42wK+PAkhAoqMBWBMkKABLRwOwJrAwAHP0KagyEc0RAC7WIq5pUedyApw4tFOBmuoATDdjjQvgTFLBIjoApDoPkf6dHYEKCi0VVAYB6e7TgpXoASSVFR3pyX+/XOV89VXPJLqdSCd9ANp/rpc5dy1e/32kBxBVVhOka1lw/cCfP7/ejCw9AKfyU0Y6Ds2F8ucbcaGpNp/VDaANsMzfL2Cz6r7P3zEgFG6AIwNs1g8rcQDRk5/0Azb/Qix/fqd3Gg3AAQtdazm2mgvBAU+v/4unB+BVjsngAEvsLaH65lAMDlhtfh71AKzKzgocgE5DAx35B5VJCBKw0DUIvOppAkDAUs+uCttXiREAj6meX4KotrMFCKB9SMO2hFvbW4QE3KY6DgnYBiYKIL/X0QRudVMFGDDW0ATO3jkaUMBsc1gZ4gLYORQkABsFqGc4/PoIgAbQNbWF2InoZQzBGg/wgLw/F9L1CiKAjWO0mYheRZisMQG0E2Ht0NEBEKxxAY/XaAK/6YIbcED+JUVaE7HrqOZrbACbS+HbYGrtz6BYgPwZQ+CnhwMYC0CP74EPbjx2BflaD6AUjMD2ucorR921LkA5DqAuvGQXXR72f0RAfnsN141Y97H8tU5A/nDPTvspz6dRULbmWi8gn30tb91QW72VpxonZK0bkOdL2o1UNrve7oCIRW+AAAHkj2rHmG/xd9tYmgEzlasPBtXz1IYAt9I9yIm3N8Rdjw0C7uRO3jtxmL7Fn+XmAA8S273OdHcPHI2fGwQ8tRxeJqHnR4fLjMj3atf2LG53u95GAI8ta1J3dxv3yKM1qtzcXdb9+LG6bW8EMG4cwiTov+jlbvywd97BBIDucnnC+e+ev8wOT5yYAIybrgGM2O1IXtjguFuMb1ctZ34MAGgDJI3rynKVHf3953JM63a1WnWfujIAaNjodcK0envEp4/85970Ax4OF6JeuToVzG8GMLvfHwF+eW/rdl7lzm8G8HVvm7qMnwYD4fxGAF9qd3I43tuN3YV4fhMAOgPZrAMRf7SdJ11HJr8JwNN2czHydvN9uDs6FspvAEAXQUH9SR1u5eBeLL8BwPPB415qDzUQzG8AsKin33sehmh+A4CnXfhRfHDCTDS/AcBssVmZPY//a9ob/SU/fkBZHz+B5DcGgMpvCgCW3xAALr8ZAGB+IwDI/PKAD8eRXx5QfDiK/AoASUFj/s+5CYCUoDF/UXwwApBo+Jb8CgIlgLCgNb+8QA0gKOjILy1QBAgJOvPLClQBAoKe/JICZQC3oDe/nEAdwHkQxZFfSgAA4DqM5covIwAA8Ag480sIIAD9Au784gIQQJ+gOT8BEcAAugXN+c+zMwgBEKD49Ltw/gxEAAUoPv8qnB9EAAZoE3TlhxBIA77zCbrzAwikAReER9CXX10gDch4BP35lQXyAA4BT35VgQIgu/h28Km/iedXFKgAsqvLrk/lza8mUAJ0Cprzn2UZrEAN0CEQya8iUAS0CsTyKwhUAdk/jZ8qml9eoAxo+uS/xPNLC9QBbZ8smF9WAADgFPTllxRAALI/QPLLCUAA2TlIfikBDKBXwJdfRgAE6BZc8uaXEEABspeO/FdZhiYAA1wQkPzCAjBAq0Awv6gADvDjEia/oAC7C0nkFxNAASDzCwmgAC+Q+UUEqD9k0vkFBDCAn9D5+QUggDP4/NwCvOX0N7X8vAIAwFXzrY4XWaZDoA64ukTKzydQBvzAy88lUAU0/4AB5ecRKAKQ83MIFAEvyPn7BWqAc/T8vQIlgI78fQIVwJmW/D0CBYCu/N0CecC/TX/zO0b+ToE0oPEH+DxDqnaBNEBr/g4B3Jl61PztAimA3fiYLNT8bYKo/nBITkDY9MhB5Pwtgnjv7VF8gLjh8bPo+ZsFduezYTof3x/rzt8kiPdfQMYHoC9QqL2aTkv+QwF9uNxkLQ5w0rpAU/59AXs4niMBYC8RsWLd+euC2Op6NXE3oHyNix1vZtOfWaZfEMV268PZeAAyL9LBqO78wK8yQqjul7yDv0wKuibOWgUg/jovyLLDuDc+7nvqtdQJcAKcACfACXACvOv6X4ABAI166i4m1058AAAAAElFTkSuQmCC"/>
+															</DesignImage>
+															<DesignTableCellEmpty id="49789"/>
+															<DesignTableCellEmpty id="49790"/>
+															<DesignTableCellEmpty id="49791"/>
+														</children>
+													</DesignTableRow>
+													<DesignTableRow id="49792">
+														<children>
+															<DesignVSpace id="49793">
+																<style colSpan="7" name="Space1"/>
+															</DesignVSpace>
+														</children>
+													</DesignTableRow>
 													<DesignTableRow id="45141">
 														<children>
 															<DesignTableCellEmpty id="45142"/>
-															<DesignImage id="45143">
-																<style align="center" name="Image14" width="fill_parent"/>
-																<controlActions id="45144">
+															<DesignImage id="49759">
+																<style align="center" name="Image15" width="fill_parent"/>
+																<controlActions id="49760">
 																	<children>
-																		<DesignActionCtrlClick id="45145">
+																		<DesignActionCtrlClick id="49761">
 																			<children>
-																				<DesignActionGroupRef id="45146" groupRef="40501"/>
-																				<DesignActionGroupRef id="45147" groupRef="42360"/>
-																				<DesignActionGroupRef id="45148" groupRef="36827"/>
+																				<DesignActionGroupRef id="49762" groupRef="40501"/>
+																				<DesignActionGroupRef id="49763" groupRef="42360"/>
+																				<DesignActionShowGeolocationInMap id="49764" location="$MT_GEOLOCATION/Root/Location/@Geolocation" zoom="if ( $MT_iOS ) then 50 else 10"/>
 																			</children>
 																		</DesignActionCtrlClick>
-																		<DesignActionCtrlLongClick id="45149">
+																		<DesignActionCtrlLongClick id="49765">
 																			<children>
-																				<DesignActionGroupRef id="45150" groupRef="40507"/>
-																				<DesignActionMessageBox id="45151" msgBoxMsg="&apos;Send a text message with current location.&apos;">
+																				<DesignActionGroupRef id="49766" groupRef="40507"/>
+																				<DesignActionMessageBox id="49767" msgBoxMsg="&apos;Show current location on map.&apos;">
 																					<children>
-																						<DesignActionMessageBoxButton id="45152"/>
+																						<DesignActionMessageBoxButton id="49768"/>
 																					</children>
 																				</DesignActionMessageBox>
 																			</children>
 																		</DesignActionCtrlLongClick>
 																	</children>
 																</controlActions>
-																<ImgFileSettings id="45153" url="tool_icons\text_message.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBQTFRF7/b7yeLx8Pf6EHrA3+70/f7+IIPE3+33YKbVgLjen8rmMIzJQJXNz+Tyv9zu3u33j8Hif7jdrdPqcK/Z+vz+uNntUJ3RbK7XUJ7R5/L3Dnm/r9Pqy+Lvv9vur9Lqh73eNo/KerXaKYjG+Pv9G4DDsNPooszlvdvr2uvzUZ7QX6bU5PD4lcThRJfN9Pn86fP6s9bs2er18/j73e301Oj0pM3l7PX5vdrtw9/wvtzvqdDnAHG8qNDp2Ory////////ZmcQBQAAAEB0Uk5T////////////////////////////////////////////////////////////////////////////////////AMJ7sUQAAAfJSURBVHja7N1ZW+JIFAbgstOdnRiMAiOIYCuO2uvsM1n4//9qpCpIAllqOacKn4dzNRc98r3UQqWykfU7L3ICnADvEUBu/KEbhkFaVhCG7tC/Ie8B4MyHoZW2lBUO584RA8jctdPest05OUYA8Scpd018cmSAeT19MPK8KIqKsl7/0/NGQd0wPx4AGVZ6TpD4g6KlBn5SUdhDchQAx7V23XtKip4i091AsVzHOIAkb+mTQcFZg+TNkBCzgOH223enhVBN3W0rDA0Cbsov0vKcQrgcr8TbN4YA295jeaSQKrIldPQjgv71S8evEtobAQ8wZF/eyCmUyhmxvzPUDCDsh8ueFso1ZS05IToBhP0ejUgBUIQ1QkD0AQa051p+AVQ++3sDXQCW3x4UYDWw2wQELX9ACsBifbJBgABwaH4XNP+rgP4yWw4+gH1XbgFebuNIhgdMkPKXggk2YAjf/+vjYIgLuMHL/yqgc9ENJoB+hDUokIrObzZBBNAO5Bdo5R90IliAQ9cPBWLRVYWDBgg3HYhgAsimE4VYADqC4wK14r1xTKAbwC6Qy643AYEeAT42wK+PAkhAoqMBWBMkKABLRwOwJrAwAHP0KagyEc0RAC7WIq5pUedyApw4tFOBmuoATDdjjQvgTFLBIjoApDoPkf6dHYEKCi0VVAYB6e7TgpXoASSVFR3pyX+/XOV89VXPJLqdSCd9ANp/rpc5dy1e/32kBxBVVhOka1lw/cCfP7/ejCw9AKfyU0Y6Ds2F8ucbcaGpNp/VDaANsMzfL2Cz6r7P3zEgFG6AIwNs1g8rcQDRk5/0Azb/Qix/fqd3Gg3AAQtdazm2mgvBAU+v/4unB+BVjsngAEvsLaH65lAMDlhtfh71AKzKzgocgE5DAx35B5VJCBKw0DUIvOppAkDAUs+uCttXiREAj6meX4KotrMFCKB9SMO2hFvbW4QE3KY6DgnYBiYKIL/X0QRudVMFGDDW0ATO3jkaUMBsc1gZ4gLYORQkABsFqGc4/PoIgAbQNbWF2InoZQzBGg/wgLw/F9L1CiKAjWO0mYheRZisMQG0E2Ht0NEBEKxxAY/XaAK/6YIbcED+JUVaE7HrqOZrbACbS+HbYGrtz6BYgPwZQ+CnhwMYC0CP74EPbjx2BflaD6AUjMD2ucorR921LkA5DqAuvGQXXR72f0RAfnsN141Y97H8tU5A/nDPTvspz6dRULbmWi8gn30tb91QW72VpxonZK0bkOdL2o1UNrve7oCIRW+AAAHkj2rHmG/xd9tYmgEzlasPBtXz1IYAt9I9yIm3N8Rdjw0C7uRO3jtxmL7Fn+XmAA8S273OdHcPHI2fGwQ8tRxeJqHnR4fLjMj3atf2LG53u95GAI8ta1J3dxv3yKM1qtzcXdb9+LG6bW8EMG4cwiTov+jlbvywd97BBIDucnnC+e+ev8wOT5yYAIybrgGM2O1IXtjguFuMb1ctZ34MAGgDJI3rynKVHf3953JM63a1WnWfujIAaNjodcK0envEp4/85970Ax4OF6JeuToVzG8GMLvfHwF+eW/rdl7lzm8G8HVvm7qMnwYD4fxGAF9qd3I43tuN3YV4fhMAOgPZrAMRf7SdJ11HJr8JwNN2czHydvN9uDs6FspvAEAXQUH9SR1u5eBeLL8BwPPB415qDzUQzG8AsKin33sehmh+A4CnXfhRfHDCTDS/AcBssVmZPY//a9ob/SU/fkBZHz+B5DcGgMpvCgCW3xAALr8ZAGB+IwDI/PKAD8eRXx5QfDiK/AoASUFj/s+5CYCUoDF/UXwwApBo+Jb8CgIlgLCgNb+8QA0gKOjILy1QBAgJOvPLClQBAoKe/JICZQC3oDe/nEAdwHkQxZFfSgAA4DqM5covIwAA8Ag480sIIAD9Au784gIQQJ+gOT8BEcAAugXN+c+zMwgBEKD49Ltw/gxEAAUoPv8qnB9EAAZoE3TlhxBIA77zCbrzAwikAReER9CXX10gDch4BP35lQXyAA4BT35VgQIgu/h28Km/iedXFKgAsqvLrk/lza8mUAJ0Cprzn2UZrEAN0CEQya8iUAS0CsTyKwhUAdk/jZ8qml9eoAxo+uS/xPNLC9QBbZ8smF9WAADgFPTllxRAALI/QPLLCUAA2TlIfikBDKBXwJdfRgAE6BZc8uaXEEABspeO/FdZhiYAA1wQkPzCAjBAq0Awv6gADvDjEia/oAC7C0nkFxNAASDzCwmgAC+Q+UUEqD9k0vkFBDCAn9D5+QUggDP4/NwCvOX0N7X8vAIAwFXzrY4XWaZDoA64ukTKzydQBvzAy88lUAU0/4AB5ecRKAKQ83MIFAEvyPn7BWqAc/T8vQIlgI78fQIVwJmW/D0CBYCu/N0CecC/TX/zO0b+ToE0oPEH+DxDqnaBNEBr/g4B3Jl61PztAimA3fiYLNT8bYKo/nBITkDY9MhB5Pwtgnjv7VF8gLjh8bPo+ZsFduezYTof3x/rzt8kiPdfQMYHoC9QqL2aTkv+QwF9uNxkLQ5w0rpAU/59AXs4niMBYC8RsWLd+euC2Op6NXE3oHyNix1vZtOfWaZfEMV268PZeAAyL9LBqO78wK8yQqjul7yDv0wKuibOWgUg/jovyLLDuDc+7nvqtdQJcAKcACfACXACvOv6X4ABAI166i4m1058AAAAAElFTkSuQmCC"/>
+																<ImgFileSettings id="49769" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXR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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="45154"/>
-															<DesignImage id="45155">
-																<style align="center" name="Image15" width="fill_parent"/>
-																<controlActions id="45156">
+															<DesignImage id="49772">
+																<style align="center" name="Image20" width="fill_parent"/>
+																<controlActions id="49773">
 																	<children>
-																		<DesignActionCtrlClick id="45157">
+																		<DesignActionCtrlClick id="49774">
 																			<children>
-																				<DesignActionGroupRef id="45158" groupRef="40501"/>
-																				<DesignActionGroupRef id="45159" groupRef="42360"/>
-																				<DesignActionShowGeolocationInMap id="45160" location="$MT_GEOLOCATION/Root/Location/@Geolocation" zoom="if ( $MT_iOS ) then 50 else 10"/>
+																				<DesignActionGroupRef id="49775" groupRef="40501"/>
+																				<DesignActionGroupRef id="49785" groupRef="42987"/>
+																				<DesignActionGroupRef id="49777" groupRef="49487"/>
 																			</children>
 																		</DesignActionCtrlClick>
-																		<DesignActionCtrlLongClick id="45161">
+																		<DesignActionCtrlLongClick id="49778">
 																			<children>
-																				<DesignActionGroupRef id="45162" groupRef="40507"/>
-																				<DesignActionMessageBox id="45163" msgBoxMsg="&apos;Show current location on map.&apos;">
+																				<DesignActionGroupRef id="49779" groupRef="40507"/>
+																				<DesignActionMessageBox id="49783" msgBoxMsg="&apos;Search for any nearby traffic alerts.&apos;">
 																					<children>
-																						<DesignActionMessageBoxButton id="45164"/>
+																						<DesignActionMessageBoxButton id="49784"/>
 																					</children>
 																				</DesignActionMessageBox>
 																			</children>
 																		</DesignActionCtrlLongClick>
 																	</children>
 																</controlActions>
-																<ImgFileSettings id="45165" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXR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"/>
+																<ImgFileSettings id="49782" url="tool_icons\traffic_alert.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZJQTFRFoc3omMjlc7TcVKXTZK3Xv9zudLba0Obzs9fpQJXN0efzgLjeEHrA7/b7frrfSZ/PIIPE3+33XKnVa7DZTaHQerjej8TgUKPRYKvWb7Lan8rmi8Lgy+LvDnm/Z67YMIzJd7bdXKnUUaPRarDX8/n85/L5WKfUG4DDoszlNo/K6PP5aK/XYKbVvdvrxeDwbK7Xj8Hios3n3O32cK/ZudrtUJ3Rh73ez+Xwr9Pqos7mUZ7Qz+TyksTklcThksXjsdXszeTwyOHvKYjG0+fxrtTqyOLxTqLQmsnmerXaxuDuRJfNf7zdX6bUc7XZos7noc3ll8jkYavVrdTpQZrNvNzrhb/eIYTFfLrcsNPor9Lqv9vuV6fTFn/CCHa+f7jdcrPcI4fFPJjMNJLKerfelsjjEHrBQZfOMY3KBHS9GoLDdbPZzOTySZvQUaDTmMjic7XbbrLZDXm/UJ7RSpzQYqnXkcTjEXzBWKfTV6TTfbncqtLnWaXVEXvBZ6zYXarVOZLMRZ3OAHG8grzg2Ory////////tMFTIAAAAIZ0Uk5T/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDZmVodAAAI4klEQVR42uydZ1/bSBCHiRuQuBewMTGYMw7B4IAhBEJLgRBSSEL6Jbn0cr33Zgvne5+q2ZVWdUdacT/935BgW5pHOzs7Myusvo9HXH0BQAAQAAQAAUAAEAAEAAFAABAABAABQAAQAAQAAUAAEAAEAAHA/x2g1U+rGkOA6fJEm16NRVYAt9tAarSYAJTbYJpoMQBYaQNqouY5wLR44lQxRKlcWDxQ2XMA0YGGkxy9ciLBtNcAQvxJSfaHIg6VK4ifjwgA+x4DNIWTFvmzJ4spCt8Ph4RDCP/6tc+aNrcnQQBEDxrnuPEU5fTN8gR14R/WvXGtHwBA8KA8gP0igTgLcjamzdokLUBL9qBh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"/>
 															</DesignImage>
 															<DesignTableCellEmpty id="45166"/>
 															<DesignImage id="45167">
@@ -5049,7 +5135,7 @@ Please try again later.&quot;">
 															</DesignImage>
 															<DesignTableCellEmpty id="45243"/>
 															<DesignImage id="45244">
-																<style align="center" name="Image19" width="fill_parent"/>
+																<style align="center" name="Image19" onEnterEscape="OnEscape" width="fill_parent"/>
 																<controlActions id="45245">
 																	<children>
 																		<DesignActionCtrlClick id="45246">
@@ -5120,6 +5206,7 @@ Paste your key into the Settings page&apos;">
 					<PageXMLRootRef id="44746" refXMLRoot="38248"/>
 					<PageXMLRootRef id="44747" refXMLRoot="41218"/>
 					<PageXMLRootRef id="44748" refXMLRoot="41732"/>
+					<PageXMLRootRef id="48974" refXMLRoot="48975"/>
 				</xmlRoots>
 			</DesignPage>
 			<DesignPage id="48409" IsNeedsTableRestOfScreenHandling="1">
@@ -5586,26 +5673,36 @@ $HTTP1_get_coordinates/response/results/result/locations/location/latLng/lng)"/>
 													</DesignLabel>
 												</children>
 											</DesignTableRow>
-											<DesignTableRow id="48873">
+										</children>
+									</DesignTable>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49315">
+								<children>
+									<DesignTable id="49316">
+										<style addDelPossible="0" name="Table1"/>
+										<children>
+											<DesignTableCol id="49317"/>
+											<DesignTableRow id="49319">
 												<children>
-													<DesignButton id="48858">
-														<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" colSpan="2" enabled_x="$PERSISTENT/Root/locationSaved = 0" margin_x="$PERSISTENT/Root/margFactor * 2" multiLine="1" name="Map View3" text_x="if ( $PERSISTENT/Root/locationSaved = 0 ) then &apos;Save This Location&apos; else &apos;Location Saved&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize" visible_x="($userLocation/Root/Location/@Latitude != &apos;&apos;) and ($userLocation/Root/Location/@Longitude != &apos;&apos;)"/>
-														<controlActions id="48859">
+													<DesignButton id="49300">
+														<style align="center" backgroundColor_x="if ($MT_iOS) then $MT_PageBackgroundColor else (  )" enabled_x="$PERSISTENT/Root/locationSaved = 0" margin_x="$PERSISTENT/Root/margFactor" multiLine="1" name="Map View3" text_x="if ( $PERSISTENT/Root/locationSaved = 0 ) then &apos;Save Location&apos; else &apos;Location Saved&apos;" textSize_x="$PERSISTENT/Root/userSettings/textSize" visible_x="($userLocation/Root/Location/@Latitude != &apos;&apos;) and ($userLocation/Root/Location/@Longitude != &apos;&apos;)"/>
+														<controlActions id="49301">
 															<children>
-																<DesignActionGroupRef id="48862" groupRef="36787"/>
-																<DesignActionCondition id="48863" condition="$PERSISTENT/Root/userInputGood = 1">
+																<DesignActionGroupRef id="49304" groupRef="36787"/>
+																<DesignActionCondition id="49305" condition="$PERSISTENT/Root/userInputGood = 1">
 																	<children>
-																		<DesignActionConditionTrue id="48864">
+																		<DesignActionConditionTrue id="49306">
 																			<children>
-																				<DesignActionCondition id="48865" condition="$PERSISTENT/Root/locationSaved = 0">
+																				<DesignActionCondition id="49307" condition="$PERSISTENT/Root/locationSaved = 0">
 																					<children>
-																						<DesignActionConditionTrue id="48866">
+																						<DesignActionConditionTrue id="49308">
 																							<children>
-																								<DesignActionUpdateNode id="48867" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/@lat" resOf="$userLocation/Root/Location/@Latitude"/>
-																								<DesignActionUpdateNode id="48868" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/@lon" resOf="$userLocation/Root/Location/@Longitude"/>
-																								<DesignActionUpdateNode id="48869" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/ns1:time" resOf="current-dateTime()"/>
-																								<DesignActionAppendNode id="48870" appAt="$XML1_gpx_data/ns1:gpx/ns1:trk" resOf="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg"/>
-																								<DesignActionUpdateNode id="48871" updAt="$PERSISTENT/Root/locationSaved" resOf="1"/>
+																								<DesignActionUpdateNode id="49309" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/@lat" resOf="$userLocation/Root/Location/@Latitude"/>
+																								<DesignActionUpdateNode id="49310" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/@lon" resOf="$userLocation/Root/Location/@Longitude"/>
+																								<DesignActionUpdateNode id="49311" updAt="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg/ns1:trkpt/ns1:time" resOf="current-dateTime()"/>
+																								<DesignActionAppendNode id="49312" appAt="$XML1_gpx_data/ns1:gpx/ns1:trk" resOf="$XML2_gpx_segment_model/ns1:gpx/ns1:trk/ns1:trkseg"/>
+																								<DesignActionUpdateNode id="49313" updAt="$PERSISTENT/Root/locationSaved" resOf="1"/>
 																							</children>
 																						</DesignActionConditionTrue>
 																					</children>
@@ -5841,7 +5938,30 @@ $userLocation/Root/Location/@Latitude,&apos;,&apos;,$userLocation/Root/Location/
 																<ImgFileSettings id="48690" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXRd37AkZr8+EPg2F+oY8JBsMsNCPNvDreARF0SFtInZ4uAsxP8onrAC4D9pzsEctUjHMMXfqwu8EdxhRNQhvnHkvnBJh7ww0fUPRZQ5QQMlOQHhEHoHAU4xw9DfADYAEOQJOAUBThVBQi2sZsgUYCPLFWAipoGSA8QrB+23jMg+AsF+cEBfhTiABQxZ4c0AIJ5oC59ENf55wFVgG38hphjGK3xLyVUAW7xi7l79omshNnRaABcBS+Ul1xK5AWW06oAcC3RllzMtTErCS2Am+CatuRyuom75qoD8InQhxg3NLAHfU8LAPtQX2pL2cf1ID2AG/J5lddN/T3xrEonPcAV7bwErYq4MUgTAE7GJQlACbMQ0gbYkmsC2ACpAuBhXJJrgHQBtzJNEDZAugDYBHuCgD0TAHAyawvlbzsmAOBAJHSVJl8wAwAHIpHrZDXHDAB4ErtOA6/NPJkAuOoKDaXBENq9MgEAt5bct0vAGyW2gREAeHqC8ziGR/ABMAQAj+MmFwDexbtlCgAuq506R/7gXIpzA4wB7GzydSLYgTZ3zAHwdqJpBzIHEHaiNs8a4gYYBQg7EdudT63XDmQQIOxEJfZdwBYwDBBOZzXWNdA2MA4ApzOGNRFcAx0AAwHjLssdsPnG3BVGkwDgH4fh/qfD+SuMJgGWl/6kT8hwCr4EJgKWl3x4EyZxLJ0dQQ0DTPL7/h1tLJ0dQc0CwPy+/xt5LJ0bQY0CRPl9n3gve3FuBDUJ8JrfLxM+TRCOoFcGAt7y+/4jfl0K16CfgHmA2fy+f4Rbl8I16BMwDzCf37eq6LE0NoKaAljIjx1LYyOoIYBY/mgs7aNPoxgHQOT3lxCnWaanUUwDIPMvj+OrOriGGxsHQOePNjfFxSlsG5gGwOUPd8ilhSM4NgKlDsDmj115gg1wCwwDEPKH+8vSXAP0gGEAVH5/GXn9tehg79JLD4DM/8v8Fr85swhCN0B6AFr+8ChovX1g79YsADV/eP219rqNwd1omxKAIT8Yvt7J0iDcaJsOgCU/2JmeooAnInZMAjDlDz8fcRitIi6BQQDG/PAafmECKMT3YQoAHxLPD0AX9qGgB3WBcoD/IfH88Ar4IexBTwkABAXI/J/x94EUyD1IBiAkQObHvhTc3pOPOBkApuEF8uMEl9HdHJcJAbgF2PwYwTACDJMCcAoI+dGCcQQYJwbgEhDzowVdmL8LkgNwCCj5kYIeBPSSBDALqPlRAri5R27m1QHeNlGy+RECeEcgYRZQAlhaVpU/LoA3ZDlXyQJYBIz54wKHtnBUAaALmPPHBD3KMawGQBOg81ssgkvyPKwKQBag86+4OQbBNmUQUgXwl37nzu+yCIa0z52qAviff+XOzyLY6Tm9HS0AnICUn6kNKCUM+MYmIOdXIBAGrFosAlp+eYEwwGUR0PNLC8QBDAKW/LICCYC7+jX2rn/z55cUyADcjTXSu7LmlxNIAYgCdP6c66oVyAEIAp78MgJJAFbAl19CIAtw/0K+K29+cYE0APXO//HnFxbIA3DvzJlfVKAAwCig5RcUqAC4/yrJLyZQAnBXlOQXEqgBUAVs+UUEigBkwRprfgGBKoD7TMi/4bqJCZQBVi0l+bkFygBYAWd+XoE6wJc1Nfk5BUl3IYH8fAJVAJX5uQSqAM8q8/MIEp3IhPNzCNQAfqrOzy5QAsipz88sSG45/VUuP6tAAWAD+T7WquvqEMgDNtYSys8mkAZ8SS4/k0AWgJ7AFOVnEUgCEs7PIJAEPCecny6QA6wknp8qkALoyE8TyAByWvJTBBIAXfnJAnHAH6jX/JZEfqJAGICcgFfchAovEAZozU8QqLtSn2h+vEAIEHzc9E5vfpzgDvt1o7SvLrc158cIbMyXTr9Qvzy+qjs/WlDFP1KN9vX9tu78KIGN/75U6gMU1ke688cF8HmEgxd+AGyCGYGm/IsCmB/XAAwPEVm3deefF9jrpCfaMT3GpWoHo+lP19UvuLPDpyjhnw2q6UE6kkV4tqmmRxnJ1e6LOEDVw6QkakB8aL2ux3kJVrVil8npUnlOvcrKABkgA2SADJAB3nX9L8AAeL9o97P8MNYAAAAASUVORK5CYII="/>
 															</DesignImage>
 															<DesignTableCellEmpty id="48854"/>
-															<DesignTableCellEmpty id="48855"/>
+															<DesignImage id="49832">
+																<style align="center" name="Image20" width="fill_parent"/>
+																<controlActions id="49833">
+																	<children>
+																		<DesignActionCtrlClick id="49834">
+																			<children>
+																				<DesignActionGroupRef id="49835" groupRef="40501"/>
+																				<DesignActionGroupRef id="49837" groupRef="49487"/>
+																			</children>
+																		</DesignActionCtrlClick>
+																		<DesignActionCtrlLongClick id="49838">
+																			<children>
+																				<DesignActionGroupRef id="49839" groupRef="40507"/>
+																				<DesignActionMessageBox id="49840" msgBoxMsg="&apos;Search for any nearby traffic alerts.&apos;">
+																					<children>
+																						<DesignActionMessageBoxButton id="49841"/>
+																					</children>
+																				</DesignActionMessageBox>
+																			</children>
+																		</DesignActionCtrlLongClick>
+																	</children>
+																</controlActions>
+																<ImgFileSettings id="49842" url="tool_icons\traffic_alert.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZJQTFRFoc3omMjlc7TcVKXTZK3Xv9zudLba0Obzs9fpQJXN0efzgLjeEHrA7/b7frrfSZ/PIIPE3+33XKnVa7DZTaHQerjej8TgUKPRYKvWb7Lan8rmi8Lgy+LvDnm/Z67YMIzJd7bdXKnUUaPRarDX8/n85/L5WKfUG4DDoszlNo/K6PP5aK/XYKbVvdvrxeDwbK7Xj8Hios3n3O32cK/ZudrtUJ3Rh73ez+Xwr9Pqos7mUZ7Qz+TyksTklcThksXjsdXszeTwyOHvKYjG0+fxrtTqyOLxTqLQmsnmerXaxuDuRJfNf7zdX6bUc7XZos7noc3ll8jkYavVrdTpQZrNvNzrhb/eIYTFfLrcsNPor9Lqv9vuV6fTFn/CCHa+f7jdcrPcI4fFPJjMNJLKerfelsjjEHrBQZfOMY3KBHS9GoLDdbPZzOTySZvQUaDTmMjic7XbbrLZDXm/UJ7RSpzQYqnXkcTjEXzBWKfTV6TTfbncqtLnWaXVEXvBZ6zYXarVOZLMRZ3OAHG8grzg2Ory////////tMFTIAAAAIZ0Uk5T/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDZmVodAAAI4klEQVR42uydZ1/bSBCHiRuQuBewMTGYMw7B4IAhBEJLgRBSSEL6Jbn0cr33Zgvne5+q2ZVWdUdacT/935BgW5pHOzs7Myusvo9HXH0BQAAQAAQAAUAAEAAEAAFAABAABAABQAAQAAQAAUAAEAAEAAHA/x2g1U+rGkOA6fJEm16NRVYAt9tAarSYAJTbYJpoMQBYaQNqouY5wLR44lQxRKlcWDxQ2XMA0YGGkxy9ciLBtNcAQvxJSfaHIg6VK4ifjwgA+x4DNIWTFvmzJ4spCt8Ph4RDCP/6tc+aNrcnQQBEDxrnuPEU5fTN8gR14R/WvXGtHwBA8KA8gP0igTgLcjamzdokLUBL9qBh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"/>
+															</DesignImage>
 															<DesignTableCellEmpty id="48691"/>
 															<DesignImage id="48692">
 																<style align="center" name="Image15" width="fill_parent"/>
@@ -6082,6 +6202,7 @@ $PERSISTENT/Root/address/addressLine3,
 $userLocation/Root/Location/@Latitude, 
 $userLocation/Root/Location/@Longitude,
 $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
+						<DesignActionScrollTo id="49492" scrolltoTarget="control" subject="control" scrollSubject="48287"/>
 					</children>
 				</onPageLoadActions>
 				<xmlRoots>
@@ -6093,6 +6214,207 @@ $XML1_map_image/images/png[2]" resOf="&apos;&apos;"/>
 					<PageXMLRootRef id="48605" refXMLRoot="37093"/>
 					<PageXMLRootRef id="48827" refXMLRoot="41218"/>
 					<PageXMLRootRef id="48857" refXMLRoot="41732"/>
+					<PageXMLRootRef id="49092" refXMLRoot="48975"/>
+				</xmlRoots>
+			</DesignPage>
+			<DesignPage id="48945" subPage="1" IsNeedsTableRestOfScreenHandling="1">
+				<style backgroundColor_x="if ($MT_iOS = true() ) then&apos;#FFFFFF&apos; else ( )" name="Traffic Alerts" showTitleBar="0"/>
+				<children>
+					<DesignTable id="48913">
+						<style backgroundColor="#0071BC" margin_x="$PERSISTENT/Root/margFactor" name="Table5" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="48914">
+								<style colWidth_x="$PERSISTENT/Root/iconWidth"/>
+							</DesignTableCol>
+							<DesignTableCol id="48915">
+								<style colWidth_x="$PERSISTENT/Root/iconWidth"/>
+							</DesignTableCol>
+							<DesignTableCol id="48916"/>
+							<DesignTableCol id="48917">
+								<style colWidth="20%"/>
+							</DesignTableCol>
+							<DesignTableRow id="48918">
+								<children>
+									<DesignImage id="48919">
+										<style align="center" name="Image1" valign="middle" visible_x="$MT_iOS = true()" width="fill_parent"/>
+										<controlActions id="48920">
+											<children>
+												<DesignActionReturnFromSubpage id="48946"/>
+											</children>
+										</controlActions>
+										<ImgFileSettings id="48926" url="tool_icons\back.png" createDirs="0" embeddedImage="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"/>
+									</DesignImage>
+									<DesignImage id="48927">
+										<style align="center" name="Image5" width="fill_parent"/>
+										<controlActions id="48928">
+											<children>
+												<DesignActionReturnFromSubpage id="48947"/>
+											</children>
+										</controlActions>
+										<ImgFileSettings id="48939" url="tool_icons\my_home.png" createDirs="0" embeddedImage="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"/>
+									</DesignImage>
+									<DesignLabel id="48940">
+										<style align="center" backgroundColor="#0071BC" height="fill_parent" multiLine="1" name="Label4" text="Traffic Alerts" textColor="white" textSize="medium" weight="1"/>
+									</DesignLabel>
+									<DesignTableCellEmpty id="48942"/>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="49167">
+						<style name="Results Page Header table" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="49168"/>
+							<DesignTableRow id="49169">
+								<children>
+									<DesignLabel id="49170">
+										<style align="center" multiLine="1" name="Label2" text_x="concat($PERSISTENT/Root/incident_count, &apos; Incidents Found&apos;)" textSize_x="$PERSISTENT/Root/userSettings/textSize"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="49172">
+								<children>
+									<DesignHLine id="49173">
+										<style margin_x="$PERSISTENT/Root/margFactor" name="Horizontal Line4"/>
+									</DesignHLine>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="49177">
+						<style addDelPossible="0" margin_x="$PERSISTENT/Root/margFactor" name="Table1"/>
+						<children>
+							<DesignTableCol id="49221">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="49178"/>
+							<DesignTableCol id="49222">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableCol id="49223">
+								<style colWidth_x="$PERSISTENT/Root/iconWidth"/>
+							</DesignTableCol>
+							<DesignTableCol id="49224">
+								<style colWidth="5%"/>
+							</DesignTableCol>
+							<DesignTableScrollableArea id="49179">
+								<style maxTableY="RestScreenYMax"/>
+								<children>
+									<DesignTableRowGroup id="49180" pageXML="49095">
+										<style addDelPossible="0"/>
+										<children>
+											<DesignTableRow id="49181">
+												<children>
+													<DesignTableCellEmpty id="49225"/>
+													<DesignLabel id="49191">
+														<style colSpan="3" multiLine="1" name="Label1" text_x="concat(
+if (type = 1) then &apos;Construction Delay&apos; else
+if (type = 2) then &apos;Event Traffic&apos; else
+if (type = 3) then &apos;Congested Traffic&apos; else
+if (type = 4) then &apos;Accident/Incident Delay&apos; else 
+&apos;Unknown Delay&apos;, &apos; on &apos;,ExpandDescription(parameterizedDescription/roadName) )" textSize_x="$PERSISTENT/Root/userSettings/textSize" underline="0" weight="1"/>
+													</DesignLabel>
+													<DesignTableCellEmpty id="49226"/>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="49183">
+												<children>
+													<DesignTableCellEmpty id="49227"/>
+													<DesignLabel id="49190">
+														<style align="left" colSpan="3" marginBottom_x="$PERSISTENT/Root/margFactor" name="Label3" text_x="concat(&apos;Severity: &apos;,severity )" textSize_x="$PERSISTENT/Root/userSettings/textSize" underline="0" weight="1"/>
+													</DesignLabel>
+													<DesignTableCellEmpty id="49228"/>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="49185">
+												<children>
+													<DesignTableCellEmpty id="49229"/>
+													<DesignLabel id="49189" pageXML="49106">
+														<style align="left" multiLine="1" name="Label5" textSize_x="$PERSISTENT/Root/userSettings/textSize" underline="0" valign="middle"/>
+														<controlActions id="893">
+															<children>
+																<DesignActionCondition id="49936" condition="mt-text-to-speech-is-speaking()">
+																	<children>
+																		<DesignActionConditionTrue id="49937">
+																			<children>
+																				<DesignActionTextToSpeech id="49938" op="Stop"/>
+																			</children>
+																		</DesignActionConditionTrue>
+																		<DesignActionConditionFalse id="49939">
+																			<children>
+																				<DesignActionTextToSpeech id="49941" speechText="ExpandDescription(fullDesc)"/>
+																			</children>
+																		</DesignActionConditionFalse>
+																	</children>
+																</DesignActionCondition>
+															</children>
+														</controlActions>
+													</DesignLabel>
+													<DesignTableCellEmpty id="49230"/>
+													<DesignImage id="49211">
+														<style align="center" name="Image4" valign="middle" width="fill_parent"/>
+														<controlActions id="49212">
+															<children>
+																<DesignActionCtrlClick id="49213">
+																	<children>
+																		<DesignActionGroupRef id="49214" groupRef="40501"/>
+																		<DesignActionShowGeolocationInMap id="49215" location="concat(lat, &apos;, &apos;,lng)" location2="concat(place/geometry/coordinates/item[2],&apos;, &apos;,place/geometry/coordinates/item[1] )"/>
+																	</children>
+																</DesignActionCtrlClick>
+																<DesignActionCtrlLongClick id="49216">
+																	<children>
+																		<DesignActionGroupRef id="49217" groupRef="40507"/>
+																		<DesignActionMessageBox id="49218" msgBoxMsg="&apos;Click to view on map.&apos;">
+																			<children>
+																				<DesignActionMessageBoxButton id="49219"/>
+																			</children>
+																		</DesignActionMessageBox>
+																	</children>
+																</DesignActionCtrlLongClick>
+															</children>
+														</controlActions>
+														<ImgFileSettings id="49220" url="tool_icons\current_location.png" createDirs="0" embeddedImage="iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAP9QTFRFyeLx8Pf6/f7+3+707/b7erfeCHa+3u33YqnXIYTFrdPq+vz+j8Hi3+33EHrAuNntQJXNG4DDIIPEQZfOWaXVEHrB5/L3KYjHMIzJcrPcoszlUaDTbK7XcK/Zy+Lvf7jdDnm/No/KGH/DSZvQUJ7Raq7ZerXaKYjGz+TyMY3KYKbVlcThsNPoqdHqksTk7/f79/v90Obz4O73RJfN+Pv9vdvrOZLMX6bUh73ev9zu2uvzmcnmv9vun8rmUZ7Q5PD4gLjes9bs9Pn86fP6r9Lqoc3o2er13e30vtzvUJ3Rw9/w8/j7fLbb1Oj07PX5AHG8qNDpgrzg////2Ory////HOOVxwAAAFV0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////ALChB88AAAfmSURBVHja7N15W+I4HAdwRguCFkWOZRBREER08B6v9do5994e8f2/lqVpUaC5k6bxefr7V4Xvx6Q52kJzL++8chkgA2SADJABMkAGEK8Hu1OpOGFVKh37wXpHgFHnoxOvj53RuwCUO1UHV9VO2XTAQ8UhV+XBZMDoLX6jWasXW15QrWK91my8EUamAqzONGOzHUafrVa7Of1xxzIS8LAe/e/7eQ9d+X7UDtUHAwHRv3+v7pGqvhc1gmkAK+z9hbZHq3YhPBIsowBWOPBf5z165a/DacEyCBDmL9Q9tqoXGAQ57fn39j3W2t+jC3La8+c99srTBRoBR9z5p4IjIwC2QP6pwDYAMArmrwZv/okgOJLXR+kD4AGw7/HXPjwMUgfADtT3RKpP7ESaAFbQgUqeWJWCTmSlC9gN/ostQUAr+OPdVAGwAWqeaNUITZDT1gCFvDAAjkS7aQLkGiBqghQBj3INEDXBY3qAweTtDz2ZOpy8wiA1gCU6hy3MZlZagKAHNTy5auD6UE5TD7qWBFzj+hADoGxXqo5sFQnh7s9P/Umdnv/A/04RNw5RAeWBo6Lw0U4u/Ne6OMH+WvAiZQHArpL4hGXQ8Zk/U2fHpAXR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"/>
+													</DesignImage>
+													<DesignTableCellEmpty id="49231"/>
+												</children>
+											</DesignTableRow>
+											<DesignTableRow id="49205">
+												<children>
+													<DesignTableCellEmpty id="49234"/>
+													<DesignVSpace id="49207">
+														<style name="Space1"/>
+													</DesignVSpace>
+													<DesignTableCellEmpty id="49235"/>
+													<DesignTableCellEmpty id="49236"/>
+													<DesignTableCellEmpty id="49237"/>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTableRowGroup>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+				</children>
+				<onPageLoadActions id="48953">
+					<children>
+						<DesignActionUpdateNode id="49161" updAt="$PERSISTENT/Root/incident_count" resOf="count($HTTP1_traffic_alerts/IncidentsResponse/Incidents/Incident)"/>
+						<DesignActionLoop id="49531" actionEnabled="0" varName="i" forEach="1 to count($HTTP1_traffic_alerts/IncidentsResponse/Incidents/Incident)">
+							<children>
+								<DesignActionLoop id="49535" varName="j" forEach="1 to count($XML1_searchPairs/substitutes/serp)" breakLoopIf="$j &gt; count($XML1_searchPairs/substitutes/serp)">
+									<children>
+										<DesignActionUpdateNode id="49536" updAt="$HTTP1_traffic_alerts/IncidentsResponse/Incidents/Incident[$i]/fullDesc" resOf="replace( $HTTP1_traffic_alerts/IncidentsResponse/Incidents/Incident[$i]/fullDesc,
+$XML1_searchPairs/substitutes/serp[$j]/@trg,
+$XML1_searchPairs/substitutes/serp[$j]/@rep )"/>
+									</children>
+								</DesignActionLoop>
+							</children>
+						</DesignActionLoop>
+					</children>
+				</onPageLoadActions>
+				<xmlRoots>
+					<PageXMLRootRef id="48961" refXMLRoot="36746"/>
+					<PageXMLRootRef id="48987" refXMLRoot="48975"/>
 				</xmlRoots>
 			</DesignPage>
 		</children>
@@ -6429,6 +6751,50 @@ $PERSISTENT/Root/address/addressLine3
 					</DesignActionCondition>
 				</children>
 			</DesignActionGroup>
+			<DesignActionGroup id="49487" name="Search Traffic Alerts">
+				<children>
+					<DesignActionCondition id="49288" condition="$PERSISTENT/Root/api_data/MapQuestKey/@key = &apos;&apos;">
+						<children>
+							<DesignActionConditionTrue id="49289">
+								<children>
+									<DesignActionMessageBox id="49290" msgBoxTitle="&apos;To activate this feature:&apos;" msgBoxMsg="&apos;Request an API key for MapQuest at 
+ 
+https://developer.mapquest.com/documentation/
+ 
+Paste your key into the Settings page&apos;">
+										<children>
+											<DesignActionMessageBoxButton id="49291"/>
+										</children>
+									</DesignActionMessageBox>
+								</children>
+							</DesignActionConditionTrue>
+							<DesignActionConditionFalse id="49292">
+								<children>
+									<DesignActionReloadData id="49293" reloadRef="48975"/>
+									<DesignActionCondition id="49428" condition="count($HTTP1_traffic_alerts/IncidentsResponse/Incidents/Incident) &lt; 1">
+										<children>
+											<DesignActionConditionTrue id="49429">
+												<children>
+													<DesignActionMessageBox id="49484" msgBoxTitle="&apos;Traffic Alerts&apos;" msgBoxMsg="&apos;No incidents reported near this location.&apos;">
+														<children>
+															<DesignActionMessageBoxButton id="49485"/>
+														</children>
+													</DesignActionMessageBox>
+												</children>
+											</DesignActionConditionTrue>
+											<DesignActionConditionFalse id="49432">
+												<children>
+													<DesignActionGotoSubpage id="49426" showLoadSubpageMsg="0" showCloseSubpageMsg="0" pageRef="48945"/>
+												</children>
+											</DesignActionConditionFalse>
+										</children>
+									</DesignActionCondition>
+								</children>
+							</DesignActionConditionFalse>
+						</children>
+					</DesignActionCondition>
+				</children>
+			</DesignActionGroup>
 		</children>
 	</ActionGroupRoot>
 	<XPathFunctionsRoot id="826">
@@ -6437,6 +6803,17 @@ $PERSISTENT/Root/address/addressLine3
 {
 	replace( $a ,  &apos;, &apos; ,  &apos;
 &apos; )
+}"/>
+			<DesignXPathFunction id="49934" xpath="declare function ExpandDescription($a as xs:string, $r) as xs:string
+{
+      if ( exists( $r ) )
+      then head( $r ) ! ExpandDescription( replace( $a, ?1, ?2, &apos;q&apos; ), tail( $r ) )
+      else $a
+
+}"/>
+			<DesignXPathFunction id="49935" xpath="declare function ExpandDescription($a as xs:string) as xs:string
+{
+	ExpandDescription( $a, $replacements )
 }"/>
 			<DesignXPathFunction id="47396" xpath="declare function ImgFilename()
 {
@@ -6501,7 +6878,7 @@ $PERSISTENT/Root/address/addressLine3
 								<children>
 									<PageXMLAttribute id="41213" name="name" mustExist="1" default="openweathermap.org"/>
 									<PageXMLAttribute id="41214" name="URL" mustExist="1" default="&apos;https://openweathermap.org/current&apos;" defValueIsXPath="1"/>
-									<PageXMLAttribute id="41215" name="key" mustExist="1"/>
+									<PageXMLAttribute id="41215" name="key" mustExist="1" default="&apos;&apos;" defValueIsXPath="1"/>
 								</children>
 							</PageXMLElement>
 							<PageXMLElement id="41734" name="EventfulKey">
@@ -6509,6 +6886,13 @@ $PERSISTENT/Root/address/addressLine3
 									<PageXMLAttribute id="41735" name="name" mustExist="1" default="eventful.com/events"/>
 									<PageXMLAttribute id="41736" name="URL" mustExist="1" default="api.eventful.com"/>
 									<PageXMLAttribute id="41737" name="key" mustExist="1"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="49942" name="TimeZoneDB">
+								<children>
+									<PageXMLAttribute id="49943" name="name" mustExist="1" default="timezonedb"/>
+									<PageXMLAttribute id="49944" name="URL" mustExist="1" default="https://timezonedb.com/api"/>
+									<PageXMLAttribute id="49999" name="key" mustExist="1"/>
 								</children>
 							</PageXMLElement>
 						</children>
@@ -6526,6 +6910,7 @@ $PERSISTENT/Root/address/addressLine3
 							<PageXMLElement id="38375" name="currentResult" mustExist="1" default="1"/>
 						</children>
 					</PageXMLElement>
+					<PageXMLElement id="49162" name="incident_count" mustExist="1" default="0"/>
 					<PageXMLElement id="36536" name="userSettings">
 						<children>
 							<PageXMLElement id="36526" name="showAddress" mustExist="1" default="false"/>
@@ -7529,6 +7914,100 @@ $PERSISTENT/Root/address/addressCountry),
 					</Params>
 				</HttpSettings>
 			</PageXMLRootHttp>
+			<PageXMLRootHttp id="48975" name="HTTP1_traffic_alerts" loadBeforePageOpen="never">
+				<children>
+					<PageXMLElement id="49093" name="IncidentsResponse">
+						<children>
+							<PageXMLElement id="49094" name="Incidents">
+								<children>
+									<PageXMLElement id="49095" name="Incident">
+										<children>
+											<PageXMLElement id="49096" name="id"/>
+											<PageXMLElement id="49097" name="type"/>
+											<PageXMLElement id="49098" name="severity"/>
+											<PageXMLElement id="49099" name="eventCode"/>
+											<PageXMLElement id="49100" name="lat"/>
+											<PageXMLElement id="49101" name="lng"/>
+											<PageXMLElement id="49102" name="startTime"/>
+											<PageXMLElement id="49103" name="endTime"/>
+											<PageXMLElement id="49104" name="impacting"/>
+											<PageXMLElement id="49105" name="shortDesc"/>
+											<PageXMLElement id="49106" name="fullDesc"/>
+											<PageXMLElement id="49107" name="delayFromFreeFlow"/>
+											<PageXMLElement id="49108" name="delayFromTypical"/>
+											<PageXMLElement id="49109" name="distance"/>
+											<PageXMLElement id="49110" name="iconURL"/>
+											<PageXMLElement id="49111" name="parameterizedDescription">
+												<children>
+													<PageXMLElement id="49112" name="crossRoad2"/>
+													<PageXMLElement id="49113" name="direction"/>
+													<PageXMLElement id="49114" name="position1"/>
+													<PageXMLElement id="49115" name="eventText"/>
+													<PageXMLElement id="49116" name="toLocation"/>
+													<PageXMLElement id="49117" name="roadName"/>
+													<PageXMLElement id="49118" name="crossRoad1"/>
+													<PageXMLElement id="49119" name="position2"/>
+													<PageXMLElement id="49120" name="fromLocation"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="49121" name="mqUrl"/>
+							<PageXMLElement id="49122" name="info">
+								<children>
+									<PageXMLElement id="49123" name="copyright">
+										<children>
+											<PageXMLElement id="49124" name="text"/>
+											<PageXMLElement id="49125" name="imageUrl"/>
+											<PageXMLElement id="49126" name="imageAltText"/>
+										</children>
+									</PageXMLElement>
+									<PageXMLElement id="49127" name="statuscode"/>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<HttpSettings so="1" id="48976" url_so="https://www.mapquestapi.com/traffic/v2/incidents?&amp;outFormat=xml&amp;filters=incidents,construction,event,congestion&amp;boundingBox={lat1}%2C{lon1}%2C{lat2}%2C{lon2}&amp;key={api_key}" type_so="REST" returnsNewXML_so="1">
+					<Params>
+						<param id="48977" name="lat1" type="string" value="$userLocation/Root/Location/@Latitude - 0.09" valueType="XPath" location="URLTemplate" documentation="bounding box upper left"/>
+						<param id="48979" name="lon1" type="string" value="$userLocation/Root/Location/@Longitude - 0.09" valueType="XPath" location="URLTemplate" documentation="bounding box upper left"/>
+						<param id="48981" name="lat2" type="string" value="$userLocation/Root/Location/@Latitude + 0.09" valueType="XPath" location="URLTemplate" documentation="bounding box lower right"/>
+						<param id="48983" name="lon2" type="string" value="$userLocation/Root/Location/@Longitude + 0.09" valueType="XPath" location="URLTemplate" documentation="bounding box lower right"/>
+						<param id="48985" name="api_key" type="string" value="$PERSISTENT/Root/api_data/MapQuestKey/@key" valueType="XPath" location="URLTemplate" documentation="MapQuest API Key"/>
+					</Params>
+				</HttpSettings>
+			</PageXMLRootHttp>
+			<PageXMLRootHttp id="49964" name="HTTP1_TimeZoneDB" readOnlyXML="1">
+				<children>
+					<PageXMLElement id="49973" name="result">
+						<children>
+							<PageXMLElement id="49974" name="status"/>
+							<PageXMLElement id="49975" name="message"/>
+							<PageXMLElement id="49976" name="countryCode"/>
+							<PageXMLElement id="49977" name="countryName"/>
+							<PageXMLElement id="49978" name="zoneName"/>
+							<PageXMLElement id="49979" name="abbreviation"/>
+							<PageXMLElement id="49980" name="gmtOffset"/>
+							<PageXMLElement id="49981" name="dst"/>
+							<PageXMLElement id="49982" name="zoneStart"/>
+							<PageXMLElement id="49983" name="zoneEnd"/>
+							<PageXMLElement id="49984" name="nextAbbreviation"/>
+							<PageXMLElement id="49985" name="timestamp"/>
+							<PageXMLElement id="49986" name="formatted"/>
+						</children>
+					</PageXMLElement>
+				</children>
+				<HttpSettings so="1" id="49965" url_so="http://api.timezonedb.com/v2.1/get-time-zone?key={key}&amp;format=xml&amp;by=position&amp;lat={lat}&amp;lng={lon}" type_so="REST" returnsNewXML_so="1">
+					<Params>
+						<param id="49966" name="key" type="string" value="$PERSISTENT/Root/api_data/TimeZoneDB/key" valueType="XPath" location="URLTemplate" documentation="API key"/>
+						<param id="49968" name="lat" type="string" value="$userLocation/Root/Location/@Latitude" valueType="XPath" location="URLTemplate" documentation="User latitude"/>
+						<param id="49970" name="lon" type="string" value="$userLocation/Root/Location/@Longitude" valueType="XPath" location="URLTemplate" documentation="User Longitude"/>
+					</Params>
+				</HttpSettings>
+			</PageXMLRootHttp>
 		</children>
 	</PageXMLRoots>
 	<WorkflowRoot id="58">
@@ -7596,8 +8075,77 @@ $PERSISTENT/Root/address/addressCountry),
 			<GlobalVariable id="324" sysVar="MT_TableColumnContext"/>
 			<GlobalVariable id="325" sysVar="MT_NFCAvailable"/>
 			<GlobalVariable id="326" sysVar="MT_IsEmbedded"/>
+			<GlobalVariable id="49933" name="replacements" xpath="(     [ &apos;Rd &apos;, &apos;Road &apos;], 
+      [ &apos;Rd.&apos;, &apos;Road.&apos;],
+      [ &apos;Expy&apos;, &apos;Expressway&apos;],
+      [ &apos;Blvd&apos;, &apos;Boulevard&apos; ],
+      [ &apos;Pl &apos; , &apos;Place &apos;],
+      [ &apos;Pl.&apos; , &apos;Place.&apos;],
+      [ &apos;Cir &apos;, &apos;Circle &apos;],
+      [ &apos;Dr &apos; , &apos;Drive &apos;],
+      [ &apos;Pkwy&apos;, &apos;Parkway&apos;],
+      [ &apos;Ln &apos; , &apos;Lane &apos;],
+      [ &apos;Hwy&apos;, &apos;Highway&apos;],
+      [ &apos;Fwy&apos;, &apos;Freeway&apos;],
+      [ &apos;Brg&apos;, &apos;Bridge&apos;],
+      [ &apos;Average&apos;, &apos;average&apos;],
+      [ &apos;Avenue&apos;, &apos;avenue&apos;],
+      [ &apos;Ave&apos;, &apos;Avenue&apos;],
+      [ &apos;St &apos;, &apos;Street &apos;],
+      [ &apos;St.&apos;, &apos;Street.&apos;],
+      [ &apos;Sq &apos;, &apos;Square&apos;],
+      [ &apos;RT&apos;, &apos;Route&apos; ],
+      [ &apos;mph&apos; , &apos;miles per hour&apos;]
+)" description_so="replacement strings for traffic incident descriptions"/>
 		</children>
 	</GlobalVariables>
+	<ChartSettingsRoot id="995">
+		<children>
+			<ChartSettings id="49576">
+				<chartData so="1" map-data-categories="1" multi-layer-chart="1">
+					<layer>
+						<dataseries-xny-rows for-each="$HTTP1_weather_forecast/weatherdata/forecast/time" x-value="@from" auto-x-value="0">
+							<col y-value="if ( $PERSISTENT/Root/userSettings/temperature = &apos;f&apos; ) then 
+ round( (((temperature/@value - 273.15) *1.8) + 32 )
+,  0 )
+else 
+round( temperature/@value  - 273.15)" y-name="&quot;Series 1&quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="LineChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9" ShowLegend="0">
+								<TitleFont Bold="0" Size="9.%"/>
+								<LegendFont Size="5.%"/>
+								<AxisLabelFont Bold="0"/>
+							</General>
+							<Line LineWidth="0.5%" DrawFilledConnectionShapes="0"/>
+							<Colors Style="User" Colors="#0071bc" Colors1="#04b508" Colors2="#0879b5" Colors3="#dc7708" Colors4="#dc143c" Colors5="#ffd700" Colors6="#4410a3" Colors7="#878369" Colors8="#b71b68" Colors9="#a25d2d" Colors10="#0028ff" Colors11="#bfbfbf" Colors12="#237518" Colors13="#52aca0" Colors14="#d3c15d" Colors15="#8971d8"/>
+							<XY>
+								<XAxis AxisGridColor="#a0a0a4" ShowGrid="1" TickSize="4.%" ShowTicks="0" ShowValues="0" ShowCategories_Every="8">
+									<ValueFont MinFontHeight="6.pt" Size="4.%"/>
+								</XAxis>
+								<YAxis AutoRangeIncludesZero="0" LabelToAxisMargin="5.%" AxisLabel="Temperature" UseAutoTick="0" ManualTickInterval="5." TickSize="5.%">
+									<ValueFont MinFontHeight="6.pt" Size="4.%"/>
+								</YAxis>
+							</XY>
+						</chartsettings>
+					</layer>
+					<layer>
+						<dataseries-xny-rows>
+							<col y-value="if ( precipitation/@value ) then precipitation/@value else 0" y-name="&quot;Series 1&quot;"/>
+						</dataseries-xny-rows>
+						<chartsettings>
+							<General SettingsVersion="3" ChartKind="AreaChart" BKColorGradientEnd="#cce8ff" PlotBKColorGradientEnd="#e8ffe9"/>
+							<Area Transparency="20" OutlineColor="#0071bc" ShowOutline="0"/>
+							<Colors Style="User" UseSubsequentColors="0" Colors="#d3ebf2" Colors1="#04b508" Colors2="#0879b5" Colors3="#dc7708" Colors4="#dc143c" Colors5="#ffd700" Colors6="#4410a3" Colors7="#878369" Colors8="#b71b68" Colors9="#a25d2d" Colors10="#0028ff" Colors11="#bfbfbf" Colors12="#237518" Colors13="#52aca0" Colors14="#d3c15d" Colors15="#8971d8"/>
+							<XY>
+								<YAxis AutoRange="0" RangeTill="24." AxisGridColor="#a0a0a4" ShowGrid="0" ShowTicks="0" ShowValues="0" AxisPosition="RightOrTop"/>
+							</XY>
+						</chartsettings>
+					</layer>
+				</chartData>
+			</ChartSettings>
+		</children>
+	</ChartSettingsRoot>
 	<DeployableFiles so="1" id="334">
 		<children>
 			<DeployableFile id="37062" deploy="1"/>
