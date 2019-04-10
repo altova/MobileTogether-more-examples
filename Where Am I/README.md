@@ -15,6 +15,8 @@ You will need a key for each API to unlock all the bonus features. Get more info
 
 Click and hold (long click) any tool icon for a help message, tap (short click) to execute the tool.
 
-This app is described in an Altova blog post at: https://blog.altova.com/images-as-tool-buttons-in-moblie-apps/
+Tool icons now have visual feedback when clicked.
+
+This app is described in an Altova blog post at: https://www.altova.com/blog/visual-feedback-in-mobile-applications/
 
 
