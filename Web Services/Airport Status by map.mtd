@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MobileTogetherDesign versionClient="62" versionServer="62" deploymentPath_so="/public/Airport Status" deploymentDescription_so="Mobile version of the Airport Status Web service example from MapForce 7/2/2019 - 12:20 PM" deploymentGlobalResourceConfig_so="Default">
+	<DesignRoot id="2">
+		<style lightTheme="1"/>
+		<children>
+			<DesignPage id="3">
+				<style autoAddSubmitButton="0" name="Airport Status" showTitleBar="1"/>
+				<children>
+					<DesignTable id="358">
+						<style name="Table4" padding_x="$PERSISTENT/Root/marginFactor"/>
+						<children>
+							<DesignTableCol id="359"/>
+							<DesignTableRow id="360">
+								<children>
+									<DesignTable id="361">
+										<style addDelPossible="0" name="Table5"/>
+										<children>
+											<DesignTableCol id="362"/>
+											<DesignTableRow id="363">
+												<children>
+													<DesignLabel id="357">
+														<style name="Label25" text="Select airport:" weight="1"/>
+													</DesignLabel>
+												</children>
+											</DesignTableRow>
+										</children>
+									</DesignTable>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignGeoMap id="36866">
+						<style geoMapShowLocation="0" geoMapShowZoom="1" geoMapType="street" geoMarkers_x="mt-geo-map-marker(&quot;1&quot;, &quot;39.175, -76.668&quot;, (&quot;BWI&quot;, &quot;BALTIMORE WASHINGTON INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;2&quot;, &quot;42.364, -71.005&quot;, (&quot;BOS&quot;, &quot;GENERAL EDWARD LAWRENCE LOGAN INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;3&quot;, &quot;35.214, -80.943&quot;, (&quot;CLT&quot;, &quot;CHARLOTTE DOUGLAS INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;4&quot;, &quot;41.786, -87.752&quot;, (&quot;MDW&quot;, &quot;CHICAGO MIDWAY INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;5&quot;, &quot;41.979, -87.904&quot;, (&quot;ORD&quot;, &quot;CHICAGO OHARE INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;6&quot;, &quot;41.412, -81.85&quot;, (&quot;CLE&quot;, &quot;CLEVELAND HOPKINS INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;7&quot;, &quot;32.847, -96.852&quot;, (&quot;DAL&quot;, &quot;DALLAS LOVE FLD&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;8&quot;, &quot;32.896, -97.037&quot;, (&quot;DFW&quot;, &quot;DALLAS FORT WORTH INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;9&quot;, &quot;39.858, -104.667&quot;, (&quot;DEN&quot;, &quot;DENVER INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;10&quot;, &quot;31.807, -106.378&quot;, (&quot;ELP&quot;, &quot;EL PASO INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;11&quot;, &quot;26.072, -80.153&quot;, (&quot;FLL&quot;, &quot;FORT LAUDERDALE HOLLYWOOD INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;12&quot;, &quot;29.645, -95.279&quot;, (&quot;HOU&quot;, &quot;WILLIAM P HOBBY&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;13&quot;, &quot;29.98, -95.34&quot;, (&quot;IAH&quot;, &quot;GEORGE BUSH INTCNTL HOUSTON&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;14&quot;, &quot;30.494, -81.688&quot;, (&quot;JAX&quot;, &quot;JACKSONVILLE INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;15&quot;, &quot;39.297, -94.714&quot;, (&quot;MCI&quot;, &quot;KANSAS CITY INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;16&quot;, &quot;36.08, -115.152&quot;, (&quot;LAS&quot;, &quot;MC CARRAN INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;17&quot;, &quot;33.942, -118.408&quot;, (&quot;LAX&quot;, &quot;LOS ANGELES INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;18&quot;, &quot;35.042, -89.977&quot;, (&quot;MEM&quot;, &quot;MEMPHIS INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;19&quot;, &quot;25.793, -80.291&quot;, (&quot;MIA&quot;, &quot;MIAMI INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;20&quot;, &quot;42.947, -87.896&quot;, (&quot;MKE&quot;, &quot;GENERAL MITCHELL INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;21&quot;, &quot;44.88, -93.217&quot;, (&quot;MSP&quot;, &quot;MINNEAPOLIS ST PAUL INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;22&quot;, &quot;36.124, -86.678&quot;, (&quot;BNA&quot;, &quot;NASHVILLE INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;23&quot;, &quot;29.993, -90.258&quot;, (&quot;MSY&quot;, &quot;LOUIS ARMSTRONG NEW ORLEANS INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;24&quot;, &quot;40.64, -73.779&quot;, (&quot;JFK&quot;, &quot;JOHN F KENNEDY INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;25&quot;, &quot;40.777, -73.872&quot;, (&quot;LGA&quot;, &quot;LA GUARDIA&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;26&quot;, &quot;40.692, -74.169&quot;, (&quot;EWR&quot;, &quot;NEWARK LIBERTY INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;27&quot;, &quot;37.721, -122.221&quot;, (&quot;OAK&quot;, &quot;METROPOLITAN OAKLAND INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;28&quot;, &quot;28.429, -81.316&quot;, (&quot;MCO&quot;, &quot;ORLANDO INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;29&quot;, &quot;39.872, -75.241&quot;, (&quot;PHL&quot;, &quot;PHILADELPHIA INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;30&quot;, &quot;33.434, -112.008&quot;, (&quot;PHX&quot;, &quot;PHOENIX SKY HARBOR INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;31&quot;, &quot;34.175, -91.934&quot;, (&quot;PBF&quot;, &quot;GRIDER FLD&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;32&quot;, &quot;40.491, -80.233&quot;, (&quot;PIT&quot;, &quot;PITTSBURGH INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;33&quot;, &quot;37.505, -77.319&quot;, (&quot;RIC&quot;, &quot;RICHMOND INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;34&quot;, &quot;38.695, -121.591&quot;, (&quot;SMF&quot;, &quot;SACRAMENTO INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;35&quot;, &quot;40.788, -111.978&quot;, (&quot;SLC&quot;, &quot;SALT LAKE CITY INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;36&quot;, &quot;32.733, -117.189&quot;, (&quot;SAN&quot;, &quot;SAN DIEGO INTERNATIONAL LINDBERGH FLD&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;37&quot;, &quot;37.619, -122.375&quot;, (&quot;SFO&quot;, &quot;SAN FRANCISCO INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;38&quot;, &quot;47.449, -122.309&quot;, (&quot;SEA&quot;, &quot;SEATTLE TACOMA INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;39&quot;, &quot;27.975, -82.533&quot;, (&quot;TPA&quot;, &quot;TAMPA INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;40&quot;, &quot;38.852, -77.037&quot;, (&quot;DCA&quot;, &quot;RONALD REAGAN WASHINGTON NATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;41&quot;, &quot;38.944, -77.456&quot;, (&quot;IAD&quot;, &quot;WASHINGTON DULLES INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;42&quot;, &quot;45.588, -122.596&quot;, (&quot;PDX&quot;, &quot;PORTLAND INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;43&quot;, &quot;35.039, -106.608&quot;, (&quot;ABQ&quot;, &quot;ALBUQUERQUE INTERNATIONAL SUNPORT&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;44&quot;, &quot;43.564, -116.223&quot;, (&quot;BOI&quot;, &quot;BOISE AIR TERMINAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;45&quot;, &quot;48.259, -101.280&quot;, (&quot;MOT&quot;, &quot;MINOT INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;46&quot;, &quot;61.174, -149.996&quot;, (&quot;ANC&quot;, &quot;TED STEVENS ANCHORAGE INTERNATIONAL&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;47&quot;, &quot;42.212, -83.353&quot;, (&quot;DTW&quot;, &quot;DETROIT METRO WAYNE CO&quot;),&quot;#B8F9FE&quot;),
+mt-geo-map-marker(&quot;48&quot;, &quot;33.640, -84.427&quot;, (&quot;ATL&quot;, &quot;WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL&quot;),&quot;#B8F9FE&quot;)" geoViewport_x="( format-geolocation( $PERSISTENT/Root/top_left_lat ,  $PERSISTENT/Root/top_left_lon ,  4 ),
+format-geolocation( $PERSISTENT/Root/bot_right_lat , $PERSISTENT/Root/bot_right_lon , 4 ) )" name="Geolocation Map1"/>
+						<onGeoMapMarkerClickedActions id="36868">
+							<children>
+								<DesignActionGroupRef id="36915" groupRef="36916"/>
+								<DesignActionGroupRef id="36869" groupRef="36858"/>
+							</children>
+						</onGeoMapMarkerClickedActions>
+					</DesignGeoMap>
+					<DesignTable id="36589">
+						<style name="Table7" padding_x="$PERSISTENT/Root/marginFactor" paddingTop_x="$PERSISTENT/Root/marginFactor * 2" tablePadding="0" visible_x="$PERSISTENT/Root/requestSuccess = 2"/>
+						<children>
+							<DesignTableCol id="36590"/>
+							<DesignTableRow id="36591">
+								<children>
+									<DesignLabel id="36592">
+										<style align="center" name="Label2" text="Checking status - please wait . . ." weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="209">
+						<style name="Table1" padding_x="$PERSISTENT/Root/marginFactor" paddingTop_x="$PERSISTENT/Root/marginFactor * 2" tablePadding="0" visible_x="$PERSISTENT/Root/requestSuccess = 1"/>
+						<children>
+							<DesignTableCol id="210"/>
+							<DesignTableRow id="211">
+								<children>
+									<DesignLabel id="212">
+										<style align="center" name="Label1" text="FAA Reported Status" weight="1"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="36875">
+								<children>
+									<DesignLabel id="36876">
+										<style align="center" multiLine="1" name="Label7" text_x="concat($PERSISTENT/Root/airport_name, &apos; (&apos;,$PERSISTENT/Root/iata_code, &apos;)&apos;)"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="369">
+						<style name="Table6" padding_x="$PERSISTENT/Root/marginFactor" tablePadding="0" visible_x="$PERSISTENT/Root/requestSuccess = 1"/>
+						<children>
+							<DesignTableCol id="370">
+								<style colWidth="35%"/>
+							</DesignTableCol>
+							<DesignTableCol id="371"/>
+							<DesignTableRow id="372">
+								<children>
+									<DesignLabel id="373">
+										<style name="Label26" text="Delay:" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="377">
+										<style multiLine="1" name="Label27" text_x="if ( $HTTP1_status_result/json/Delay = &apos;false&apos; ) then &apos;None&apos; else &apos;Yes&apos;"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="36766">
+						<style addDelPossible="0" name="Table3" padding_x="$PERSISTENT/Root/marginFactor" tablePadding="0" visible_x="$PERSISTENT/Root/requestSuccess = 1"/>
+						<children>
+							<DesignTableCol id="36767">
+								<style colWidth="35%"/>
+							</DesignTableCol>
+							<DesignTableCol id="36768"/>
+							<DesignTableRowGroup id="36770" pageXML="399">
+								<style addDelPossible="0"/>
+								<children>
+									<DesignTableRow id="36771">
+										<children>
+											<DesignLabel id="36772">
+												<style name="Label31" text="Type:" valign="middle" visible_x="string-length(Type) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36774" pageXML="435">
+												<style marginTop_x="$PERSISTENT/Root/marginFactor" name="Label38" visible_x="string-length(Type) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36776">
+										<children>
+											<DesignLabel id="36777">
+												<style name="Label29" text="Reason:" valign="middle" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36779" pageXML="401">
+												<style multiLine="1" name="Label3"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36781">
+										<children>
+											<DesignLabel id="36782">
+												<style name="Label30" text="AvgDelay:" valign="middle" visible_x="string-length(AvgDelay) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36784" pageXML="443">
+												<style name="Label4" visible_x="string-length(AvgDelay) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36806">
+										<children>
+											<DesignLabel id="36801">
+												<style name="Label39" text="EndTime:" valign="middle" visible_x="string-length(EndTime) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36804" pageXML="36811">
+												<style name="Label5" visible_x="string-length(EndTime) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36786">
+										<children>
+											<DesignLabel id="36787">
+												<style name="Label32" text="MinDelay:" valign="middle" visible_x="string-length(MinDelay) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36789" pageXML="437">
+												<style name="Label35" visible_x="string-length(MinDelay) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36791">
+										<children>
+											<DesignLabel id="36792">
+												<style name="Label33" text="Trend:" valign="middle" visible_x="string-length(Trend) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36794" pageXML="439">
+												<style name="Label36" visible_x="string-length(Trend) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36796">
+										<children>
+											<DesignLabel id="36797">
+												<style name="Label34" text="MaxDelay:" valign="middle" visible_x="string-length(MaxDelay) &gt; 0" weight="1"/>
+											</DesignLabel>
+											<DesignLabel id="36799" pageXML="441">
+												<style name="Label37" visible_x="string-length(MaxDelay) &gt; 0"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36813">
+										<children>
+											<DesignVSpace id="36814">
+												<style name="Space1" spaceHeight_x="$PERSISTENT/Root/marginFactor"/>
+											</DesignVSpace>
+											<DesignTableCellEmpty id="36816"/>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableRowGroup>
+						</children>
+					</DesignTable>
+					<DesignTable id="36817">
+						<style addDelPossible="0" name="Table11" padding_x="$PERSISTENT/Root/marginFactor" paddingTop_x="$PERSISTENT/Root/marginFactor * 2" tablePadding="0" visible_x="$PERSISTENT/Root/requestSuccess = 1"/>
+						<children>
+							<DesignTableCol id="36818">
+								<style colWidth="35%"/>
+							</DesignTableCol>
+							<DesignTableCol id="36819"/>
+							<DesignTableRow id="36820">
+								<children>
+									<DesignLabel id="36821">
+										<style name="Label15" text="Weather:" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="36823" pageXML="411">
+										<style multiLine="1" name="Label16"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="36825">
+								<children>
+									<DesignLabel id="36826">
+										<style name="Label17" text="Visibility:" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="36828" pageXML="415">
+										<style multiLine="1" name="Label18"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="36830">
+								<children>
+									<DesignLabel id="36831">
+										<style name="Label19" text="Temperature:" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="36833" pageXML="429">
+										<style multiLine="1" name="Label20"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="36835">
+								<children>
+									<DesignLabel id="36836">
+										<style name="Label21" text="Wind:" weight="1"/>
+									</DesignLabel>
+									<DesignLabel id="36838" pageXML="433">
+										<style multiLine="1" name="Label22"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+							<DesignTableRow id="36840">
+								<children>
+									<DesignLabel id="36841" pageXML="425">
+										<style colSpan="2" marginTop_x="$PERSISTENT/Root/marginFactor * 2" multiLine="1" name="Label24" valign="middle"/>
+									</DesignLabel>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+					<DesignTable id="36526">
+						<style name="Table10" tablePadding="0" visible="1"/>
+						<children>
+							<DesignTableCol id="36527"/>
+							<DesignTableRow id="36536">
+								<children>
+									<DesignButton id="36537">
+										<style backgroundColor_x="if ( $MT_iOS = true() ) then $MT_PageBackgroundColor else ( )" margin_x="$PERSISTENT/Root/marginFactor * 2" name="Button2" padding_x="$PERSISTENT/Root/marginFactor" text="Check FAA Map" weight="1"/>
+										<controlActions id="36538">
+											<children>
+												<DesignActionOpenUrlOrFile id="36541" url="&apos;https://www.fly.faa.gov/flyfaa/usmap.jsp&apos;"/>
+											</children>
+										</controlActions>
+									</DesignButton>
+								</children>
+							</DesignTableRow>
+						</children>
+					</DesignTable>
+				</children>
+				<onPageLoadActions id="165">
+					<children>
+						<DesignActionComment id="36909" comment="Start each launch clean with no memory of last selection from previous run"/>
+						<DesignActionUpdateNode id="36910" updAt="$PERSISTENT/Root/iata_code,
+$PERSISTENT/Root/airport_name" resOf="&apos;&apos;"/>
+						<DesignActionUpdateNode id="36891" updAt="$PERSISTENT/Root/requestSuccess" resOf="0"/>
+						<DesignActionGroupRef id="36928" groupRef="36929"/>
+					</children>
+				</onPageLoadActions>
+				<xmlRoots>
+					<PageXMLRootRef id="149" refXMLRoot="150"/>
+				</xmlRoots>
+			</DesignPage>
+			<DesignPage id="36425" IsNeedsTableRestOfScreenHandling="1">
+				<style autoAddSubmitButton="0" name="Intro"/>
+				<children>
+					<DesignLabel id="36397">
+						<style align="center" name="Header Label1" text="Airport Status" textSize="large" weight="1"/>
+					</DesignLabel>
+					<DesignTable id="36399">
+						<style addDelPossible="0" name="Intro Text Table" tablePadding="0"/>
+						<children>
+							<DesignTableCol id="36400"/>
+							<DesignTableScrollableArea id="36401">
+								<style maxTableY="RestScreenYMax"/>
+								<children>
+									<DesignTableRow id="36402">
+										<children>
+											<DesignLabel id="36403">
+												<style linkDetect="explicit" multiLine="1" name="Text Label6" padding_x="$PERSISTENT/Root/marginFactor" text="This example demonstrates how to call a generic HTTP Web service from MobileTogether. The description of the Web service called in this example can be found at https://app.swaggerhub.com/apis/FAA/ASWS/1.1.0. This Web service returns the current status of any major US airport, as an XML or JSON structure, accepting the three-letter airport code as argument (for example, &quot;SFO&quot;, &quot;IAD&quot;, &quot;ABE&quot;, &quot;DFW&quot;, etc). "/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36405">
+										<children>
+											<DesignLabel id="36406">
+												<style multiLine="1" name="Text Label7" padding_x="$PERSISTENT/Root/marginFactor" text="The same Web Service is used in a MapForce example mapping design file named AirportStatus.mfd ."/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36411">
+										<children>
+											<DesignLabel id="36412">
+												<style multiLine="1" name="Text Label9" padding_x="$PERSISTENT/Root/marginFactor" text="The status information provided by this app indicates general airport conditions; it is not flight-specific.  Check with your airline to determine if your flight is affected." weight="1"/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+									<DesignTableRow id="36414">
+										<children>
+											<DesignLabel id="36415">
+												<style multiLine="1" name="Text Label10" padding_x="$PERSISTENT/Root/marginFactor" text="This app was created as an example for the Altova blog."/>
+											</DesignLabel>
+										</children>
+									</DesignTableRow>
+								</children>
+							</DesignTableScrollableArea>
+						</children>
+					</DesignTable>
+					<DesignCheckBox id="36417" pageXML="36453">
+						<style cbRight="0" checkedUnchecked="true 1 false" margin="6px" multiLine="1" name="Skip Box" text="Skip this intro in the future"/>
+					</DesignCheckBox>
+					<DesignButton id="36419">
+						<style align="center" name="Launch Button" text="Next Page"/>
+						<controlActions id="36420">
+							<children>
+								<DesignActionGotoPage id="36423" showLoadToppageMsg="0" processRef="67"/>
+							</children>
+						</controlActions>
+					</DesignButton>
+				</children>
+				<onPageLoadActions id="36441">
+					<children>
+						<DesignActionCondition id="36442" condition="$PERSISTENT/Root/skipIntro = true()">
+							<children>
+								<DesignActionConditionTrue id="36443">
+									<children>
+										<DesignActionGotoPage id="36444" showLoadToppageMsg="0" processRef="67"/>
+									</children>
+								</DesignActionConditionTrue>
+							</children>
+						</DesignActionCondition>
+					</children>
+				</onPageLoadActions>
+			</DesignPage>
+		</children>
+	</DesignRoot>
+	<ActionGroupRoot id="61">
+		<children>
+			<DesignActionGroup id="36858" name="Get Status for Airport">
+				<children>
+					<DesignActionCondition id="36892" condition="$PERSISTENT/Root/iata_code != map:get( $MT_GeolocationMapMarker, &quot;title&quot;)">
+						<children>
+							<DesignActionConditionTrue id="36893">
+								<children>
+									<DesignActionUpdateNode id="36894" updAt="$PERSISTENT/Root/requestSuccess" resOf="2"/>
+									<DesignActionUpdateDisplay id="36895"/>
+									<DesignActionUpdateNode id="36896" updAt="$PERSISTENT/Root/iata_code" resOf="map:get( $MT_GeolocationMapMarker, &quot;title&quot;)"/>
+									<DesignActionUpdateNode id="36897" updAt="$PERSISTENT/Root/airport_name" resOf="map:get( $MT_GeolocationMapMarker, &quot;text&quot;)"/>
+									<DesignActionReloadData id="36898" onError="continue" reloadRef="150">
+										<children>
+											<DesignActionOnSuccess id="36899">
+												<children>
+													<DesignActionUpdateNode id="36900" updAt="$PERSISTENT/Root/requestSuccess" resOf="1"/>
+													<DesignActionScrollTo id="36908" scrolltoTarget="bottom" subject="page"/>
+												</children>
+											</DesignActionOnSuccess>
+											<DesignActionOnError id="36901">
+												<children>
+													<DesignActionUpdateNode id="36902" updAt="$PERSISTENT/Root/requestSuccess" resOf="0"/>
+													<DesignActionUpdateDisplay id="36903"/>
+													<DesignActionUpdateNode id="36935" updAt="$PERSISTENT/Root/iata_code" resOf="&apos;&apos;"/>
+													<DesignActionMessageBox id="36904" msgBoxTitle="&apos;Request Failed&apos;" msgBoxMsg="&quot;Could not get status - please try again later.&quot;">
+														<children>
+															<DesignActionMessageBoxButton id="36905"/>
+														</children>
+													</DesignActionMessageBox>
+												</children>
+											</DesignActionOnError>
+										</children>
+									</DesignActionReloadData>
+								</children>
+							</DesignActionConditionTrue>
+						</children>
+					</DesignActionCondition>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="36916" name="Update viewport from marker">
+				<children>
+					<DesignActionUpdateNode id="36917" updAt="$PERSISTENT/Root/top_left_lat" resOf="map:get($MT_GeolocationMapMarker, &quot;geolocation&quot;)"/>
+					<DesignActionUpdateNode id="36919" updAt="$PERSISTENT/Root/top_left_lat" resOf="xs:decimal(substring-before($PERSISTENT/Root/top_left_lat, &apos; &apos;)) + 0.25"/>
+					<DesignActionUpdateNode id="36920" updAt="$PERSISTENT/Root/top_left_lon" resOf="map:get($MT_GeolocationMapMarker, &quot;geolocation&quot;)"/>
+					<DesignActionUpdateNode id="36921" updAt="$PERSISTENT/Root/top_left_lon" resOf="xs:decimal(substring-after($PERSISTENT/Root/top_left_lon, &apos; &apos;)) - 0.25"/>
+					<DesignActionUpdateNode id="36924" updAt="$PERSISTENT/Root/bot_right_lat" resOf="map:get($MT_GeolocationMapMarker, &quot;geolocation&quot;)"/>
+					<DesignActionUpdateNode id="36925" updAt="$PERSISTENT/Root/bot_right_lat" resOf="xs:decimal(substring-before($PERSISTENT/Root/bot_right_lat, &apos; &apos;)) - 0.25"/>
+					<DesignActionUpdateNode id="36926" updAt="$PERSISTENT/Root/bot_right_lon" resOf="map:get($MT_GeolocationMapMarker, &quot;geolocation&quot;)"/>
+					<DesignActionUpdateNode id="36927" updAt="$PERSISTENT/Root/bot_right_lon" resOf="xs:decimal(substring-after($PERSISTENT/Root/bot_right_lon, &apos; &apos;)) + 0.25"/>
+				</children>
+			</DesignActionGroup>
+			<DesignActionGroup id="36929" name="Set default viewport">
+				<children>
+					<DesignActionUpdateNode id="36930" updAt="$PERSISTENT/Root/top_left_lat" resOf="62.174"/>
+					<DesignActionUpdateNode id="36931" updAt="$PERSISTENT/Root/top_left_lon" resOf="-151.996"/>
+					<DesignActionUpdateNode id="36932" updAt="$PERSISTENT/Root/bot_right_lat" resOf="26.793"/>
+					<DesignActionUpdateNode id="36933" updAt="$PERSISTENT/Root/bot_right_lon" resOf="-68.005"/>
+				</children>
+			</DesignActionGroup>
+		</children>
+	</ActionGroupRoot>
+	<PageXMLNamespaceRoot id="70">
+		<children>
+			<PageXMLNamespace id="71" defNS="1"/>
+		</children>
+	</PageXMLNamespaceRoot>
+	<PageXMLPersistentRoot id="72" name="PERSISTENT">
+		<children>
+			<PageXMLElement id="73" name="Root">
+				<children>
+					<PageXMLElement id="36453" name="skipIntro" mustExist="1" default="false"/>
+					<PageXMLElement id="187" name="requestSuccess" mustExist="1" default="0"/>
+					<PageXMLElement id="489" name="marginFactor" mustExist="1" default="if ( $MT_Browser = true() or $MT_Windows = true() ) then 8 else 
+$MT_DeviceWidth idiv 100" defValueIsXPath="1"/>
+					<PageXMLElement id="36880" name="iata_code" mustExist="1"/>
+					<PageXMLElement id="36881" name="airport_name" mustExist="1"/>
+					<PageXMLElement id="36911" name="top_left_lat" mustExist="1" default="62.174"/>
+					<PageXMLElement id="36913" name="top_left_lon" mustExist="1" default="-151.996"/>
+					<PageXMLElement id="36912" name="bot_right_lat" mustExist="1" default="26.793"/>
+					<PageXMLElement id="36914" name="bot_right_lon" mustExist="1" default="-68.005"/>
+				</children>
+			</PageXMLElement>
+		</children>
+	</PageXMLPersistentRoot>
+	<PageXMLRoots id="69">
+		<children>
+			<PageXMLRootHttp id="150" name="HTTP1_status_result" persistOnClient="1" loadBeforePageOpen="never">
+				<children>
+					<PageXMLElement id="379" name="json">
+						<children>
+							<PageXMLAttribute id="380" name="type"/>
+							<PageXMLElement id="381" name="Name">
+								<children>
+									<PageXMLAttribute id="382" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="383" name="City">
+								<children>
+									<PageXMLAttribute id="384" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="385" name="State">
+								<children>
+									<PageXMLAttribute id="386" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="387" name="ICAO">
+								<children>
+									<PageXMLAttribute id="388" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="389" name="IATA">
+								<children>
+									<PageXMLAttribute id="390" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="391" name="SupportedAirport">
+								<children>
+									<PageXMLAttribute id="392" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="393" name="Delay">
+								<children>
+									<PageXMLAttribute id="394" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="395" name="DelayCount">
+								<children>
+									<PageXMLAttribute id="396" name="type"/>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="397" name="Status">
+								<children>
+									<PageXMLAttribute id="398" name="type"/>
+									<PageXMLElement id="399" name="item">
+										<children>
+											<PageXMLAttribute id="400" name="type"/>
+											<PageXMLElement id="435" name="Type">
+												<children>
+													<PageXMLAttribute id="436" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="401" name="Reason">
+												<children>
+													<PageXMLAttribute id="402" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="443" name="AvgDelay">
+												<children>
+													<PageXMLAttribute id="444" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="36811" name="EndTime">
+												<children>
+													<PageXMLAttribute id="36812" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="437" name="MinDelay">
+												<children>
+													<PageXMLAttribute id="438" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="439" name="Trend">
+												<children>
+													<PageXMLAttribute id="440" name="type"/>
+												</children>
+											</PageXMLElement>
+											<PageXMLElement id="441" name="MaxDelay">
+												<children>
+													<PageXMLAttribute id="442" name="type"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+							<PageXMLElement id="403" name="Weather">
+								<children>
+									<PageXMLAttribute id="404" name="type"/>
+									<PageXMLElement id="405" name="Weather">
+										<children>
+											<PageXMLAttribute id="406" name="type"/>
+											<PageXMLElement id="407" name="item">
+												<children>
+													<PageXMLAttribute id="408" name="type"/>
+													<PageXMLElement id="409" name="Temp">
+														<children>
+															<PageXMLAttribute id="410" name="type"/>
+															<PageXMLElement id="411" name="item">
+																<children>
+																	<PageXMLAttribute id="412" name="type"/>
+																</children>
+															</PageXMLElement>
+														</children>
+													</PageXMLElement>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+									<PageXMLElement id="413" name="Visibility">
+										<children>
+											<PageXMLAttribute id="414" name="type"/>
+											<PageXMLElement id="415" name="item">
+												<children>
+													<PageXMLAttribute id="416" name="type"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+									<PageXMLElement id="417" name="Meta">
+										<children>
+											<PageXMLAttribute id="418" name="type"/>
+											<PageXMLElement id="419" name="item">
+												<children>
+													<PageXMLAttribute id="420" name="type"/>
+													<PageXMLElement id="421" name="Credit">
+														<children>
+															<PageXMLAttribute id="422" name="type"/>
+														</children>
+													</PageXMLElement>
+													<PageXMLElement id="423" name="Url">
+														<children>
+															<PageXMLAttribute id="424" name="type"/>
+														</children>
+													</PageXMLElement>
+													<PageXMLElement id="425" name="Updated">
+														<children>
+															<PageXMLAttribute id="426" name="type"/>
+														</children>
+													</PageXMLElement>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+									<PageXMLElement id="427" name="Temp">
+										<children>
+											<PageXMLAttribute id="428" name="type"/>
+											<PageXMLElement id="429" name="item">
+												<children>
+													<PageXMLAttribute id="430" name="type"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+									<PageXMLElement id="431" name="Wind">
+										<children>
+											<PageXMLAttribute id="432" name="type"/>
+											<PageXMLElement id="433" name="item">
+												<children>
+													<PageXMLAttribute id="434" name="type"/>
+												</children>
+											</PageXMLElement>
+										</children>
+									</PageXMLElement>
+								</children>
+							</PageXMLElement>
+						</children>
+					</PageXMLElement>
+				</children>
+				<HttpSettings so="1" id="151" url_so="https://soa.smext.faa.gov/asws/api/airport/status/{airportCode}" ParseAs="JSON" type_so="REST" returnsNewXML_so="1">
+					<Headers>
+						<header name="Accept" value="application/json"/>
+					</Headers>
+					<Params>
+						<param id="152" name="airportCode" type="string" value="$PERSISTENT/Root/iata_code" valueType="XPath" location="URLTemplate"/>
+					</Params>
+				</HttpSettings>
+			</PageXMLRootHttp>
+		</children>
+	</PageXMLRoots>
+	<WorkflowRoot id="66">
+		<children>
+			<WorkflowPageRef id="36452" page="36425"/>
+			<WorkflowPageRef id="67" page="3"/>
+		</children>
+	</WorkflowRoot>
+	<GlobalVariables id="75">
+		<children>
+			<GlobalVariable id="76" sysVar="MT_Android" idxIcon_so="0"/>
+			<GlobalVariable id="77" sysVar="MT_iOS" idxIcon_so="1"/>
+			<GlobalVariable id="78" sysVar="MT_Browser" idxIcon_so="2"/>
+			<GlobalVariable id="79" sysVar="MT_iPad" idxIcon_so="3"/>
+			<GlobalVariable id="80" sysVar="MT_Windows" idxIcon_so="6"/>
+			<GlobalVariable id="81" sysVar="MT_WindowsPhone" idxIcon_so="7"/>
+			<GlobalVariable id="82" sysVar="MT_DeviceWidth"/>
+			<GlobalVariable id="83" sysVar="MT_DeviceHeight"/>
+			<GlobalVariable id="84" sysVar="MT_DPIX"/>
+			<GlobalVariable id="85" sysVar="MT_DPIY"/>
+			<GlobalVariable id="86" sysVar="MT_Landscape" idxIcon_so="4"/>
+			<GlobalVariable id="87" sysVar="MT_Portrait" idxIcon_so="5"/>
+			<GlobalVariable id="88" sysVar="MT_CanvasX"/>
+			<GlobalVariable id="89" sysVar="MT_CanvasY"/>
+			<GlobalVariable id="90" sysVar="MT_ClientLanguage"/>
+			<GlobalVariable id="91" sysVar="MT_TelephonyAvailable" idxIcon_so="20"/>
+			<GlobalVariable id="92" sysVar="MT_SMSAvailable" idxIcon_so="21"/>
+			<GlobalVariable id="93" sysVar="MT_ButtonTextColor"/>
+			<GlobalVariable id="94" sysVar="MT_ButtonBackgroundColor"/>
+			<GlobalVariable id="95" sysVar="MT_EditFieldTextColor"/>
+			<GlobalVariable id="96" sysVar="MT_EditFieldBackgroundColor"/>
+			<GlobalVariable id="97" sysVar="MT_LabelTextColor"/>
+			<GlobalVariable id="98" sysVar="MT_LabelBackgroundColor"/>
+			<GlobalVariable id="99" sysVar="MT_PageBackgroundColor"/>
+			<GlobalVariable id="100" sysVar="MT_FirstPageLoad"/>
+			<GlobalVariable id="101" sysVar="MT_TargetNode"/>
+			<GlobalVariable id="102" sysVar="MT_ControlKind"/>
+			<GlobalVariable id="103" sysVar="MT_ControlName"/>
+			<GlobalVariable id="104" sysVar="MT_ControlNode"/>
+			<GlobalVariable id="105" sysVar="MT_PageName"/>
+			<GlobalVariable id="106" sysVar="MT_UserName"/>
+			<GlobalVariable id="107" sysVar="MT_UserRoles"/>
+			<GlobalVariable id="108" sysVar="MT_ControlValue"/>
+			<GlobalVariable id="109" sysVar="MT_ControlValueBeforeChange"/>
+			<GlobalVariable id="110" sysVar="MT_SimulationMode"/>
+			<GlobalVariable id="111" sysVar="MT_DBExecute_Result"/>
+			<GlobalVariable id="112" sysVar="MT_CameraAvailable"/>
+			<GlobalVariable id="113" sysVar="MT_GeolocationAvailable"/>
+			<GlobalVariable id="114" sysVar="MT_InputParameters"/>
+			<GlobalVariable id="115" sysVar="MT_HTTPExecute_Result"/>
+			<GlobalVariable id="116" sysVar="MT_ServerConnectionErrorLocation"/>
+			<GlobalVariable id="117" sysVar="MT_IsAppStoreApp"/>
+			<GlobalVariable id="118" sysVar="MT_WindowWidth"/>
+			<GlobalVariable id="119" sysVar="MT_WindowHeight"/>
+			<GlobalVariable id="120" sysVar="MT_AudioChannel"/>
+			<GlobalVariable id="121" sysVar="MT_TableColumnContext"/>
+			<GlobalVariable id="122" sysVar="MT_NFCAvailable"/>
+			<GlobalVariable id="123" sysVar="MT_IsEmbedded"/>
+			<GlobalVariable id="245" sysVar="MT_GeolocationMapMarker"/>
+		</children>
+	</GlobalVariables>
+	<CustomerAppSettings so="1" id="65"/>
+</MobileTogetherDesign>
