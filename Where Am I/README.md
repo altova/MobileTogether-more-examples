@@ -7,7 +7,7 @@ An interface to an OpenWeather API lets you collect current weather conditions.
 
 An interface to an Eventful API lets you get a list of current and upcoming events in the nearby area.
 
-New features in this version include Locate by Address, graph of 5-day weather forecast, and traffic alerts for major cities in North America with text-to-speech when clicking on alert descriptions.
+New features in this version include custom maps on search result pages.
 
 Note that certain features are only available when you hold your device in portrait orientation.
 
@@ -15,8 +15,6 @@ You will need a key for each API to unlock all the bonus features. Get more info
 
 Click and hold (long click) any tool icon for a help message, tap (short click) to execute the tool.
 
-Tool icons now have visual feedback when clicked.
-
-This app is described in an Altova blog post at: https://www.altova.com/blog/visual-feedback-in-mobile-applications/
+This the latest featurres in this app are described in an Altova blog post at: https://www.altova.com/blog/build-custom-maps-in-mobile-apps/
 
 
