@@ -1,11 +1,9 @@
 # MobileTogether-Where-Am-I
-This app demonstrates basic geolocation functionality, with buttons to start and stop GPS, display of captured latitude and longitude, interface to the client device default map application, and API to Google maps.
+This app demonstrates basic geolocation functionality, with buttons to start and stop GPS, display of captured latitude and longitude, interface to the client device default map application, and APIs to various geolocation services.
 
 An interface to a MapQuest Geocoding API lets you get more refined addresses and search the surrounding area for various enterprises and amusements.
 
 An interface to an OpenWeather API lets you collect current weather conditions.
-
-An interface to an Eventful API lets you get a list of current and upcoming events in the nearby area.
 
 New features in this version include custom maps on search result pages.
 
@@ -15,6 +13,6 @@ You will need a key for each API to unlock all the bonus features. Get more info
 
 Click and hold (long click) any tool icon for a help message, tap (short click) to execute the tool.
 
-This the latest featurres in this app are described in an Altova blog post at: https://www.altova.com/blog/build-custom-maps-in-mobile-apps/
+This the latest featurres in this app are described in an Altova blog post at: https://www.altova.com/blog/maintaining-low-code-apps/
 
 
